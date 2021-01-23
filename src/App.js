@@ -4,7 +4,9 @@ import userAPI from './utils/userAPI'
 import 'bootstrap/dist/css/bootstrap.min.css'
 // Components
 import NavBar from './components/NavBar'
-import SignIn from './components/SignIn'
+// Pages
+import SignInPage from './pages/SignInPage'
+import RecipePage from './pages/RecipePage'
 
 function App() {
   const [profileState, setProfileState] = useState({
@@ -69,7 +71,10 @@ function App() {
       />
       <Switch>
         <Route exact path="/signin">
-          <SignIn />
+          <SignInPage />
+        </Route>
+        <Route exact path="/recipeform">
+          <RecipePage />
         </Route>
       </Switch>
     </Router>
