@@ -1,24 +1,78 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React, { useState, useEffect } from 'react'
+import userAPI from './utils/userAPI'
+import 'bootstrap/dist/css/bootstrap.min.css'
+// Components
+import NavBar from './components/NavBar'
+import SignIn from './components/SignIn'
 
 function App() {
+  const [profileState, setProfileState] = useState({
+    name: "",
+    email: "",
+    recipes: [],
+    token: "",
+    id: "",
+    isLoggedIn: false
+  })
+
+  useEffect(() => {
+    fetchUserData()
+  }, [])
+
+  function fetchUserData() {
+    const token = localStorage.getItem('token')
+    if (localStorage.getItem('token') !== null) {
+      userAPI.getProfile(token).then(profileData => {
+        console.log(profileData)
+        if (profileData) {
+          setProfileState({
+            name: profileData.name,
+            email: profileData.email,
+            recipes: profileData.Recipes,
+            id: profileData.id,
+            isLoggedIn: true
+          })
+        } else {
+          localStorage.removeItem("token")
+          setProfileState({
+            name: "",
+            email: "",
+            recipes: [],
+            token: "",
+            id: "",
+            isLoggedIn: false
+          })
+        }
+      })
+    }
+  }
+
+  const handleLogOut = event => {
+    localStorage.removeItem("token");
+    setProfileState({
+      name: "",
+      email: "",
+      keebs: [],
+      parts: [],
+      token: "",
+      isLoggedIn: false
+    })
+    window.location.reload(false)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router >
+      <NavBar 
+        isLoggedIn={profileState.isLoggedIn}
+        handleLogOut={handleLogOut}
+      />
+      <Switch>
+        <Route exact path="/signin">
+          <SignIn />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
