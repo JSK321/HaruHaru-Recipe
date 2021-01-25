@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React, { useState, useEffect } from 'react'
-import userAPI from './utils/userAPI'
+import API from './utils/API'
 import 'bootstrap/dist/css/bootstrap.min.css'
 // Components
 import NavBar from './components/NavBar'
@@ -25,8 +25,7 @@ function App() {
   function fetchUserData() {
     const token = localStorage.getItem('token')
     if (localStorage.getItem('token') !== null) {
-      userAPI.getProfile(token).then(profileData => {
-        console.log(profileData)
+      API.getProfile(token).then(profileData => {
         if (profileData) {
           setProfileState({
             name: profileData.name,

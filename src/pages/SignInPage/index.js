@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import userAPI from '../../utils/userAPI'
+import API from '../../utils/API'
 import SignInForm from '../../components/SignInForm'
 
 export default function SignInPage() {
@@ -30,12 +30,12 @@ export default function SignInPage() {
         if (!loginFormState.email || !loginFormState.password) {
             alert("잘못된 비밀번호 / 이메일을 다시 시도하십시오.")
         } else {
-            userAPI.login(loginFormState).then(newToken => {
+            API.login(loginFormState).then(newToken => {
                 if (newToken === null) {
                     alert("잘못된 비밀번호 / 이메일을 다시 시도하십시오.")
                 } else {
                     localStorage.setItem("token", newToken.token)
-                    userAPI.getProfile(newToken.token).then(profileData => {
+                    API.getProfile(newToken.token).then(profileData => {
                         setProfileState({
                             name: profileData.name,
                             email: profileData.email,
