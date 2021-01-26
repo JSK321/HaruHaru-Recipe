@@ -65,9 +65,6 @@ export default function RecipeForm(props) {
                                 Add Ingredients
                             </Button>
                         </Form.Group>
-                        {/* <Button variant="primary" type="submit">
-                            Add Ingredients
-                         </Button> */}
                     </Form>
                 </Card.Text>
             </Card.Body>
