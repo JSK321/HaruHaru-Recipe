@@ -66,7 +66,7 @@ function App() {
 
   return (
     <Router >
-      <NavBar 
+      <NavBar
         isLoggedIn={profileState.isLoggedIn}
         handleLogOut={handleLogOut}
       />
@@ -75,12 +75,14 @@ function App() {
           <SignInPage />
         </Route>
         <Route exact path="/recipeform">
-          <RecipePage 
-          profile={profileState}
+          <RecipePage
+            profile={profileState}
           />
         </Route>
-        <Route exact path="/ingreform/:id">
-          <IngrePage />
+        <Route exact path="/ingredientform/:id">
+          <IngrePage
+            profile={profileState}
+          />
         </Route>
       </Switch>
     </Router>

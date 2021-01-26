@@ -5,30 +5,16 @@ import RecipeForm from '../../components/RecipeForm'
 
 export default function RecipePage(props) {
     // -----------------States-----------------
-    // ----------------------------------------
     const [recipeState, setRecipeState] = useState({
         recipeName: "",
         recipeImage: ""
     });
     const [imgLoadingState, setImgLoadingState] = useState(false);
-    // const [ingredientState, setIngredientState] = useState({
-    //     ingredients: "",
-    //     RecipeId: ""
-    // });
-    // const [directionState, setDirectionState] = useState({
-    //     directions: "",
-    //     RecipeId: "",
-    //     UserId: ""
-    // });
-
-    // const { id } = useParams();
 
     useEffect(() => {
 
     }, [])
-
     // -----------------Input changes-----------------
-    // -----------------------------------------------
     const handleRecipeInputChange = event => {
         const { name, value } = event.target
         setRecipeState({
@@ -55,21 +41,7 @@ export default function RecipePage(props) {
         })
         setImgLoadingState(false)
     };
-    // const handleIngreInputChange = event => {
-    //     const { name, value } = event.target
-    //     setIngredientState({
-    //         ...ingredientState,
-    //         [name]: value
-    //     })
-    // };
-    // const handleDirectInputChange = event => {
-    //     const { name, value } = event.target
-    //     setDirectionState({
-    //         ...directionState,
-    //         [name]: value
-    //     })
-    // };
-
+    // -----------------Form Submit-----------------
     const handleFormSubmit = event => {
         event.preventDefault()
         if (props.profile.isLoggedIn === true) {
@@ -78,7 +50,7 @@ export default function RecipePage(props) {
             }).then(afterCreate => {
                 API.getRecipes().then(res => {
                     let recipeId = res.slice(-1)[0].id
-                    window.location.href = `/ingreform/${recipeId}`
+                    window.location.href = `/ingredientform/${recipeId}`
                 }
                 )
             })
@@ -94,20 +66,13 @@ export default function RecipePage(props) {
     return (
         <div>
             <RecipeForm
-                // handleInputs
                 handleRecipeInputChange={handleRecipeInputChange}
-                // handleIngreInputChange={handleIngreInputChange}
-                // handleDirectInputChange={handleDirectInputChange}
                 handleFormSubmit={handleFormSubmit}
                 handleUploadImgBtn={handleUploadImgBtn}
                 handleUploadImg={handleUploadImg}
-
-                // // Values
                 recipeName={recipeState.recipeName}
                 recipeImage={recipeState.recipeImage}
                 loading={imgLoadingState}
-            // ingredients={ingredientState.ingredients}
-            // directions={directionState.directions}
             />
         </div>
     );
