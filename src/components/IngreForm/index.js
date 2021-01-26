@@ -1,4 +1,5 @@
 import { Card } from 'react-bootstrap'
+import { ListGroup } from 'react-bootstrap'
 import { Form } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
@@ -10,13 +11,6 @@ export default function IngreForm(props) {
                 <Card.Title style={{ textAlign: "center" }}>Add Ingredients</Card.Title>
                 <Form onSubmit={props.handleFormSubmit}>
                     <Form.Group>
-                        {/* <Form.Control
-                            type="text"
-                            placeholder="Ingredient"
-                            onChange={props.handleIngreInputChange}
-                            value={props.ingredient}
-                            name="ingredient"
-                        /> */}
                         <Form.Row>
                             <Col sm="12">
                                 <Form.Control
@@ -55,6 +49,8 @@ export default function IngreForm(props) {
                         >
                             Add Ingredient
                         </Button>
+
+
                     </Form.Group>
                     <Form.Group>
                         <Form.Control

@@ -16,14 +16,20 @@ export default function IngrePage(props) {
         RecipeId: "",
         UserId: "",
     });
-
+    const [ingreAddedState, setIngreAddedState] = useState({
+        item: []
+    });
     const { id } = useParams();
 
     useEffect(() => {
     }, [])
 
     function fetchIngreData() {
-        console.log("hello")
+        API.getAllIngreForRecipe(id).then(data => {
+            setIngreAddedState({
+                item: data
+            })
+        })
     }
     // -----------------Input changes-----------------
     const handleIngreInputChange = event => {
@@ -48,9 +54,7 @@ export default function IngrePage(props) {
             ingredientState.ingredient !== "" &&
             ingredientState.ingredient !== null &&
             ingredientState.ingredientQuant !== "" &&
-            ingredientState.ingredientQuant !== null &&
-            ingredientState.ingredientUnit !== "" &&
-            ingredientState.ingredientUnit !== null
+            ingredientState.ingredientQuant !== null 
         ) {
             API.createIngredients(props.profile.token, {
                 ...ingredientState,
@@ -65,7 +69,8 @@ export default function IngrePage(props) {
                 fetchIngreData()
             })
         } else {
-            alert("Please fill out all fields for ingredients")
+            // alert("Please fill out all fields for ingredients")
+            fetchIngreData()
         }
     }
 
@@ -91,11 +96,14 @@ export default function IngrePage(props) {
                 handleDirectInputChange={handleDirectInputChange}
                 handleFormSubmit={handleFormSubmit}
                 handleAddIngreBtn={handleAddIngreBtn}
+
                 ingredient={ingredientState.ingredient}
                 ingredientQuant={ingredientState.ingredientQuant}
                 ingredientUnit={ingredientState.ingredientUnit}
                 directions={directionState.directions}
 
+
+                ingredients={ingreAddedState.item}
             />
         </div>
     )

@@ -37,6 +37,11 @@ const userAPI = {
         return fetch(`${URL_PREFIX}/api/recipes/${recipeId}`, {
         }).then(res => res.json()).catch(err => console.log(err))
     },
+    // Retrieve All Ingredients for Recipe with RecipeId
+    getAllIngreForRecipe: function(recipeId){
+        return fetch(`${URL_PREFIX}/api/ingredients/all/${recipeId}`, {
+        }).then(res => res.json()).catch(err => console.log(err))
+    },
     // Create New User Function
     createUser: function (userData) {
         return fetch(`${URL_PREFIX}/api/users`, {
