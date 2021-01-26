@@ -1,7 +1,7 @@
 import { Card } from 'react-bootstrap'
 import { Form } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
-// import { ListGroup } from 'react-bootstrap'
+import { Image } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
 
 export default function RecipeForm(props) {
@@ -11,7 +11,29 @@ export default function RecipeForm(props) {
             <Card.Body>
                 <Card.Title style={{ textAlign: "center" }}>Add Recipe</Card.Title>
                 <Card.Text>
-                    <Form >
+                    <Form onSubmit={props.handleFormSubmit}>
+                        <Form.Group>
+                            {props.loading ? (
+                                <h3 style={{ textAlign: "center" }}><strong>Loading Image...</strong></h3>
+                            ) : (
+                                    <Image
+                                        src={
+                                            props.recipeImage ?
+                                                (props.recipeImage)
+                                                : null
+                                        }
+                                        style={
+                                            props.recipeImage ?
+                                                ({
+                                                    maxWidth: "300px",
+                                                    height: "auto",
+                                                    margin: "0 auto"
+                                                })
+                                                : null
+                                        }
+                                    />
+                                )}
+                        </Form.Group>
                         <Form.Group>
                             <Form.Control
                                 type="text"
@@ -21,35 +43,31 @@ export default function RecipeForm(props) {
                                 name="recipeName"
                             />
                         </Form.Group>
-                        <Form.Group>
-                            <Form.Control
-                                as="textarea"
-                                row={5}
-                                placeholder="Ingredients"
-                                onChange={props.handleIngreInputChange}
-                                value={props.ingredients}
-                                name="ingredients"
-                            />
-                            <Form.Text
-                                className="text-muted"
-                                style={{ textAlign: "center" }}
-                            >
-                                List all ingredients separated with a comma,
-                            </Form.Text>
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Control
-                                as="textarea"
-                                row={5}
-                                placeholder="Directions"
-                                onChange={props.handleDirectInputChange}
-                                value={props.directions}
-                                name="directions"
-                            />
-                        </Form.Group>
-                        <Button variant="primary" type="submit">
-                            Submit
+                        <Button
+                            type="button"
+                            onClick={props.handleUploadImgBtn}
+                            style={{ width: "100%", marginBottom: "10px" }}
+                        >
+                            Upload Image
                          </Button>
+                        <Form.Group>
+                            <Form.File
+                                id="uploadImg"
+                                onChange={props.handleUploadImg}
+                                style={{ display: "none" }}
+                                name="recipeImage"
+                            />
+                            <Button
+                                variant="primary"
+                                type="submit"
+                                style={{width:"100%"}}
+                            >
+                                Add Ingredients
+                            </Button>
+                        </Form.Group>
+                        {/* <Button variant="primary" type="submit">
+                            Add Ingredients
+                         </Button> */}
                     </Form>
                 </Card.Text>
             </Card.Body>

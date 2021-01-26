@@ -31,6 +31,7 @@ function App() {
             name: profileData.name,
             email: profileData.email,
             recipes: profileData.Recipes,
+            token: token,
             id: profileData.id,
             isLoggedIn: true
           })
@@ -73,7 +74,9 @@ function App() {
           <SignInPage />
         </Route>
         <Route exact path="/recipeform">
-          <RecipePage />
+          <RecipePage 
+          profile={profileState}
+          />
         </Route>
       </Switch>
     </Router>

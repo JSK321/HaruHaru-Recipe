@@ -12,6 +12,13 @@ const userAPI = {
             body: JSON.stringify(userData)
         }).then(res => res.json()).catch(err => null)
     },
+    // Upload Image Function
+    uploadImage: function (imgData) {
+        return fetch(`https://api.cloudinary.com/v1_1/jsk321/image/upload`, {
+            method: 'POST',
+            body: imgData
+        })
+    },
     // Retrieve Profile Function
     getProfile: function (token) {
         return fetch(`${URL_PREFIX}/api/users/secretProfile`, {
@@ -50,16 +57,16 @@ const userAPI = {
         }).catch(err => null)
     },
     // Create New Recipe Function
-    createRecipe: function(token, recipeData){
+    createRecipe: function (token, recipeData) {
         return fetch(`${URL_PREFIX}/api/recipes`, {
-            method:"POST",
+            method: "POST",
             headers: {
                 'Content-Type': 'application/json',
                 'authorization': `Bearer ${token}`
             },
             body: JSON.stringify(recipeData)
         }).then(res => {
-            if(res.ok){
+            if (res.ok) {
                 return res.json()
             } else {
                 alert("Sign in to add recipe!")
@@ -68,16 +75,16 @@ const userAPI = {
         }).catch(err => console.log(err))
     },
     // Create New Ingredients Function
-    createIngredients: function(token, ingreData){
-        return fetch(`${URL_PREFIX}/api/ingredients`,{
-            method:"POST",
+    createIngredients: function (token, ingreData) {
+        return fetch(`${URL_PREFIX}/api/ingredients`, {
+            method: "POST",
             headers: {
                 'Content-Type': 'application/json',
                 'authorization': `Bearer ${token}`
             },
             body: JSON.stringify(ingreData)
         }).then(res => {
-            if(res.ok){
+            if (res.ok) {
                 return res.json()
             } else {
                 throw new Error("Something went wrong")
@@ -85,16 +92,16 @@ const userAPI = {
         })
     },
     // Create New Steps Function
-    createSteps: function(token, stepsData){
+    createSteps: function (token, stepsData) {
         return fetch(`${URL_PREFIX}/api/steps`, {
-            method:"POST",
+            method: "POST",
             headers: {
                 'Content-Type': 'application/json',
                 'authorization': `Bearer ${token}`
             },
             body: JSON.stringify(stepsData)
         }).then(res => {
-            if(res.ok){
+            if (res.ok) {
                 return res.json()
             } else {
                 throw new Error("Something went wrong")
