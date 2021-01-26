@@ -7,6 +7,7 @@ export default function RecipePage(props) {
     // -----------------States-----------------
     const [recipeState, setRecipeState] = useState({
         recipeName: "",
+        recipeDescript: "",
         recipeImage: ""
     });
     const [imgLoadingState, setImgLoadingState] = useState(false);
@@ -72,6 +73,7 @@ export default function RecipePage(props) {
                 handleUploadImg={handleUploadImg}
                 recipeName={recipeState.recipeName}
                 recipeImage={recipeState.recipeImage}
+                recipeDescript={recipeState.recipeDescript}
                 loading={imgLoadingState}
             />
         </div>
