@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+// import { useParams } from 'react-router-dom'
 import API from '../../utils/API'
 import RecipeForm from '../../components/RecipeForm'
 
@@ -20,13 +20,12 @@ export default function RecipePage(props) {
     //     RecipeId: "",
     //     UserId: ""
     // });
-    const [userProfile, setUserProfile] = useState({});
 
-    const { id } = useParams();
+    // const { id } = useParams();
 
-    useEffect(()=> {
+    useEffect(() => {
 
-    }, []) 
+    }, [])
 
     // -----------------Input changes-----------------
     // -----------------------------------------------
@@ -73,9 +72,19 @@ export default function RecipePage(props) {
 
     const handleFormSubmit = event => {
         event.preventDefault()
-        API.createRecipe(props.profile.token, {
-            ...recipeState,
-        })
+        if (props.profile.isLoggedIn === true) {
+            API.createRecipe(props.profile.token, {
+                ...recipeState,
+            }).then(afterCreate => {
+                API.getRecipes().then(res => {
+                    let recipeId = res.slice(-1)[0].id
+                    window.location.href = `/ingreform/${recipeId}`
+                }
+                )
+            })
+        } else {
+            alert("Sign in to add new recipe")
+        }
         // API.createIngredients(props.profile.token, {
         //     ...ingredientState,
 
@@ -97,8 +106,8 @@ export default function RecipePage(props) {
                 recipeName={recipeState.recipeName}
                 recipeImage={recipeState.recipeImage}
                 loading={imgLoadingState}
-                // ingredients={ingredientState.ingredients}
-                // directions={directionState.directions}
+            // ingredients={ingredientState.ingredients}
+            // directions={directionState.directions}
             />
         </div>
     );
