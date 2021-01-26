@@ -7,6 +7,7 @@ import NavBar from './components/NavBar'
 // Pages
 import SignInPage from './pages/SignInPage'
 import RecipePage from './pages/RecipePage'
+import IngrePage from './pages/IngrePage'
 
 function App() {
   const [profileState, setProfileState] = useState({
@@ -65,7 +66,7 @@ function App() {
 
   return (
     <Router >
-      <NavBar 
+      <NavBar
         isLoggedIn={profileState.isLoggedIn}
         handleLogOut={handleLogOut}
       />
@@ -74,8 +75,13 @@ function App() {
           <SignInPage />
         </Route>
         <Route exact path="/recipeform">
-          <RecipePage 
-          profile={profileState}
+          <RecipePage
+            profile={profileState}
+          />
+        </Route>
+        <Route exact path="/ingredientform/:id">
+          <IngrePage
+            profile={profileState}
           />
         </Route>
       </Switch>
