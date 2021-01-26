@@ -2,7 +2,7 @@ const URL_PREFIX = "http://localhost:8080"
 // const URL_PREFIX = "https://mykeebs-api.herokuapp.com"
 
 const userAPI = {
-    // Log in function
+    // Login Function
     login: function (userData) {
         return fetch(`${URL_PREFIX}/api/users/login`, {
             method: "POST",
@@ -12,7 +12,25 @@ const userAPI = {
             body: JSON.stringify(userData)
         }).then(res => res.json()).catch(err => null)
     },
-    // Create new user function
+    // Retrieve Profile Function
+    getProfile: function (token) {
+        return fetch(`${URL_PREFIX}/api/users/secretProfile`, {
+            headers: {
+                'authorization': `Bearer ${token}`
+            }
+        }).then(res => res.json()).catch(err => null)
+    },
+    // Retrieve All Recipe Function
+    getRecipes: function () {
+        return fetch(`${URL_PREFIX}/api/recipes`, {
+        }).then(res => res.json()).catch(err => console.log(err))
+    },
+    // Retrieve One Recipe Function
+    getOneRecipe: function (recipeId) {
+        return fetch(`${URL_PREFIX}/api/recipes/${recipeId}`, {
+        }).then(res => res.json()).catch(err => console.log(err))
+    },
+    // Create New User Function
     createUser: function (userData) {
         return fetch(`${URL_PREFIX}/api/users`, {
             method: "POST",
@@ -31,14 +49,58 @@ const userAPI = {
             }
         }).catch(err => null)
     },
-    // Retrieve Profile function
-    getProfile: function (token) {
-        return fetch(`${URL_PREFIX}/api/users/secretProfile`, {
+    // Create New Recipe Function
+    createRecipe: function(token, recipeData){
+        return fetch(`${URL_PREFIX}/api/recipes`, {
+            method:"POST",
             headers: {
+                'Content-Type': 'application/json',
                 'authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(recipeData)
+        }).then(res => {
+            if(res.ok){
+                return res.json()
+            } else {
+                alert("Sign in to add recipe!")
+                throw new Error("Something went wrong")
             }
-        }).then(res => res.json()).catch(err => null)
+        }).catch(err => console.log(err))
     },
+    // Create New Ingredients Function
+    createIngredients: function(token, ingreData){
+        return fetch(`${URL_PREFIX}/api/ingredients`,{
+            method:"POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(ingreData)
+        }).then(res => {
+            if(res.ok){
+                return res.json()
+            } else {
+                throw new Error("Something went wrong")
+            }
+        })
+    },
+    // Create New Steps Function
+    createSteps: function(token, stepsData){
+        return fetch(`${URL_PREFIX}/api/steps`, {
+            method:"POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(stepsData)
+        }).then(res => {
+            if(res.ok){
+                return res.json()
+            } else {
+                throw new Error("Something went wrong")
+            }
+        })
+    }
 }
 
 module.exports = userAPI;
