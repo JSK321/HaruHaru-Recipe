@@ -49,7 +49,17 @@ export default function IngreForm(props) {
                         >
                             Add Ingredient
                         </Button>
-
+                        {props.ingredients !== null ?
+                            props.ingredients.map(item => (
+                                <ListGroup variant="flush" style={{ textAlign: "center" }}>
+                                    <ListGroup.Item>
+                                        <strong>
+                                            {item.ingredient}, {item.ingredientQuant} {item.ingredientUnit}
+                                        </strong>
+                                    </ListGroup.Item>
+                                </ListGroup>
+                            ))
+                            : null}
 
                     </Form.Group>
                     <Form.Group>

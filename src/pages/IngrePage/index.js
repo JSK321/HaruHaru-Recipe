@@ -76,17 +76,13 @@ export default function IngrePage(props) {
 
     const handleFormSubmit = event => {
         event.preventDefault()
-        // if (props.profile.isLoggedIn === true) {
-        //     API.createIngredients(props.profile.token, {
-        //         ...ingredientState,
-        //         RecipeId: id
-        //     })
-        //     API.createSteps(props.profile.token, {
-        //         ...directionState,
-        //         RecipeId: id,
-        //         UserId: props.profile.id
-        //     })
-        // }
+        if (props.profile.isLoggedIn === true) {
+            API.createSteps(props.profile.token, {
+                ...directionState,
+                RecipeId: id,
+                UserId: props.profile.id
+            })
+        }
     }
 
     return (
@@ -96,13 +92,10 @@ export default function IngrePage(props) {
                 handleDirectInputChange={handleDirectInputChange}
                 handleFormSubmit={handleFormSubmit}
                 handleAddIngreBtn={handleAddIngreBtn}
-
                 ingredient={ingredientState.ingredient}
                 ingredientQuant={ingredientState.ingredientQuant}
                 ingredientUnit={ingredientState.ingredientUnit}
                 directions={directionState.directions}
-
-
                 ingredients={ingreAddedState.item}
             />
         </div>
