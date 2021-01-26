@@ -43,6 +43,16 @@ export default function RecipeForm(props) {
                                 name="recipeName"
                             />
                         </Form.Group>
+                        <Form.Group>
+                            <Form.Control
+                                as="textarea"
+                                rows={3}
+                                placeholder="Recipe Description"
+                                onChange={props.handleRecipeInputChange}
+                                value={props.recipeDescript}
+                                name="recipeDescript"
+                            />
+                        </Form.Group>
                         <Button
                             type="button"
                             onClick={props.handleUploadImgBtn}
