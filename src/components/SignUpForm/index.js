@@ -1,16 +1,23 @@
 import { Card } from 'react-bootstrap'
 import { Form } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
-import './styles.css'
 
-export default function SignInForm(props) {
+export default function SignUpForm(props) {
     return (
         <Card className="SignInCard">
             <Card.Body>
-                <Card.Title style={{ textAlign: "center" }}>옆모습 로그인</Card.Title>
+                <Card.Title style={{ textAlign: "center" }}>Register</Card.Title>
                 <Card.Text>
                     <Form onSubmit={props.handleFormSubmit}>
                         <Form.Group>
+                            <Form.Group>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Name"
+                                    onChange={props.handleInputChange}
+                                    name="name"
+                                />
+                            </Form.Group>
                             <Form.Control
                                 type="email"
                                 placeholder="이메일"
@@ -22,13 +29,13 @@ export default function SignInForm(props) {
                             <Form.Control
                                 type="password"
                                 placeholder="암호"
-                                onChange={props.handleInputChange}    
+                                onChange={props.handleInputChange}
                                 name="password"
                             />
                         </Form.Group>
                         <Button variant="primary" type="submit">
-                            로그인
-                         </Button>
+                            Sign Up
+                        </Button>
                     </Form>
                 </Card.Text>
                 <Card.Link href="#">Card Link</Card.Link>
