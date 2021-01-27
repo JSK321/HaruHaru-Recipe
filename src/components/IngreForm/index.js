@@ -54,13 +54,12 @@ export default function IngreForm(props) {
                                 <ListGroup variant="flush" style={{ textAlign: "center" }}>
                                     <ListGroup.Item>
                                         <strong>
-                                            {item.ingredient}, {item.ingredientQuant} {item.ingredientUnit}
+                                            {item.ingredientQuant} {item.ingredientUnit}, {item.ingredient}
                                         </strong>
                                     </ListGroup.Item>
                                 </ListGroup>
                             ))
                             : null}
-
                     </Form.Group>
                     <Form.Group>
                         <Form.Control
