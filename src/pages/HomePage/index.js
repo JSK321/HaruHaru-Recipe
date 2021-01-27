@@ -25,9 +25,9 @@ export default function HomePage() {
 
     return (
         <div className="container" style={{ marginBottom: "75px", }}>
-            <CarouselComponent
+            {/* <CarouselComponent
 
-            />
+            /> */}
             <div className="row">
                 {recipeInfoState.recipes !== null ?
                     recipeInfoState.recipes.map(data => (

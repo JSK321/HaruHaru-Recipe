@@ -1,0 +1,7 @@
+.RecipeViewCard {
+    width: 19rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    border: 1px solid black
+}

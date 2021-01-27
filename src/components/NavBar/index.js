@@ -8,7 +8,11 @@ import { Button } from 'react-bootstrap'
 
 export default function NavBar(props) {
     return (
-        <Navbar expand="lg-md-sm" style={{ backgroundColor: "silver" }}>
+        <Navbar
+            expand="lg-md-sm"
+            style={{ backgroundColor: "silver" }}
+            sticky="top"
+        >
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             {/* <Form inline>
                 <FormControl type="text" placeholder="Search" className="mr-sm-2" />
