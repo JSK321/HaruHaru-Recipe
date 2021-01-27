@@ -54,7 +54,7 @@ export default function IngreForm(props) {
                                 <ListGroup variant="flush" style={{ textAlign: "center" }}>
                                     <ListGroup.Item>
                                         <strong>
-                                            {item.ingredientQuant} {item.ingredientUnit}, {item.ingredient}
+                                            {item.ingredientQuant} {item.ingredientUnit} {item.ingredient}
                                         </strong>
                                     </ListGroup.Item>
                                 </ListGroup>
