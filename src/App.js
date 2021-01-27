@@ -58,8 +58,7 @@ function App() {
     setProfileState({
       name: "",
       email: "",
-      keebs: [],
-      parts: [],
+      recipes: [],
       token: "",
       isLoggedIn: false
     })
@@ -84,7 +83,7 @@ function App() {
             profile={profileState}
           />
         </Route>
-        <Route exact path="/ingreform/:id">
+        <Route exact path="/ingredientform/:id">
           <IngrePage
             profile={profileState}
           />

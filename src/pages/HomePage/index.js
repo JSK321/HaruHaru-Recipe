@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
 import API from '../../utils/API'
 import RecipeViewCard from '../../components/RecipeViewCard'
-import CarouselComponent from '../../components/Carousel'
+
 
 export default function HomePage() {
     const [recipeInfoState, setRecipeInfoState] = useState({
         recipes: []
     })
-    const { id } = useParams();
+
+    const [searchState, setSearchState] = useState({
+        search: ""
+    })
 
     useEffect(() => {
         fetchRecipeInfo()
-        console.log(recipeInfoState)
     }, [])
 
     function fetchRecipeInfo() {
@@ -23,11 +24,45 @@ export default function HomePage() {
         })
     }
 
+    const handleSearchInput = event => {
+        event.preventDefault()
+        let keyword = event.target.value
+        let filtered = recipeInfoState.recipes.filter(recipeObj => {
+            return (
+                recipeObj.recipeName.toLowerCase().indexOf(keyword) > -1
+            )
+        })
+        if (keyword === "") {
+            fetchRecipeInfo()
+        }
+        setRecipeInfoState({
+            recipes: filtered
+        })
+        setSearchState({
+            search: keyword
+        })
+    }
+
     return (
         <div className="container" style={{ marginBottom: "75px", }}>
-            {/* <CarouselComponent
-
-            /> */}
+            <input
+                className="form-control"
+                type="search"
+                placeholder="Search"
+                onChange={handleSearchInput}
+                style={{
+                    width: "250px",
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                    marginBottom: "10px",
+                    borderRadius: "10px",
+                    position:"sticky",
+                    top:"0",
+                    zIndex:"1",
+                    // border: "2px solid slateblue",
+                    // color: "midnightblue"
+                }}
+            />
             <div className="row">
                 {recipeInfoState.recipes !== null ?
                     recipeInfoState.recipes.map(data => (
