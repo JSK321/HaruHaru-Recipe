@@ -39,6 +39,7 @@ export default function HomePage() {
             recipes: filtered
         })
         setSearchState({
+            ...searchState,
             search: keyword
         })
     }
@@ -68,6 +69,7 @@ export default function HomePage() {
                     recipeInfoState.recipes.map(data => (
                         <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <RecipeViewCard
+                                key={data.id}
                                 recipeId={data.id}
                                 recipeName={data.recipeName}
                                 recipeImage={data.recipeImage}

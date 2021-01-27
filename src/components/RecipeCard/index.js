@@ -16,6 +16,7 @@ export default function RecipeCard(props) {
                     />
                 </Card>
                 <Card.Body>
+                    <Card.Title><strong>Description</strong></Card.Title>
                     <Card.Text>
                         {props.recipeDescript}
                     </Card.Text>
