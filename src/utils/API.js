@@ -52,7 +52,6 @@ const userAPI = {
             body: JSON.stringify(userData)
         }).then(res => {
             if (res.ok) {
-                alert("You are ready to share your keebs!")
                 window.location.href = "/"
                 return res.json()
             } else {

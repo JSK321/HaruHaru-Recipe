@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 // Components
 import NavBar from './components/NavBar'
 // Pages
+import SignUpPage from './pages/SignUpPage'
 import SignInPage from './pages/SignInPage'
 import RecipePage from './pages/RecipePage'
 import IngrePage from './pages/IngrePage'
@@ -74,6 +75,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           <HomePage />
+        </Route>
+        <Route exact path="/signup">
+          <SignUpPage />
         </Route>
         <Route exact path="/signin">
           <SignInPage />

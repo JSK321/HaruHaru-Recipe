@@ -18,7 +18,11 @@ export default function NavBar(props) {
                         :
                         <Nav.Link href="/signin">로그인</Nav.Link>
                     }
-                    <Nav.Link href="/recipeform">Add new recipe</Nav.Link>
+                    {props.isLoggedIn ?
+                        <Nav.Link href="/recipeform">Add new recipe</Nav.Link>
+                        :
+                        <Nav.Link href="/signup">Register</Nav.Link>
+                    }
                     <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
