@@ -8,6 +8,7 @@ import NavBar from './components/NavBar'
 import SignInPage from './pages/SignInPage'
 import RecipePage from './pages/RecipePage'
 import IngrePage from './pages/IngrePage'
+import RecipeCardPage from './pages/RecipeCardPage'
 
 function App() {
   const [profileState, setProfileState] = useState({
@@ -79,8 +80,13 @@ function App() {
             profile={profileState}
           />
         </Route>
-        <Route exact path="/ingredientform/:id">
+        <Route exact path="/ingreform/:id">
           <IngrePage
+            profile={profileState}
+          />
+        </Route>
+        <Route exact path="/recipe/:id">
+          <RecipeCardPage
             profile={profileState}
           />
         </Route>
