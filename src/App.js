@@ -9,6 +9,7 @@ import SignInPage from './pages/SignInPage'
 import RecipePage from './pages/RecipePage'
 import IngrePage from './pages/IngrePage'
 import RecipeCardPage from './pages/RecipeCardPage'
+import HomePage from './pages/HomePage'
 
 function App() {
   const [profileState, setProfileState] = useState({
@@ -72,6 +73,9 @@ function App() {
         handleLogOut={handleLogOut}
       />
       <Switch>
+        <Route exact path="/">
+          <HomePage />
+        </Route>
         <Route exact path="/signin">
           <SignInPage />
         </Route>

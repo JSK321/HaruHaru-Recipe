@@ -58,10 +58,6 @@ export default function RecipePage(props) {
         } else {
             alert("Sign in to add new recipe")
         }
-        // API.createIngredients(props.profile.token, {
-        //     ...ingredientState,
-
-        // })
     }
 
     return (
