@@ -38,8 +38,10 @@ export default function SignUpForm(props) {
                         </Button>
                     </Form>
                 </Card.Text>
-                <Card.Link href="#">Card Link</Card.Link>
-                <Card.Link href="#">Another Link</Card.Link>
+                <Form.Text className="text-muted">
+                    Already a registered? Sign in!
+                </Form.Text>
+                <Card.Link href="/signin">Sign In</Card.Link>
             </Card.Body>
         </Card>
     )

@@ -22,17 +22,19 @@ export default function SignInForm(props) {
                             <Form.Control
                                 type="password"
                                 placeholder="암호"
-                                onChange={props.handleInputChange}    
+                                onChange={props.handleInputChange}
                                 name="password"
                             />
                         </Form.Group>
-                        <Button variant="primary" type="submit">
+                        <Button
+                            variant="primary"
+                            type="submit"
+
+                        >
                             로그인
                          </Button>
                     </Form>
                 </Card.Text>
-                <Card.Link href="#">Card Link</Card.Link>
-                <Card.Link href="#">Another Link</Card.Link>
             </Card.Body>
         </Card>
     )
