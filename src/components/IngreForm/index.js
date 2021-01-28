@@ -69,6 +69,7 @@ export default function IngreForm(props) {
                             onChange={props.handleDirectInputChange}
                             value={props.directions}
                             name="directions"
+                            required
                         />
                     </Form.Group>
                     <Button
