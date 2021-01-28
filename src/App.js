@@ -88,7 +88,9 @@ function App() {
           <SignInPage />
         </Route>
         <Route exact path="/profile/:id">
-          <ProfilePage />
+          <ProfilePage
+            // profile={profileState}
+          />
         </Route>
         <Route exact path="/recipeform">
           <RecipePage
