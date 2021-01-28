@@ -7,6 +7,7 @@ import NavBar from './components/NavBar'
 // Pages
 import SignUpPage from './pages/SignUpPage'
 import SignInPage from './pages/SignInPage'
+import ProfilePage from './pages/ProfilePage'
 import RecipePage from './pages/RecipePage'
 import IngrePage from './pages/IngrePage'
 import RecipeCardPage from './pages/RecipeCardPage'
@@ -72,6 +73,7 @@ function App() {
   return (
     <Router >
       <NavBar
+        id={profileState.id}
         isLoggedIn={profileState.isLoggedIn}
         handleLogOut={handleLogOut}
       />
@@ -84,6 +86,9 @@ function App() {
         </Route>
         <Route exact path="/signin">
           <SignInPage />
+        </Route>
+        <Route exact path="/profile/:id">
+          <ProfilePage />
         </Route>
         <Route exact path="/recipeform">
           <RecipePage

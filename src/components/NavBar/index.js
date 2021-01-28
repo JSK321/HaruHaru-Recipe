@@ -23,16 +23,23 @@ export default function NavBar(props) {
                         :
                         <Nav.Link href="/signup">Register</Nav.Link>
                     }
-                    <NavDropdown title="Profile" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.1">Profile Page</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.2">My Recipes</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Saved Recipes</NavDropdown.Item>
-                        {/* <NavDropdown.Divider /> */}
-                        {/* <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
-                    </NavDropdown>
+                    {props.isLoggedIn ?
+                        <Nav.Link href={`/profile/${props.id}`}>Profile</Nav.Link>
+
+                        // <NavDropdown title="Profile" id="basic-nav-dropdown">
+                        //     <NavDropdown.Item href={`/profile/${props.id}`}>Profile Page</NavDropdown.Item>
+                        //     <NavDropdown.Item href="#action/3.2">My Recipes</NavDropdown.Item>
+                        //     <NavDropdown.Item href="#action/3.3">Saved Recipes</NavDropdown.Item>
+                        //     {/* <NavDropdown.Divider /> */}
+                        //     {/* <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
+                        // </NavDropdown>
+                        
+                        :
+                        null
+                    }
                     {props.isLoggedIn ?
                         <Nav.Link onClick={props.handleLogOut}>로그 아웃</Nav.Link>
-                        : 
+                        :
                         null
                     }
                 </Nav>

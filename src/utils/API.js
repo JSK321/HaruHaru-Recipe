@@ -106,6 +106,7 @@ const userAPI = {
             body: JSON.stringify(stepsData)
         }).then(res => {
             if (res.ok) {
+                window.location.href = "/"
                 return res.json()
             } else {
                 throw new Error("Something went wrong")

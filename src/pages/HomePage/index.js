@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import API from '../../utils/API'
 import RecipeViewCard from '../../components/RecipeViewCard'
+import { Container } from 'react-bootstrap'
+import { Row } from 'react-bootstrap'
+import { InputGroup } from 'react-bootstrap'
+import { FormControl } from 'react-bootstrap'
 
 
 export default function HomePage() {
@@ -45,29 +49,34 @@ export default function HomePage() {
     }
 
     return (
-        <div className="container" style={{ marginBottom: "75px", }}>
-            <input
-                className="form-control"
-                type="search"
-                placeholder="Search"
-                onChange={handleSearchInput}
+        <Container>
+            <InputGroup
                 style={{
                     width: "250px",
                     marginLeft: "auto",
                     marginRight: "auto",
-                    marginBottom: "10px",
-                    borderRadius: "10px",
-                    position:"sticky",
-                    top:"0",
-                    zIndex:"1",
-                    // border: "2px solid slateblue",
-                    // color: "midnightblue"
+                    position: "sticky",
+                    top: "0",
+                    zIndex: "1",
                 }}
-            />
-            <div className="row">
+            >
+                <FormControl
+                    type="search"
+                    placeholder="Search"
+                    className="form-control"
+                    onChange={handleSearchInput}
+                    style={{
+                        marginTop: "10px",
+                        borderRadius: "10px",
+                        // border: "2px solid slateblue",
+                        // color: "midnightblue"
+                    }}
+                />
+            </InputGroup>
+            <Row>
                 {recipeInfoState.recipes !== null ?
                     recipeInfoState.recipes.map(data => (
-                        <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
                             <RecipeViewCard
                                 key={data.id}
                                 recipeId={data.id}
@@ -78,7 +87,7 @@ export default function HomePage() {
                         </div>
                     ))
                     : null}
-            </div>
-        </div>
+            </Row>
+        </Container>
     )
 }
