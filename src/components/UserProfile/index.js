@@ -14,20 +14,49 @@ import './styles.css'
 
 export default function UserProfile(props) {
     const [key, setKey] = useState('recipe');
-    const [userRecipes, setUserRecipes] = useState({
+
+    const [userRecipesState, setUserRecipesState] = useState({
         recipe: ""
     })
 
+    const [searchState, setSearchState] = useState({
+        search: ""
+    })
+
     useEffect(() => {
+        fetchRecipeInfo()
+    }, [])
+
+    function fetchRecipeInfo(){
         const token = localStorage.getItem("token")
         if (token) {
             API.getProfile(token).then(data => {
-                setUserRecipes({
+                setUserRecipesState({
                     recipe: data.Recipes
                 })
             })
         }
-    }, [])
+    }
+
+    const handleSearchInput = event => {
+        event.preventDefault()
+        let keyword = event.target.value
+        let filtered = userRecipesState.recipe.filter(recipeObj => {
+            return (
+                recipeObj.recipeName.toLowerCase().indexOf(keyword) > -1
+            )
+        })
+        if (keyword === "") {
+            fetchRecipeInfo()
+        }
+        setUserRecipesState({
+            recipe: filtered
+        })
+        setSearchState({
+            ...searchState,
+            search: keyword
+        })
+    }
 
     return (
         <Container>
@@ -62,12 +91,13 @@ export default function UserProfile(props) {
                                         <FormControl
                                             type="search"
                                             placeholder="Search"
+                                            onChange={handleSearchInput}
                                         />
                                     </InputGroup>
                                     <ListGroup variant="flush">
                                         <Row lg={3} md={2} sm={2} xs={1} className="no-gutters">
-                                            {userRecipes.recipe !== "" ?
-                                                userRecipes.recipe.map(item => (
+                                            {userRecipesState.recipe !== "" ?
+                                                userRecipesState.recipe.map(item => (
                                                     <ListGroup.Item className="RecipeListGroup">
                                                         <Link to={`/recipe/${item.id}`}>
                                                             {item.recipeName}
