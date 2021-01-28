@@ -16,4 +16,11 @@
     .RecipeCard {
         width: 100vw
     }
+    .RecipeCardImage {
+        width: 300px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        object-fit: contain;
+    }
 }
