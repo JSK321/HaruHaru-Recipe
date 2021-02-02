@@ -40,6 +40,7 @@ export default function RecipeForm(props) {
                                 onChange={props.handleRecipeInputChange}
                                 value={props.recipeName}
                                 name="recipeName"
+                                required
                             />
                         </Form.Group>
                         <Form.Group>

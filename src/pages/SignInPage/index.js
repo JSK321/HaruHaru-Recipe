@@ -10,6 +10,7 @@ export default function SignInPage() {
 
     const [profileState, setProfileState] = useState({
         name: "",
+        accountName:"",
         email: "",
         recipes: [],
         token: "",
@@ -38,6 +39,7 @@ export default function SignInPage() {
                     API.getProfile(newToken.token).then(profileData => {
                         setProfileState({
                             name: profileData.name,
+                            accountName: profileData.accountName,
                             email: profileData.email,
                             id: profileData.id,
                             isLoggedIn: true

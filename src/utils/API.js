@@ -27,6 +27,16 @@ const userAPI = {
             }
         }).then(res => res.json()).catch(err => null)
     },
+    // // Retrieve All Profile Function
+    // getAllProfile: function(){
+    //     return fetch(`${URL_PREFIX}/api/users`, {
+    //     }).then(res => res.json()).catch(err => console.log(err))
+    // },
+    // // Retrieve One Profile Function
+    // getOneProfile: function(userId){
+    //     return fetch(`${URL_PREFIX}/api/users/${userId}`, {
+    //     }).then(res => res.json()).catch(err => console.log(err))
+    // },
     // Retrieve All Recipe Function
     getRecipes: function () {
         return fetch(`${URL_PREFIX}/api/recipes`, {
@@ -37,8 +47,18 @@ const userAPI = {
         return fetch(`${URL_PREFIX}/api/recipes/${recipeId}`, {
         }).then(res => res.json()).catch(err => console.log(err))
     },
+    // Retrieve One Saved Recipe
+    getOneSavedRecipe: function(recipeId){
+        return fetch(`${URL_PREFIX}/api/savedrecipes/${recipeId}`, {
+        }).then(res => res.json()).catch(err => console.log(err))
+    },
+    // Retrieve All Saved Recipe
+    getAllSavedRecipe: function(){
+        return fetch(`${URL_PREFIX}/api/savedrecipes`,{
+        }).then(res => res.json()).catch(err => console.log(err))
+    },
     // Retrieve All Ingredients for Recipe with RecipeId
-    getAllIngreForRecipe: function(recipeId){
+    getAllIngreForRecipe: function (recipeId) {
         return fetch(`${URL_PREFIX}/api/ingredients/all/${recipeId}`, {
         }).then(res => res.json()).catch(err => console.log(err))
     },
@@ -78,6 +98,23 @@ const userAPI = {
             }
         }).catch(err => console.log(err))
     },
+    // Save Recipe Function
+    saveRecipe: function (token, recipeData) {
+        return fetch(`${URL_PREFIX}/api/savedrecipes`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(recipeData)
+        }).then(res => {
+            if (res.ok) {
+                return res.json()
+            } else {
+                throw new Error("Something went wrong")
+            }
+        }).catch(err => console.log(err))
+    },
     // Create New Ingredients Function
     createIngredients: function (token, ingreData) {
         return fetch(`${URL_PREFIX}/api/ingredients`, {
@@ -106,6 +143,7 @@ const userAPI = {
             body: JSON.stringify(stepsData)
         }).then(res => {
             if (res.ok) {
+                window.location.href = "/"
                 return res.json()
             } else {
                 throw new Error("Something went wrong")

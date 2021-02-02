@@ -7,6 +7,7 @@ import NavBar from './components/NavBar'
 // Pages
 import SignUpPage from './pages/SignUpPage'
 import SignInPage from './pages/SignInPage'
+import ProfilePage from './pages/ProfilePage'
 import RecipePage from './pages/RecipePage'
 import IngrePage from './pages/IngrePage'
 import RecipeCardPage from './pages/RecipeCardPage'
@@ -15,11 +16,17 @@ import HomePage from './pages/HomePage'
 function App() {
   const [profileState, setProfileState] = useState({
     name: "",
+    accountName: "",
     email: "",
     recipes: [],
+    savedRecipes: [],
     token: "",
     id: "",
     isLoggedIn: false
+  })
+
+  const [usersState, setUsersState] = useState({
+    users: []
   })
 
   useEffect(() => {
@@ -33,8 +40,10 @@ function App() {
         if (profileData) {
           setProfileState({
             name: profileData.name,
+            accountName: profileData.accountName,
             email: profileData.email,
             recipes: profileData.Recipes,
+            savedRecipes: profileData.SavedRecipes,
             token: token,
             id: profileData.id,
             isLoggedIn: true
@@ -43,8 +52,10 @@ function App() {
           localStorage.removeItem("token")
           setProfileState({
             name: "",
+            accountName: "",
             email: "",
             recipes: [],
+            savedRecips: [],
             token: "",
             id: "",
             isLoggedIn: false
@@ -55,20 +66,25 @@ function App() {
   }
 
   const handleLogOut = event => {
-    localStorage.removeItem("token");
-    setProfileState({
-      name: "",
-      email: "",
-      recipes: [],
-      token: "",
-      isLoggedIn: false
-    })
-    window.location.reload(false)
+    let confirmAlert = window.confirm("Are you sure to log out?")
+    if (confirmAlert === true) {
+      localStorage.removeItem("token");
+      setProfileState({
+        name: "",
+        email: "",
+        recipes: [],
+        token: "",
+        isLoggedIn: false
+      })
+      window.location.reload(false)
+    }
   }
 
   return (
     <Router >
       <NavBar
+        id={profileState.id}
+        accountName={profileState.accountName}
         isLoggedIn={profileState.isLoggedIn}
         handleLogOut={handleLogOut}
       />
@@ -81,6 +97,13 @@ function App() {
         </Route>
         <Route exact path="/signin">
           <SignInPage />
+        </Route>
+        {/* <Route exact path="/profile/:id"> */}
+        <Route exact path={`/profile/${profileState.accountName}`}>
+          <ProfilePage
+          // profile={profileState}
+          users={usersState}
+          />
         </Route>
         <Route exact path="/recipeform">
           <RecipePage
