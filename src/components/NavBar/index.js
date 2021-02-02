@@ -10,6 +10,13 @@ export default function NavBar(props) {
             style={{ backgroundColor: "silver" }}
         >
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            {props.isLoggedIn ?
+                <Navbar.Brand
+                    href={`/profile/${props.accountName}`}
+                    className="ml-auto">
+                    Profile!
+                </Navbar.Brand>
+                : null}
             <Navbar.Brand href="/">조리법!</Navbar.Brand>
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
@@ -23,25 +30,23 @@ export default function NavBar(props) {
                         :
                         <Nav.Link href="/signup">Register</Nav.Link>
                     }
-                    {props.isLoggedIn ?
-                        <Nav.Link href={`/profile/${props.id}`}>Profile</Nav.Link>
-
-                        // <NavDropdown title="Profile" id="basic-nav-dropdown">
-                        //     <NavDropdown.Item href={`/profile/${props.id}`}>Profile Page</NavDropdown.Item>
-                        //     <NavDropdown.Item href="#action/3.2">My Recipes</NavDropdown.Item>
-                        //     <NavDropdown.Item href="#action/3.3">Saved Recipes</NavDropdown.Item>
-                        //     {/* <NavDropdown.Divider /> */}
-                        //     {/* <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
-                        // </NavDropdown>
-                        
+                    {/* {props.isLoggedIn ?
+                        <Nav.Link href={`/profile/${props.accountName}`}>Profile</Nav.Link>
                         :
                         null
-                    }
+                    } */}
                     {props.isLoggedIn ?
                         <Nav.Link onClick={props.handleLogOut}>로그 아웃</Nav.Link>
                         :
                         null
                     }
+                    {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                        <NavDropdown.Item href={`/profile/${props.id}`}>Profile Page</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.2">My Recipes</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.3">Saved Recipes</NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                    </NavDropdown> */}
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

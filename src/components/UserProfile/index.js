@@ -16,10 +16,17 @@ export default function UserProfile(props) {
     const [key, setKey] = useState('recipe');
 
     const [userRecipesState, setUserRecipesState] = useState({
-        recipe: ""
+        recipe: [],
+    })
+    const [savedRecipesState, setSavedRecipesState] = useState({
+        savedRecipe: [],
     })
 
     const [searchState, setSearchState] = useState({
+        search: ""
+    })
+
+    const [savedSearchState, setSavedSearchState] = useState({
         search: ""
     })
 
@@ -27,12 +34,15 @@ export default function UserProfile(props) {
         fetchRecipeInfo()
     }, [])
 
-    function fetchRecipeInfo(){
+    function fetchRecipeInfo() {
         const token = localStorage.getItem("token")
         if (token) {
             API.getProfile(token).then(data => {
                 setUserRecipesState({
                     recipe: data.Recipes
+                })
+                setSavedRecipesState({
+                    savedRecipe: data.SavedRecipes
                 })
             })
         }
@@ -58,6 +68,26 @@ export default function UserProfile(props) {
         })
     }
 
+    const handleSavedSearchInput = event => {
+        event.preventDefault()
+        let keyword = event.target.value
+        let savedFiltered = savedRecipesState.savedRecipe.filter(recipeObj => {
+            return (
+                recipeObj.recipeName.toLowerCase().indexOf(keyword) > -1
+            )
+        })
+        if (keyword === "") {
+            fetchRecipeInfo()
+        }
+        setSavedRecipesState({
+            savedRecipe: savedFiltered
+        })
+        setSavedSearchState({
+            ...savedSearchState,
+            search: keyword
+        })
+    }
+
     return (
         <Container>
             <Row className="justify-content-md-center no-gutters">
@@ -66,7 +96,8 @@ export default function UserProfile(props) {
                         <Card.Img
                             className="ProfileImage"
                             variant="top"
-                            src="https://res.cloudinary.com/jsk321/image/upload/v1611706500/ummas_cb/2014cody_ku5msz.jpg" />
+                            src="https://res.cloudinary.com/jsk321/image/upload/v1611706500/ummas_cb/2014cody_ku5msz.jpg"
+                        />
                         <Card.Body>
                             <Card.Text>
                                 <strong>Name:</strong> {props.name}
@@ -98,11 +129,12 @@ export default function UserProfile(props) {
                                         <Row lg={3} md={2} sm={2} xs={1} className="no-gutters">
                                             {userRecipesState.recipe !== "" ?
                                                 userRecipesState.recipe.map(item => (
-                                                    <ListGroup.Item className="RecipeListGroup">
-                                                        <Link to={`/recipe/${item.id}`}>
-                                                            {item.recipeName}
-                                                        </Link>
-                                                    </ListGroup.Item>
+                                                    <Link
+                                                        className="RecipeListGroup"
+                                                        to={`/recipe/${item.id}`}
+                                                    >
+                                                        {item.recipeName}
+                                                    </Link>
                                                 ))
                                                 : null}
                                         </Row>
@@ -117,15 +149,21 @@ export default function UserProfile(props) {
                                         <FormControl
                                             type="search"
                                             placeholder="Search"
+                                            onChange={handleSavedSearchInput}
                                         />
                                     </InputGroup>
                                     <ListGroup variant="flush">
                                         <Row lg={3} md={2} sm={2} xs={1} className="no-gutters">
-                                            <ListGroup.Item className="RecipeListGroup">Cras justo odio</ListGroup.Item>
-                                            <ListGroup.Item className="RecipeListGroup">Dapibus ac facilisis in</ListGroup.Item>
-                                            <ListGroup.Item className="RecipeListGroup">Vestibulum at eros</ListGroup.Item>
-                                            <ListGroup.Item className="RecipeListGroup">Vestibulum at eros</ListGroup.Item>
-                                            <ListGroup.Item className="RecipeListGroup">Vestibulum at eros</ListGroup.Item>
+                                            {savedRecipesState.savedRecipe !== "" ?
+                                                savedRecipesState.savedRecipe.map(item => (
+                                                    <Link
+                                                        className="RecipeListGroup"
+                                                        to={`/recipe/${item.recipeId}`}
+                                                    >
+                                                        {item.recipeName}
+                                                    </Link>
+                                                ))
+                                                : null}
                                         </Row>
                                     </ListGroup>
                                 </Card.Body>

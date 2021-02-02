@@ -3,11 +3,13 @@ import { useParams } from 'react-router-dom'
 import API from '../../utils/API'
 import RecipeCard from '../../components/RecipeCard'
 
-export default function RecipeCardPage() {
+export default function RecipeCardPage(props) {
     const [recipeState, setRecipeState] = useState({
         recipeName: "",
         recipeDescript: "",
-        recipeImage: ""
+        recipeImage: "",
+        recipeId: "",
+        ownerId: ""
     });
     const [ingredientState, setIngredientState] = useState({
         item: []
@@ -15,11 +17,15 @@ export default function RecipeCardPage() {
     const [directionState, setDirectionState] = useState({
         directions: "",
     });
+    const [savedRecipeState, setSavedRecipeState] = useState({
+        isSaved: false
+    })
     const { id } = useParams();
 
     useEffect(() => {
         fetchData()
         fetchIngreData()
+        fetchSavedRecipes()
     }, [])
 
     function fetchData() {
@@ -28,7 +34,9 @@ export default function RecipeCardPage() {
                 setRecipeState({
                     recipeName: data.recipeName,
                     recipeDescript: data.recipeDescript,
-                    recipeImage: data.recipeImage
+                    recipeImage: data.recipeImage,
+                    recipeId: id,
+                    ownerId: data.UserId
                 })
                 setDirectionState({
                     directions: data.Steps[0].directions
@@ -47,17 +55,61 @@ export default function RecipeCardPage() {
         })
     }
 
+    function fetchSavedRecipes() {
+        API.getOneSavedRecipe(id).then(data => {
+            if (data !== null) {
+                if (data.UserId === data.ownerId) {
+                    setSavedRecipeState({
+                        isSaved: false
+                    })
+                } else {
+                    setSavedRecipeState({
+                        ownerId: data.ownerId,
+                        isSaved: true
+                    })
+                }
+            } else {
+                console.log("Recipe not found")
+                setSavedRecipeState({
+                    isSaved: false
+                })
+            }
+        })
+    }
+
+    const handleSaveRecipeBtn = event => {
+        event.preventDefault()
+        if (props.profile.isLoggedIn !== false) {
+            API.saveRecipe(props.profile.token, {
+                recipeName: recipeState.recipeName,
+                ownerId: recipeState.ownerId,
+                savedByUser: props.profile.accountName,
+                recipeId: id,
+                isSaved: true
+            }).then(afterSave => {
+                window.location.href = "/"
+            })
+        } else {
+            alert("Please sign in to save recipe!")
+        }
+    }
+
     return (
         <div>
             <RecipeCard
+                handleSaveRecipeBtn={handleSaveRecipeBtn}
                 recipeName={recipeState.recipeName}
                 recipeDescript={recipeState.recipeDescript}
                 recipeImage={recipeState.recipeImage}
-                ingredient={ingredientState.ingredient}
-                ingredientQuant={ingredientState.ingredientQuant}
-                ingredientUnit={ingredientState.ingredientUnit}
                 directions={directionState.directions}
                 ingredients={ingredientState.item}
+                ownerId={recipeState.ownerId}
+                userId={props.profile.id}
+                recipeId={id}
+                isLoggedIn={props.profile.isLoggedIn}
+                accountName={props.profile.accountName}
+                isSaved={savedRecipeState.isSaved}
+                savedOwnerId={savedRecipeState.ownerId}
             />
         </div>
     )

@@ -16,11 +16,17 @@ import HomePage from './pages/HomePage'
 function App() {
   const [profileState, setProfileState] = useState({
     name: "",
+    accountName: "",
     email: "",
     recipes: [],
+    savedRecipes: [],
     token: "",
     id: "",
     isLoggedIn: false
+  })
+
+  const [usersState, setUsersState] = useState({
+    users: []
   })
 
   useEffect(() => {
@@ -34,8 +40,10 @@ function App() {
         if (profileData) {
           setProfileState({
             name: profileData.name,
+            accountName: profileData.accountName,
             email: profileData.email,
             recipes: profileData.Recipes,
+            savedRecipes: profileData.SavedRecipes,
             token: token,
             id: profileData.id,
             isLoggedIn: true
@@ -44,8 +52,10 @@ function App() {
           localStorage.removeItem("token")
           setProfileState({
             name: "",
+            accountName: "",
             email: "",
             recipes: [],
+            savedRecips: [],
             token: "",
             id: "",
             isLoggedIn: false
@@ -74,6 +84,7 @@ function App() {
     <Router >
       <NavBar
         id={profileState.id}
+        accountName={profileState.accountName}
         isLoggedIn={profileState.isLoggedIn}
         handleLogOut={handleLogOut}
       />
@@ -87,9 +98,11 @@ function App() {
         <Route exact path="/signin">
           <SignInPage />
         </Route>
-        <Route exact path="/profile/:id">
+        {/* <Route exact path="/profile/:id"> */}
+        <Route exact path={`/profile/${profileState.accountName}`}>
           <ProfilePage
-            // profile={profileState}
+          // profile={profileState}
+          users={usersState}
           />
         </Route>
         <Route exact path="/recipeform">

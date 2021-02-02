@@ -5,8 +5,10 @@ import UserProfile from '../../components/UserProfile'
 export default function ProfilePage(props) {
     const [userProfile, setUserProfile] = useState({
         name: "",
+        accountName:"",
         email: "",
         recipes: [],
+        savedRecipes: [],
         token: "",
         id: "",
         // profileImage: "",
@@ -23,8 +25,10 @@ export default function ProfilePage(props) {
             if (data) {
                 setUserProfile({
                     name: data.name,
+                    accountName: data.accountName,
                     email: data.email,
                     recipes: data.Recipes,
+                    savedRecipes: data.SavedRecipes,
                     token: token,
                     id: data.id,
                     // profileImage: data.profileImage,
@@ -34,8 +38,10 @@ export default function ProfilePage(props) {
                 localStorage.removeItem("token");
                 setUserProfile({
                     name: "",
+                    accountName:"",
                     email: "",
                     recipes: [],
+                    savedRecipes: [],
                     token: "",
                     id: "",
                     // profileImage: "",

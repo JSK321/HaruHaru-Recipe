@@ -1,6 +1,7 @@
 import { Card } from 'react-bootstrap'
 import { ListGroup } from 'react-bootstrap'
 import { Accordion } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 import './styles.css'
 
 export default function RecipeCard(props) {
@@ -51,9 +52,83 @@ export default function RecipeCard(props) {
                         {props.directions}
                     </Card.Body>
                 </Accordion.Collapse>
-                <Card.Footer>
-                    <Card.Link href="#">Card Link</Card.Link>
-                    <Card.Link href="#">Another Link</Card.Link>
+                <Card.Footer style={{ textAlign: "center" }}>
+                    {/* {props.userId === props.ownerId ?
+                        <Button
+                            variant="link"
+
+                        >
+                            Update Recipe
+                        </Button>
+                        :
+                        null
+                    }
+                    {props.isloggedIn ?
+                        (<Button
+                            variant="link"
+                            href={`/profile/${props.accountName}`}
+                        >
+                            View my Profile
+                        </Button>)
+                        :
+                        (props.userId !== props.ownerId && props.isLoggedIn ?
+                            < Button
+                                variant="link"
+                                onClick={props.handleSaveRecipeBtn}
+                            >
+                                Save Recipe
+                            </Button>
+                            :
+                            (props.isLoggedIn ?
+                                <Button>Hello</Button>
+                                :
+                                null
+                                // <Button
+                                //     variant="link"
+                                //     href={`/profile/${props.accountName}`}
+                                // >
+                                //     View my Profile
+                                // </Button>
+                            )
+                        )
+                    } */}
+
+                    {props.userId === props.ownerId ?
+                        <Button
+                            variant="link"
+                        >
+                            Update Recipe
+                        </Button>
+                        :
+                        null
+                    }
+
+                    {props.userId !== props.ownerId && props.isLoggedIn && props.isSaved === false ?
+                        < Button
+                            variant="link"
+                            onClick={props.handleSaveRecipeBtn}
+                        >
+                            Save Recipe
+                        </Button>
+                        :
+                        null
+                    }
+
+                    {props.isLoggedIn ?
+                        <Button
+                            variant="link"
+                            href={`/profile/${props.accountName}`}
+                        >
+                            View my Profile
+                       </Button>
+                        :
+                        <Button
+                            variant="link"
+                            href="/signin"
+                        >
+                            Sign in
+                        </Button>
+                    }
                 </Card.Footer>
             </Card>
         </Accordion >
