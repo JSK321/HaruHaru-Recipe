@@ -7,6 +7,7 @@ export default function RecipePage(props) {
     // -----------------States-----------------
     const [recipeState, setRecipeState] = useState({
         recipeName: "",
+        recipeCategory: "",
         recipeDescript: "",
         recipeImage: ""
     });
@@ -21,6 +22,13 @@ export default function RecipePage(props) {
         setRecipeState({
             ...recipeState,
             [name]: value
+        })
+    };
+    const handleSelectCategory = event => {
+        let category = event.target.value
+        setRecipeState({
+            ...recipeState,
+            recipeCategory: category
         })
     };
     const handleUploadImgBtn = event => {
@@ -64,10 +72,12 @@ export default function RecipePage(props) {
         <div>
             <RecipeForm
                 handleRecipeInputChange={handleRecipeInputChange}
+                handleSelectCategory={handleSelectCategory}
                 handleFormSubmit={handleFormSubmit}
                 handleUploadImgBtn={handleUploadImgBtn}
                 handleUploadImg={handleUploadImg}
                 recipeName={recipeState.recipeName}
+                recipeCategory={recipeState.recipeCategory}
                 recipeImage={recipeState.recipeImage}
                 recipeDescript={recipeState.recipeDescript}
                 loading={imgLoadingState}
