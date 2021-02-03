@@ -54,9 +54,9 @@ export default function RecipeForm(props) {
                                 <option>Breakfast</option>
                                 <option>Lunch</option>
                                 <option>Dinner</option>
-                                <option>Dessert</option>
+                                {/* <option>Dessert</option> */}
                                 <option>Soup/Stew</option>
-                                <option>Snack</option>
+                                {/* <option>Snack</option> */}
                                 <option>Other</option>
                             </Form.Control>
                         </Form.Group>

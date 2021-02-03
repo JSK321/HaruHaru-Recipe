@@ -1,13 +1,38 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Navbar } from 'react-bootstrap'
 import { Nav } from 'react-bootstrap'
 import { NavDropdown } from 'react-bootstrap'
+import "./styles.css"
 
 export default function NavBar(props) {
+    // const [categoryState, setCategoryState] = useState({
+    //     category: ""
+    // })
+
+    // const handleCategorySelect = event => {
+    //     event.preventDefault();
+    //     let category = event.target.name
+    //     // console.log(category)
+    //     setCategoryState({
+    //         category: category
+    //     })
+    //     // if (categoryState.category !== "") {
+    //     //     changeCategoryPage()
+    //     // }
+    //     setTimeout(changeCategoryPage(), 10)
+    // }
+
+    // function changeCategoryPage() {
+    //     if (categoryState.category !== "" && categoryState.category === "breakfast") {
+    //         window.location.href = "/breakfast"
+    //         // console.log('Here')
+    //     }
+    // }
+
     return (
         <Navbar
+            className="NavBar"
             expand="lg-md-sm"
-            style={{ backgroundColor: "silver" }}
         >
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             {props.isLoggedIn ?
@@ -35,18 +60,23 @@ export default function NavBar(props) {
                         :
                         null
                     } */}
+                    <NavDropdown title="View by Category" id="nav-dropdown">
+                        {/* <NavDropdown.Item href={`/profile/${props.id}`}>Profile</NavDropdown.Item> */}
+                        {/* <NavDropdown.Item onClick={handleCategorySelect} name="breakfast">Breakfast</NavDropdown.Item> */}
+                        <NavDropdown.Item href="/breakfast">Breakfast</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.2">Lunch</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.3">Dinner</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.3">Soup/Stew</NavDropdown.Item>
+                        {/* <NavDropdown.Item href="#action/3.3">Dessert</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.3">Snack</NavDropdown.Item> */}
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="#action/3.4">Other</NavDropdown.Item>
+                    </NavDropdown>
                     {props.isLoggedIn ?
                         <Nav.Link onClick={props.handleLogOut}>로그 아웃</Nav.Link>
                         :
                         null
                     }
-                    {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                        <NavDropdown.Item href={`/profile/${props.id}`}>Profile Page</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.2">My Recipes</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Saved Recipes</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                    </NavDropdown> */}
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

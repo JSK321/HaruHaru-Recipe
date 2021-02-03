@@ -12,6 +12,7 @@ import RecipePage from './pages/RecipePage'
 import IngrePage from './pages/IngrePage'
 import RecipeCardPage from './pages/RecipeCardPage'
 import HomePage from './pages/HomePage'
+import BreakfastPage from './pages/BreakfastPage'
 
 function App() {
   const [profileState, setProfileState] = useState({
@@ -102,7 +103,12 @@ function App() {
         <Route exact path={`/profile/${profileState.accountName}`}>
           <ProfilePage
           // profile={profileState}
-          users={usersState}
+          // users={usersState}
+          />
+        </Route>
+        <Route exact path="/breakfast">
+          <BreakfastPage
+
           />
         </Route>
         <Route exact path="/recipeform">

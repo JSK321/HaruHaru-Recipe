@@ -47,6 +47,12 @@ const userAPI = {
         return fetch(`${URL_PREFIX}/api/recipes/${recipeId}`, {
         }).then(res => res.json()).catch(err => console.log(err))
     },
+    // Retrieve All Breakfast Recipe
+    getAllCategoryRecipe: function(category){
+        return fetch(`${URL_PREFIX}/api/recipes/category/${category}`,{
+        }).then(res => res.json()).catch(err => console.log(err))
+    },
+
     // Retrieve One Saved Recipe
     getOneSavedRecipe: function(recipeId){
         return fetch(`${URL_PREFIX}/api/savedrecipes/${recipeId}`, {
