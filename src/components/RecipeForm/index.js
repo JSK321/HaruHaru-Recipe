@@ -43,6 +43,23 @@ export default function RecipeForm(props) {
                                 required
                             />
                         </Form.Group>
+                        <Form.Group controlId="exampleForm.ControlSelect1">
+                            <Form.Control 
+                            as="select"
+                            onChange={props.handleSelectCategory}
+                            value={props.recipeCategory}
+                            required
+                            >
+                                <option selected disabled value="">Category</option>
+                                <option>Breakfast</option>
+                                <option>Lunch</option>
+                                <option>Dinner</option>
+                                {/* <option>Dessert</option> */}
+                                <option>Soup/Stew</option>
+                                {/* <option>Snack</option> */}
+                                <option>Other</option>
+                            </Form.Control>
+                        </Form.Group>
                         <Form.Group>
                             <Form.Control
                                 as="textarea"
@@ -70,7 +87,7 @@ export default function RecipeForm(props) {
                             <Button
                                 variant="primary"
                                 type="submit"
-                                style={{width:"100%"}}
+                                style={{ width: "100%" }}
                             >
                                 Add Ingredients
                             </Button>

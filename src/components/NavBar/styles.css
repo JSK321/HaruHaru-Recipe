@@ -1,0 +1,18 @@
+.NavBar {
+    /* background: linear-gradient(darkorange, goldenrod, yellow, orange, orangered) */
+    background: linear-gradient(darkorange, yellow, orangered)
+}
+
+div.dropdown-menu.show {
+    background: linear-gradient(darkorange,yellow, orangered)
+}
+
+a.dropdown-item {
+    color: black; 
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    background-color: goldenrod;
+    color: black;
+    text-decoration: none
+}
