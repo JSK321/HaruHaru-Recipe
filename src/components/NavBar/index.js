@@ -12,14 +12,12 @@ export default function NavBar(props) {
     // const handleCategorySelect = event => {
     //     event.preventDefault();
     //     let category = event.target.name
-    //     // console.log(category)
     //     setCategoryState({
     //         category: category
     //     })
-    //     // if (categoryState.category !== "") {
-    //     //     changeCategoryPage()
-    //     // }
-    //     setTimeout(changeCategoryPage(), 10)
+    //     if (categoryState.category != "") {
+    //         changeCategoryPage()
+    //     }
     // }
 
     // function changeCategoryPage() {
