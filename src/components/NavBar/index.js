@@ -63,12 +63,12 @@ export default function NavBar(props) {
                         {/* <NavDropdown.Item onClick={handleCategorySelect} name="breakfast">Breakfast</NavDropdown.Item> */}
                         <NavDropdown.Item href="/breakfast">Breakfast</NavDropdown.Item>
                         <NavDropdown.Item href="/lunch">Lunch</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Dinner</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Soup/Stew</NavDropdown.Item>
+                        <NavDropdown.Item href="/dinner">Dinner</NavDropdown.Item>
+                        <NavDropdown.Item href="/soupsandstews">Soup/Stew</NavDropdown.Item>
                         {/* <NavDropdown.Item href="#action/3.3">Dessert</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.3">Snack</NavDropdown.Item> */}
                         <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action/3.4">Other</NavDropdown.Item>
+                        <NavDropdown.Item href="/other">Other</NavDropdown.Item>
                     </NavDropdown>
                     {props.isLoggedIn ?
                         <Nav.Link onClick={props.handleLogOut}>로그 아웃</Nav.Link>
