@@ -15,6 +15,8 @@ import HomePage from './pages/HomePage'
 import BreakfastPage from './pages/BreakfastPage'
 import LunchPage from './pages/LunchPage'
 import DinnerPage from './pages/DinnerPage'
+import SoupsNStewsPage from './pages/SoupsNStewsPage'
+import OtherPage from './pages/OtherPage'
 
 function App() {
   const [profileState, setProfileState] = useState({
@@ -120,6 +122,16 @@ function App() {
         </Route>
         <Route exact path="/dinner">
           <DinnerPage
+
+          />
+        </Route>
+        <Route exact path="/soupsandstews">
+          <SoupsNStewsPage
+
+          />
+        </Route>
+        <Route exact path="/other">
+          <OtherPage
 
           />
         </Route>
