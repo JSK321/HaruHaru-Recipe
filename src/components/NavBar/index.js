@@ -62,7 +62,7 @@ export default function NavBar(props) {
                         {/* <NavDropdown.Item href={`/profile/${props.id}`}>Profile</NavDropdown.Item> */}
                         {/* <NavDropdown.Item onClick={handleCategorySelect} name="breakfast">Breakfast</NavDropdown.Item> */}
                         <NavDropdown.Item href="/breakfast">Breakfast</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.2">Lunch</NavDropdown.Item>
+                        <NavDropdown.Item href="/lunch">Lunch</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.3">Dinner</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.3">Soup/Stew</NavDropdown.Item>
                         {/* <NavDropdown.Item href="#action/3.3">Dessert</NavDropdown.Item>
