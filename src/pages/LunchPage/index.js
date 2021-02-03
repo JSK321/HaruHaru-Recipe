@@ -6,9 +6,7 @@ import { Row } from 'react-bootstrap'
 import { InputGroup } from 'react-bootstrap'
 import { FormControl } from 'react-bootstrap'
 
-
-
-export default function HomePage() {
+export default function LunchPage() {
     const [recipeInfoState, setRecipeInfoState] = useState({
         recipes: []
     })
@@ -18,11 +16,12 @@ export default function HomePage() {
     })
 
     useEffect(() => {
-        fetchRecipeInfo()
+        fetchLunchRecipeInfo()
     }, [])
 
-    function fetchRecipeInfo() {
-        API.getRecipes().then(data => {
+    function fetchLunchRecipeInfo() {
+        const lunch = "lunch"
+        API.getAllCategoryRecipe(lunch).then(data => {
             setRecipeInfoState({
                 recipes: data
             })
@@ -38,7 +37,7 @@ export default function HomePage() {
             )
         })
         if (keyword === "") {
-            fetchRecipeInfo()
+            fetchLunchRecipeInfo()
         }
         setRecipeInfoState({
             recipes: filtered
@@ -51,7 +50,7 @@ export default function HomePage() {
 
     return (
         <Container>
-            <h1>Browse All Recipes!</h1>
+            <h1>Browse Lunch Recipes!</h1>
             <InputGroup
                 style={{
                     width: "250px",
@@ -92,6 +91,6 @@ export default function HomePage() {
                     ))
                 }
             </Row>
-        </Container>
+        </Container >
     )
 }
