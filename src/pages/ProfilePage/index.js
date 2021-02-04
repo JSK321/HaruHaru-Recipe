@@ -66,7 +66,7 @@ export default function ProfilePage(props) {
         let confirmAlert = window.confirm("Are you certain to delete recipe?")
         let closeBtnId = event.currentTarget.id
         if (confirmAlert === true) {
-            API.deleteRecipe(token, closeBtnId)
+            API.deleteSavedRecipe(token, closeBtnId)
         }
     }
 

@@ -170,7 +170,7 @@ export default function UserProfile(props) {
                                                         to={`/recipe/${item.recipeId}`}
                                                     >
                                                         <CloseButton
-                                                            onClick={props.handleCloseButton}
+                                                            onClick={props.handleSavedRecipeDeleteButton}
                                                             id={item.id}
                                                         >
                                                         </CloseButton>
