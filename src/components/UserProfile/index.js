@@ -10,6 +10,7 @@ import { Row } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
 import { Tabs } from 'react-bootstrap'
 import { Tab } from 'react-bootstrap'
+import { CloseButton } from 'react-bootstrap'
 import './styles.css'
 
 export default function UserProfile(props) {
@@ -133,8 +134,10 @@ export default function UserProfile(props) {
                                                         className="RecipeListGroup"
                                                         to={`/recipe/${item.id}`}
                                                     >
-                                                        {item.recipeName}
+                                                        {item.recipeName}<CloseButton onClick={props.handleCloseButton}></CloseButton>
+                                                        
                                                     </Link>
+                                                    
                                                 ))
                                                 : null}
                                         </Row>

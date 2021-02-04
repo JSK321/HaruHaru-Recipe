@@ -5,7 +5,7 @@ import UserProfile from '../../components/UserProfile'
 export default function ProfilePage(props) {
     const [userProfile, setUserProfile] = useState({
         name: "",
-        accountName:"",
+        accountName: "",
         email: "",
         recipes: [],
         savedRecipes: [],
@@ -38,7 +38,7 @@ export default function ProfilePage(props) {
                 localStorage.removeItem("token");
                 setUserProfile({
                     name: "",
-                    accountName:"",
+                    accountName: "",
                     email: "",
                     recipes: [],
                     savedRecipes: [],
@@ -51,14 +51,20 @@ export default function ProfilePage(props) {
         })
     }
 
+    const handleCloseButton = event => {
+        event.preventDefault()
+        console.log("clicked")
+    }
+
     return (
         <div>
             <UserProfile
                 name={userProfile.name}
                 email={userProfile.email}
                 id={userProfile.id}
-            // profileImage={userProfile.profileImage}
+                // profileImage={userProfile.profileImage}
 
+                handleCloseButton={handleCloseButton}
             />
         </div>
     )
