@@ -1,0 +1,23 @@
+.btn-light {
+    color: black; 
+    background-color: transparent;
+    border-color: none;
+    border: none;
+    background: none
+    
+}
+.btn-light:hover {
+    background-color: transparent;
+    border-color: transparent;
+}
+.btn-light:focus {
+    background-color: transparent;
+    border-color: transparent;
+    outline: 0;
+    box-shadow: none;
+}
+.btn-light:focus:not(:focus-visible) {
+    outline: 0;
+    background-color: transparent;
+    border-color: transparent;
+}

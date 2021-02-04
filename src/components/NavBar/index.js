@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react'
+// import React, { useState, useEffect } from 'react'
 import { Navbar } from 'react-bootstrap'
 import { Nav } from 'react-bootstrap'
 import { NavDropdown } from 'react-bootstrap'
+import { Badge } from 'react-bootstrap'
+import LogInModal from '../LogInModal'
 import "./styles.css"
 
 export default function NavBar(props) {
@@ -33,14 +35,31 @@ export default function NavBar(props) {
             expand="lg-md-sm"
         >
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            {props.isLoggedIn ?
+            {/* {props.isLoggedIn ?
                 <Navbar.Brand
                     href={`/profile/${props.accountName}`}
                     className="ml-auto">
                     Profile!
                 </Navbar.Brand>
-                : null}
-            <Navbar.Brand href="/">조리법!</Navbar.Brand>
+                : null} */}
+
+            <Navbar.Brand
+                href="/"
+                className="ml-auto"
+            >
+                조리법!
+            </Navbar.Brand>
+            {props.isLoggedIn ?
+                <Navbar.Brand
+                
+                >
+                    <LogInModal
+
+                    />
+                </Navbar.Brand>
+                : null
+            }
+
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
                     {props.isLoggedIn ?
@@ -77,6 +96,6 @@ export default function NavBar(props) {
                     }
                 </Nav>
             </Navbar.Collapse>
-        </Navbar>
+        </Navbar >
     )
 }
