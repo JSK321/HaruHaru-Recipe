@@ -239,7 +239,24 @@ const userAPI = {
                 throw new Error("Something went wrong")
             }
         }).catch(err => null)
-    }
+    },
+    // Delete Saved Recipe Function
+    deleteSavedRecipe: function(token, id){
+        return fetch(`${URL_PREFIX}/api/savedrecipes/${id}`, {
+            method: "DELETE",
+            headers: {
+                'authorization': `Bearer ${token}`
+            },
+        }).then(res => {
+            if (res.ok) {
+                alert("Recipe deleted!")
+                window.location.reload()
+            } else {
+                alert("Log in to delete recipe!")
+                throw new Error("Something went wrong")
+            }
+        }).catch(err => null)
+    },
 }
 
 module.exports = userAPI;

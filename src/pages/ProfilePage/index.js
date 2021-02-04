@@ -51,7 +51,16 @@ export default function ProfilePage(props) {
         })
     }
 
-    const handleCloseButton = event => {
+    const handleRecipeDeleteButton = event => {
+        event.preventDefault()
+        const token = localStorage.getItem("token")
+        let confirmAlert = window.confirm("Are you certain to delete recipe?")
+        let closeBtnId = event.currentTarget.id
+        if (confirmAlert === true) {
+            API.deleteRecipe(token, closeBtnId)
+        }
+    }
+    const handleSavedRecipeDeleteButton = event => {
         event.preventDefault()
         const token = localStorage.getItem("token")
         let confirmAlert = window.confirm("Are you certain to delete recipe?")
@@ -69,7 +78,8 @@ export default function ProfilePage(props) {
                 id={userProfile.id}
                 // profileImage={userProfile.profileImage}
 
-                handleCloseButton={handleCloseButton}
+                handleRecipeDeleteButton={handleRecipeDeleteButton}
+                handleSavedRecipeDeleteButton={handleSavedRecipeDeleteButton}
             />
         </div>
     )
