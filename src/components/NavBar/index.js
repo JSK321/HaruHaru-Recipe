@@ -2,7 +2,6 @@
 import { Navbar } from 'react-bootstrap'
 import { Nav } from 'react-bootstrap'
 import { NavDropdown } from 'react-bootstrap'
-import { Badge } from 'react-bootstrap'
 import LogInModal from '../LogInModal'
 import "./styles.css"
 
@@ -35,13 +34,6 @@ export default function NavBar(props) {
             expand="lg-md-sm"
         >
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            {/* {props.isLoggedIn ?
-                <Navbar.Brand
-                    href={`/profile/${props.accountName}`}
-                    className="ml-auto">
-                    Profile!
-                </Navbar.Brand>
-                : null} */}
 
             <Navbar.Brand
                 href="/"
