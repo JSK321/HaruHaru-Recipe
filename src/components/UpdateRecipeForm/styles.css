@@ -25,6 +25,14 @@
     /* top: 50%; */
     /* -ms-transform: translate(-50%, -50%); */
 }
+.recipeImageUpdate{
+    display: block;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    height:auto;
+    border-radius: 15px;
+}
 
 .text-muted{
     text-align: center;
@@ -35,7 +43,14 @@
         width: 100%;
        
     }
-    /* .updateFormButton{
-        width:100%;
-    } */
+}
+
+@media screen and (max-width: 430px){
+    .recipeImageUpdate{
+        display: block;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        height:auto;
+    }
 }

@@ -20,7 +20,8 @@ export default function UpdateRecipePage(props) {
     })
     const [recipeIngreState, setRecipeIngreState] = useState({
         item: []
-    });
+    })
+    const [imgLoadingState, setImgLoadingState] = useState(false)
 
     const { id } = useParams();
 
@@ -105,6 +106,26 @@ export default function UpdateRecipePage(props) {
         )
     }
 
+    const handleUploadImgBtn = event => {
+        event.preventDefault()
+        document.getElementById('uploadImg').click()
+    };
+    const handleUploadImg = async event => {
+        event.preventDefault()
+        const files = event.target.files
+        const data = new FormData()
+        data.append('file', files[0])
+        data.append('upload_preset', 'ummas_cb')
+        setImgLoadingState(true)
+        const res = await API.uploadImage(data)
+        const file = await res.json()
+        setRecipeState({
+            ...recipeState,
+            recipeImage: file.secure_url
+        })
+        setImgLoadingState(false)
+    };
+
     const handleFormSubmit = event => {
         event.preventDefault()
         API.updateRecipe(
@@ -132,6 +153,7 @@ export default function UpdateRecipePage(props) {
                 recipeCategory={recipeState.recipeCategory}
                 recipeDescript={recipeState.recipeDescript}
                 recipeImage={recipeState.recipeImage}
+                loading={imgLoadingState}
                 // Ingredients
                 ingredients={recipeIngreState.item}
                 // Directions
@@ -142,6 +164,8 @@ export default function UpdateRecipePage(props) {
                 handleIngreInputChange={handleIngreInputChange}
                 handleDirectInputChange={handleDirectInputChange}
                 // Button clicks
+                handleUploadImgBtn={handleUploadImgBtn}
+                handleUploadImg={handleUploadImg}
                 handleIngreSetButton={handleIngreSetButton}
                 handleFormSubmit={handleFormSubmit}
             />

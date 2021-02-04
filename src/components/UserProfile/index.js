@@ -96,7 +96,7 @@ export default function UserProfile(props) {
                         <Card.Img
                             className="ProfileImage"
                             variant="top"
-                            src="https://res.cloudinary.com/jsk321/image/upload/v1611706500/ummas_cb/2014cody_ku5msz.jpg"
+                            // src="https://res.cloudinary.com/jsk321/image/upload/v1611706500/ummas_cb/2014cody_ku5msz.jpg"
                         />
                         <Card.Body>
                             <Card.Text>
