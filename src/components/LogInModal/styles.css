@@ -3,7 +3,8 @@
     background-color: transparent;
     border-color: none;
     border: none;
-    background: none
+    background: none;
+    font-size: 18px;
     
 }
 .btn-light:hover {
