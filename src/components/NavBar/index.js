@@ -50,11 +50,12 @@ export default function NavBar(props) {
                 조리법!
             </Navbar.Brand>
             {props.isLoggedIn ?
-                <Navbar.Brand
-                
-                >
+                <Navbar.Brand>
                     <LogInModal
-
+                        name={props.name}
+                        email={props.email}
+                        accountName={props.accountName}
+                        logOut={props.handleLogOut}
                     />
                 </Navbar.Brand>
                 : null
@@ -89,11 +90,6 @@ export default function NavBar(props) {
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="/other">Other</NavDropdown.Item>
                     </NavDropdown>
-                    {props.isLoggedIn ?
-                        <Nav.Link onClick={props.handleLogOut}>로그 아웃</Nav.Link>
-                        :
-                        null
-                    }
                 </Nav>
             </Navbar.Collapse>
         </Navbar >
