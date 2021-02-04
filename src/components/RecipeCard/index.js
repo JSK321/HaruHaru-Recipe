@@ -53,49 +53,10 @@ export default function RecipeCard(props) {
                     </Card.Body>
                 </Accordion.Collapse>
                 <Card.Footer style={{ textAlign: "center" }}>
-                    {/* {props.userId === props.ownerId ?
-                        <Button
-                            variant="link"
-
-                        >
-                            Update Recipe
-                        </Button>
-                        :
-                        null
-                    }
-                    {props.isloggedIn ?
-                        (<Button
-                            variant="link"
-                            href={`/profile/${props.accountName}`}
-                        >
-                            View my Profile
-                        </Button>)
-                        :
-                        (props.userId !== props.ownerId && props.isLoggedIn ?
-                            < Button
-                                variant="link"
-                                onClick={props.handleSaveRecipeBtn}
-                            >
-                                Save Recipe
-                            </Button>
-                            :
-                            (props.isLoggedIn ?
-                                <Button>Hello</Button>
-                                :
-                                null
-                                // <Button
-                                //     variant="link"
-                                //     href={`/profile/${props.accountName}`}
-                                // >
-                                //     View my Profile
-                                // </Button>
-                            )
-                        )
-                    } */}
-
                     {props.userId === props.ownerId ?
                         <Button
                             variant="link"
+                            href={`/updaterecipe/${props.recipeId}`}
                         >
                             Update Recipe
                         </Button>

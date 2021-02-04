@@ -48,24 +48,29 @@ const userAPI = {
         }).then(res => res.json()).catch(err => console.log(err))
     },
     // Retrieve All Breakfast Recipe
-    getAllCategoryRecipe: function(category){
-        return fetch(`${URL_PREFIX}/api/recipes/category/${category}`,{
+    getAllCategoryRecipe: function (category) {
+        return fetch(`${URL_PREFIX}/api/recipes/category/${category}`, {
         }).then(res => res.json()).catch(err => console.log(err))
     },
 
     // Retrieve One Saved Recipe
-    getOneSavedRecipe: function(recipeId){
+    getOneSavedRecipe: function (recipeId) {
         return fetch(`${URL_PREFIX}/api/savedrecipes/${recipeId}`, {
         }).then(res => res.json()).catch(err => console.log(err))
     },
     // Retrieve All Saved Recipe
-    getAllSavedRecipe: function(){
-        return fetch(`${URL_PREFIX}/api/savedrecipes`,{
+    getAllSavedRecipe: function () {
+        return fetch(`${URL_PREFIX}/api/savedrecipes`, {
         }).then(res => res.json()).catch(err => console.log(err))
     },
     // Retrieve All Ingredients for Recipe with RecipeId
     getAllIngreForRecipe: function (recipeId) {
         return fetch(`${URL_PREFIX}/api/ingredients/all/${recipeId}`, {
+        }).then(res => res.json()).catch(err => console.log(err))
+    },
+    // Retrieve One Ingredient for Recipe with RecipeId
+    getOneIngreForRecipe: function (recipeId) {
+        return fetch(`${URL_PREFIX}/api/ingredients/${recipeId}`, {
         }).then(res => res.json()).catch(err => console.log(err))
     },
     // Create New User Function
@@ -136,7 +141,7 @@ const userAPI = {
             } else {
                 throw new Error("Something went wrong")
             }
-        })
+        }).catch(err => console.log(err))
     },
     // Create New Steps Function
     createSteps: function (token, stepsData) {
@@ -154,8 +159,70 @@ const userAPI = {
             } else {
                 throw new Error("Something went wrong")
             }
-        })
-    }
+        }).catch(err => console.log(err))
+    },
+    // Update One Ingredient Fucntion
+    updateOneIngre: function (token, id, ingredient, ingredientQuant, ingredientUnit) {
+        return fetch(`${URL_PREFIX}/api/ingredients/${id}`, {
+            method: "PUT",
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                ingredient: ingredient,
+                ingredientQuant: ingredientQuant,
+                ingredientUnit: ingredientUnit,
+            })
+        }).then(res => {
+            if (res.ok) {
+                return res.json()
+            } else {
+                throw new Error("Something went wrong")
+            }
+        }).catch(err => console.log(err))
+    },
+    // Update Recipe Function
+    updateRecipe: function (token, id, recipeName, recipeDescript, recipeCategory, recipeImage) {
+        return fetch(`${URL_PREFIX}/api/recipes/${id}`, {
+            method: "PUT",
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                recipeName: recipeName,
+                recipeDescript: recipeDescript,
+                recipeCategory: recipeCategory,
+                recipeImage: recipeImage
+            })
+        }).then(res => {
+            if (res.ok) {
+                return res.json()
+            } else {
+                throw new Error("Something went wrong")
+            }
+        }).catch(err => console.log(err))
+    },
+    // Update Directions for Recipe Function
+    updateDirection: function (token, id, directions) {
+        return fetch(`${URL_PREFIX}/api/steps/${id}`, {
+            method: "PUT",
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                directions: directions
+            })
+        }).then(res => {
+            if (res.ok) {
+                return res.json()
+            } else {
+                throw new Error("Something went wrong")
+            }
+        }).catch(err => console.log(err))
+    },
 }
 
 module.exports = userAPI;
