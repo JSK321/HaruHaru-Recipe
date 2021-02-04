@@ -53,7 +53,12 @@ export default function ProfilePage(props) {
 
     const handleCloseButton = event => {
         event.preventDefault()
-        console.log("clicked")
+        const token = localStorage.getItem("token")
+        let confirmAlert = window.confirm("Are you certain to delete recipe?")
+        let closeBtnId = event.currentTarget.id
+        if (confirmAlert === true) {
+            API.deleteRecipe(token, closeBtnId)
+        }
     }
 
     return (

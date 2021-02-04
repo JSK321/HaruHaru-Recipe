@@ -133,8 +133,14 @@ export default function UserProfile(props) {
                                                     <Link
                                                         className="RecipeListGroup"
                                                         to={`/recipe/${item.id}`}
+                                                        id={item.id}
                                                     >
-                                                        {item.recipeName}<CloseButton onClick={props.handleCloseButton}></CloseButton>
+                                                        {item.recipeName}
+                                                        <CloseButton 
+                                                        onClick={props.handleCloseButton} 
+                                                        id={item.id}
+                                                        >
+                                                        </CloseButton>
                                                         
                                                     </Link>
                                                     

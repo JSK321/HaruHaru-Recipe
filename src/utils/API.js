@@ -233,12 +233,13 @@ const userAPI = {
         }).then(res => {
             if (res.ok) {
                 alert("Recipe deleted!")
+                window.location.reload()
             } else {
                 alert("Log in to delete recipe!")
                 throw new Error("Something went wrong")
             }
         }).catch(err => null)
-    },
+    }
 }
 
 module.exports = userAPI;
