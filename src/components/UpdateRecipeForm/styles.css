@@ -1,0 +1,41 @@
+.updateRecipeCard {
+    width: 45rem;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black
+}
+
+.updateRecipeTitle {
+    text-align: center;
+}
+
+.updateRecipeDescript {
+    margin-top: 10px;
+}
+
+.updateFormButton{
+    width: 100%;
+    margin-top:10px;
+    /* width:60%;
+    margin-top:5px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%); */
+    /* top: 50%; */
+    /* -ms-transform: translate(-50%, -50%); */
+}
+
+.text-muted{
+    text-align: center;
+}
+
+@media screen and (max-width: 720px){
+    .updateRecipeCard {
+        width: 100%;
+       
+    }
+    /* .updateFormButton{
+        width:100%;
+    } */
+}

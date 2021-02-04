@@ -98,14 +98,17 @@ export default function RecipeCardPage(props) {
         <div>
             <RecipeCard
                 handleSaveRecipeBtn={handleSaveRecipeBtn}
+                //Recipe
                 recipeName={recipeState.recipeName}
                 recipeDescript={recipeState.recipeDescript}
                 recipeImage={recipeState.recipeImage}
-                directions={directionState.directions}
-                ingredients={ingredientState.item}
                 ownerId={recipeState.ownerId}
-                userId={props.profile.id}
                 recipeId={id}
+                // Ingredients
+                ingredients={ingredientState.item}
+                // Directions
+                directions={directionState.directions}
+                userId={props.profile.id}
                 isLoggedIn={props.profile.isLoggedIn}
                 accountName={props.profile.accountName}
                 isSaved={savedRecipeState.isSaved}
