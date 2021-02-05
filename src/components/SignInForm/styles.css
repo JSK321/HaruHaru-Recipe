@@ -5,3 +5,11 @@
      margin-top: 25px;
      border: 1px solid black
 }
+
+.signInFormControl {
+     margin-bottom: 5px;
+}
+
+.signInBtn {
+     width: 100%
+}

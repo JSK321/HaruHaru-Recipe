@@ -6,28 +6,7 @@ import LogInModal from '../LogInModal'
 import "./styles.css"
 
 export default function NavBar(props) {
-    // const [categoryState, setCategoryState] = useState({
-    //     category: ""
-    // })
-
-    // const handleCategorySelect = event => {
-    //     event.preventDefault();
-    //     let category = event.target.name
-    //     setCategoryState({
-    //         category: category
-    //     })
-    //     if (categoryState.category != "") {
-    //         changeCategoryPage()
-    //     }
-    // }
-
-    // function changeCategoryPage() {
-    //     if (categoryState.category !== "" && categoryState.category === "breakfast") {
-    //         window.location.href = "/breakfast"
-    //         // console.log('Here')
-    //     }
-    // }
-
+    
     return (
         <Navbar
             className="NavBar"

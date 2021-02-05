@@ -5,8 +5,19 @@ import SignUpForm from '../../components/SignUpForm'
 export default function SignUpPage() {
     const [userState, setUserState] = useState({
         name: "",
+        accountName: "",
         email: "",
         password: ""
+    })
+
+    const [profileState, setProfileState] = useState({
+        name: "",
+        accountName:"",
+        email: "",
+        recipes: [],
+        token: "",
+        id: "",
+        isLoggedIn: false
     })
 
     const handleInputChange = event => {
@@ -19,11 +30,25 @@ export default function SignUpPage() {
 
     const handleFormSubmit = event => {
         event.preventDefault()
-        try {
-            API.createUser(userState)
-        } catch (error) {
-            console.log(error)
-        }
+        API.createUser(userState)
+       
+        API.login(userState).then(newToken => {
+            console.log(newToken.token)
+            localStorage.setItem("token", newToken.token)
+
+            API.getProfile(newToken.token).then(profileData => {
+                setProfileState({
+                    name: profileData.name,
+                    accountName: profileData.accountName,
+                    email: profileData.email,
+                    id: profileData.id,
+                    isLoggedIn: true
+                })
+            }).then(res => {
+                window.location.href = "/"
+            })
+        })
+
     }
 
     return (
@@ -34,6 +59,7 @@ export default function SignUpPage() {
                 email={userState.email}
                 password={userState.password}
                 name={userState.name}
+                accountName={userState.accountName}
             />
         </div>
     )

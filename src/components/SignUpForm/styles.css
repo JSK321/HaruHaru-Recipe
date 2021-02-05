@@ -1,0 +1,25 @@
+.signUpBtn {
+    width: 100%;
+}
+
+.signInLink {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+}
+
+.text-muted {
+    margin-top: -10px;
+}
+
+.SignUpCard {
+    width: 22rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    border: 1px solid black
+}
+
+.signUpFormControl {
+    margin-bottom: 5px;
+}
