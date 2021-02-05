@@ -97,7 +97,7 @@ export default function UserProfile(props) {
                         <Card.Img
                             className="ProfileImage"
                             variant="top"
-                        // src="https://res.cloudinary.com/jsk321/image/upload/v1611706500/ummas_cb/2014cody_ku5msz.jpg"
+                            src={props.profileImage}
                         />
                         <Card.Body>
                             <Card.Text>
@@ -106,7 +106,15 @@ export default function UserProfile(props) {
                             <Card.Text>
                                 <strong>Email:</strong> {props.email}
                             </Card.Text>
-                            {/* <Button variant="primary">Go somewhere</Button> */}
+                            <Card.Text>
+                                <strong>Account Name:</strong> {props.accountName}
+                            </Card.Text>
+                            <Link
+                                className="editProfileBtn btn btn-primary"
+                                to="/editprofile"
+                            >
+                                Edit Profile
+                            </Link>
                         </Card.Body>
                     </Card>
                 </Col>
