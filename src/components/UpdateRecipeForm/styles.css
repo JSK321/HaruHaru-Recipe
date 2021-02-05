@@ -38,6 +38,7 @@
     text-align: center;
 }
 
+
 @media screen and (max-width: 720px){
     .updateRecipeCard {
         width: 100%;

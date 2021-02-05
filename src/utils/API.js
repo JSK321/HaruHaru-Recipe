@@ -162,6 +162,30 @@ const userAPI = {
             }
         }).catch(err => console.log(err))
     },
+    // Update User Profile
+    updateUserProfile: function (token, id, name, accountName, password, newPassword, confirmNewPassword, profileImage) {
+        return fetch(`${URL_PREFIX}/api/users/${id}`, {
+            method: "PUT",
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                name: name,
+                accountName: accountName,
+                password: password,
+                newPassword: newPassword,
+                confirmNewPassword: confirmNewPassword,
+                profileImage: profileImage
+            })
+        }).then(res => {
+            if(res.ok){
+                return res.json()
+            } else {
+                throw new Error("Something went wrong")
+            }
+        }).catch(err => console.log(err))
+    },
     // Update One Ingredient Fucntion
     updateOneIngre: function (token, id, ingredient, ingredientQuant, ingredientUnit) {
         return fetch(`${URL_PREFIX}/api/ingredients/${id}`, {

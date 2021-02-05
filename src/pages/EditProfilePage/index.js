@@ -7,13 +7,16 @@ export default function EditProfilePage() {
         name: "",
         accountName: "",
         email: "",
-        recipes: [],
-        savedRecipes: [],
+        password: "",
+        newPassword: "",
+        confirmNewPassword: "",
         token: "",
         id: "",
         profileImage: "",
         isLoggedIn: false,
     })
+
+    const [imgLoadingState, setImgLoadingState] = useState(false);
 
     useEffect(() => {
         fetchUserData()
@@ -27,8 +30,6 @@ export default function EditProfilePage() {
                     name: data.name,
                     accountName: data.accountName,
                     email: data.email,
-                    recipes: data.Recipes,
-                    savedRecipes: data.SavedRecipes,
                     token: token,
                     id: data.id,
                     profileImage: data.profileImage,
@@ -40,8 +41,8 @@ export default function EditProfilePage() {
                     name: "",
                     accountName: "",
                     email: "",
-                    recipes: [],
-                    savedRecipes: [],
+                    password: "",
+                    newPassword: "",
                     token: "",
                     id: "",
                     profileImage: "",
@@ -51,10 +52,68 @@ export default function EditProfilePage() {
         })
     }
 
+    const handleUploadImgBtn = event => {
+        event.preventDefault()
+        document.getElementById('uploadImg').click()
+    };
+    const handleUploadImg = async event => {
+        event.preventDefault()
+        const files = event.target.files
+        const data = new FormData()
+        data.append('file', files[0])
+        data.append('upload_preset', 'ummas_cb')
+        setImgLoadingState(true)
+        const res = await API.uploadImage(data)
+        const file = await res.json()
+        setUserProfile({
+            ...userProfile,
+            profileImage: file.secure_url
+        })
+        setImgLoadingState(false)
+    };
+
+    const handleInputChange = event => {
+        const { name, value } = event.target
+        setUserProfile({
+            ...userProfile,
+            [name]: value
+        })
+    };
+
+    const handleFormSubmit = event => {
+        event.preventDefault()
+        API.updateUserProfile(
+            userProfile.token,
+            userProfile.id,
+            userProfile.name,
+            userProfile.accountName,
+            userProfile.password,
+            userProfile.newPassword,
+            userProfile.confirmNewPassword,
+            userProfile.profileImage
+        ).then(afterUpdate => {
+            setUserProfile({
+                accountName: userProfile.accountName
+            })
+            window.location.href = `/profile/${userProfile.accountName}`
+        })
+    }
+
     return (
         <div>
             <EditProfileForm
+                name={userProfile.name}
+                accountName={userProfile.accountName}
+                password={userProfile.password}
+                newPassword={userProfile.newPassword}
+                confirmNewPassword={userProfile.confirmNewPassword}
+                profileImage={userProfile.profileImage}
+                loading={imgLoadingState}
 
+                handleInputChange={handleInputChange}
+                handleFormSubmit={handleFormSubmit}
+                handleUploadImgBtn={handleUploadImgBtn}
+                handleUploadImg={handleUploadImg}
             />
         </div>
     )
