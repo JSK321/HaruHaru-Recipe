@@ -84,7 +84,7 @@ const userAPI = {
         }).then(res => {
             if (res.ok) {
                 // window.location.href = `/profile/${userData.accoutName}`
-                window.location.href= '/'
+                // window.location.href= '/'
                 return res.json()
             } else {
                 alert("Email already exists!")

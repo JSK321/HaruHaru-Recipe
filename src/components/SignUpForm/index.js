@@ -18,6 +18,7 @@ export default function SignUpForm(props) {
                                 onChange={props.handleInputChange}
                                 name="name"
                                 className="signUpFormControl"
+                                required
                             />
                             <Form.Control
                                 type="text"
@@ -25,6 +26,7 @@ export default function SignUpForm(props) {
                                 onChange={props.handleInputChange}
                                 name="accountName"
                                 className="signUpFormControl"
+                                required
                             />
                             <Form.Control
                                 type="email"
@@ -32,6 +34,7 @@ export default function SignUpForm(props) {
                                 onChange={props.handleInputChange}
                                 name="email"
                                 className="signUpFormControl"
+                                required
                             />
                             <Form.Control
                                 type="password"
@@ -39,6 +42,7 @@ export default function SignUpForm(props) {
                                 onChange={props.handleInputChange}
                                 name="password"
                                 className="signUpFormControl"
+                                required
                             />
                         </Form.Group>
                         <Button variant="primary" type="submit" className="signUpBtn">

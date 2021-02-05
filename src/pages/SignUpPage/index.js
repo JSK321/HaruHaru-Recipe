@@ -10,6 +10,16 @@ export default function SignUpPage() {
         password: ""
     })
 
+    const [profileState, setProfileState] = useState({
+        name: "",
+        accountName:"",
+        email: "",
+        recipes: [],
+        token: "",
+        id: "",
+        isLoggedIn: false
+    })
+
     const handleInputChange = event => {
         const { name, value } = event.target
         setUserState({
@@ -20,11 +30,25 @@ export default function SignUpPage() {
 
     const handleFormSubmit = event => {
         event.preventDefault()
-        try {
-            API.createUser(userState)
-        } catch (error) {
-            console.log(error)
-        }
+        API.createUser(userState)
+       
+        API.login(userState).then(newToken => {
+            console.log(newToken.token)
+            localStorage.setItem("token", newToken.token)
+
+            API.getProfile(newToken.token).then(profileData => {
+                setProfileState({
+                    name: profileData.name,
+                    accountName: profileData.accountName,
+                    email: profileData.email,
+                    id: profileData.id,
+                    isLoggedIn: true
+                })
+            }).then(res => {
+                window.location.href = "/"
+            })
+        })
+
     }
 
     return (
