@@ -31,7 +31,7 @@ export default function ProfilePage(props) {
                     savedRecipes: data.SavedRecipes,
                     token: token,
                     id: data.id,
-                    // profileImage: data.profileImage,
+                    profileImage: data.profileImage,
                     isLoggedIn: true
                 })
             } else {
@@ -44,7 +44,7 @@ export default function ProfilePage(props) {
                     savedRecipes: [],
                     token: "",
                     id: "",
-                    // profileImage: "",
+                    profileImage: "",
                     isLoggedIn: false,
                 })
             }
@@ -76,7 +76,8 @@ export default function ProfilePage(props) {
                 name={userProfile.name}
                 email={userProfile.email}
                 id={userProfile.id}
-                // profileImage={userProfile.profileImage}
+                accountName={userProfile.accountName}
+                profileImage={userProfile.profileImage}
 
                 handleRecipeDeleteButton={handleRecipeDeleteButton}
                 handleSavedRecipeDeleteButton={handleSavedRecipeDeleteButton}
