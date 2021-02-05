@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import API from '../../utils/API'
-import UserProfile from '../../components/UserProfile'
+import EditProfileForm from '../../components/EditProfileForm'
 
-export default function ProfilePage(props) {
+export default function EditProfilePage() {
     const [userProfile, setUserProfile] = useState({
         name: "",
         accountName: "",
@@ -51,36 +51,10 @@ export default function ProfilePage(props) {
         })
     }
 
-    const handleRecipeDeleteButton = event => {
-        event.preventDefault()
-        const token = localStorage.getItem("token")
-        let confirmAlert = window.confirm("Are you certain to delete recipe?")
-        let closeBtnId = event.currentTarget.id
-        if (confirmAlert === true) {
-            API.deleteRecipe(token, closeBtnId)
-        }
-    }
-    const handleSavedRecipeDeleteButton = event => {
-        event.preventDefault()
-        const token = localStorage.getItem("token")
-        let confirmAlert = window.confirm("Are you certain to delete recipe?")
-        let closeBtnId = event.currentTarget.id
-        if (confirmAlert === true) {
-            API.deleteSavedRecipe(token, closeBtnId)
-        }
-    }
-
     return (
         <div>
-            <UserProfile
-                name={userProfile.name}
-                email={userProfile.email}
-                id={userProfile.id}
-                accountName={userProfile.accountName}
-                profileImage={userProfile.profileImage}
+            <EditProfileForm
 
-                handleRecipeDeleteButton={handleRecipeDeleteButton}
-                handleSavedRecipeDeleteButton={handleSavedRecipeDeleteButton}
             />
         </div>
     )

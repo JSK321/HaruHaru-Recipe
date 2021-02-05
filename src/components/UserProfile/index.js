@@ -111,7 +111,7 @@ export default function UserProfile(props) {
                             </Card.Text>
                             <Link
                                 className="editProfileBtn btn btn-primary"
-                                to="/editprofile"
+                                to={`/editprofile/${props.accountName}`}
                             >
                                 Edit Profile
                             </Link>

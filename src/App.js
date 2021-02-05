@@ -8,6 +8,7 @@ import NavBar from './components/NavBar'
 import SignUpPage from './pages/SignUpPage'
 import SignInPage from './pages/SignInPage'
 import ProfilePage from './pages/ProfilePage'
+import EditProfilePage from './pages/EditProfilePage'
 import RecipePage from './pages/RecipePage'
 import IngrePage from './pages/IngrePage'
 import RecipeCardPage from './pages/RecipeCardPage'
@@ -106,11 +107,15 @@ function App() {
         <Route exact path="/signin">
           <SignInPage />
         </Route>
-        {/* <Route exact path="/profile/:id"> */}
         <Route exact path={`/profile/${profileState.accountName}`}>
           <ProfilePage
           // profile={profileState}
           // users={usersState}
+          />
+        </Route>
+        <Route exact path={`/editprofile/${profileState.accountName}`}>
+          <EditProfilePage 
+          
           />
         </Route>
         <Route exact path="/breakfast">

@@ -44,11 +44,6 @@ export default function NavBar(props) {
                         :
                         <Nav.Link href="/signup">Register</Nav.Link>
                     }
-                    {/* {props.isLoggedIn ?
-                        <Nav.Link href={`/profile/${props.accountName}`}>Profile</Nav.Link>
-                        :
-                        null
-                    } */}
                     <NavDropdown title="View by Category" id="nav-dropdown">
                         {/* <NavDropdown.Item href={`/profile/${props.id}`}>Profile</NavDropdown.Item> */}
                         {/* <NavDropdown.Item onClick={handleCategorySelect} name="breakfast">Breakfast</NavDropdown.Item> */}
