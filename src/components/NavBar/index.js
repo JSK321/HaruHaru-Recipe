@@ -26,6 +26,7 @@ export default function NavBar(props) {
                         name={props.name}
                         email={props.email}
                         accountName={props.accountName}
+                        profileImage={props.profileImage}
                         logOut={props.handleLogOut}
                     />
                 </Navbar.Brand>

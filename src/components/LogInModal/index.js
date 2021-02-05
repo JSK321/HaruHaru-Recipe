@@ -20,7 +20,7 @@ export default function LogInModal(props) {
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Image
-                        src="https://res.cloudinary.com/jsk321/image/upload/v1612472877/ummas_cb/fz7uquilwgm7lh045bph.jpg" 
+                        src={props.profileImage} 
                         className="modalProfilImage"
                         roundedCircle
                     />

@@ -25,6 +25,7 @@ function App() {
     name: "",
     accountName: "",
     email: "",
+    profileImage: "",
     recipes: [],
     savedRecipes: [],
     token: "",
@@ -49,6 +50,7 @@ function App() {
             name: profileData.name,
             accountName: profileData.accountName,
             email: profileData.email,
+            profileImage: profileData.profileImage,
             recipes: profileData.Recipes,
             savedRecipes: profileData.SavedRecipes,
             token: token,
@@ -61,6 +63,7 @@ function App() {
             name: "",
             accountName: "",
             email: "",
+            profileImage: "",
             recipes: [],
             savedRecips: [],
             token: "",
@@ -94,6 +97,7 @@ function App() {
         name={profileState.name}
         email={profileState.email}
         accountName={profileState.accountName}
+        profileImage={profileState.profileImage}
         isLoggedIn={profileState.isLoggedIn}
         handleLogOut={handleLogOut}
       />
@@ -109,13 +113,12 @@ function App() {
         </Route>
         <Route exact path={`/profile/${profileState.accountName}`}>
           <ProfilePage
-          // profile={profileState}
-          // users={usersState}
+
           />
         </Route>
         <Route exact path={`/editprofile/${profileState.accountName}`}>
-          <EditProfilePage 
-          
+          <EditProfilePage
+
           />
         </Route>
         <Route exact path="/breakfast">
@@ -159,9 +162,9 @@ function App() {
           />
         </Route>
         <Route exact path="/updaterecipe/:id">
-            <UpdateRecipePage 
-              profile={profileState}
-            />
+          <UpdateRecipePage
+            profile={profileState}
+          />
         </Route>
       </Switch>
     </Router>

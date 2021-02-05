@@ -34,7 +34,7 @@ export default function EditProfileForm(props) {
                                 onChange={props.handleInputChange}
                                 name="name"
                                 className="signUpFormControl"
-                                // required
+                            // required
                             />
                             <Form.Control
                                 type="text"
@@ -43,7 +43,7 @@ export default function EditProfileForm(props) {
                                 value={props.accountName}
                                 name="accountName"
                                 className="signUpFormControl"
-                                // required
+                            // required
                             />
                             <Form.Control
                                 type="password"
@@ -51,7 +51,7 @@ export default function EditProfileForm(props) {
                                 onChange={props.handleInputChange}
                                 name="password"
                                 className="signUpFormControl"
-                                // required
+                            // required
                             />
                             <Form.Control
                                 type="password"
@@ -59,7 +59,7 @@ export default function EditProfileForm(props) {
                                 onChange={props.handleInputChange}
                                 name="newPassword"
                                 className="signUpFormControl"
-                                // required
+                            // required
                             />
                             <Form.Control
                                 type="password"
@@ -67,13 +67,13 @@ export default function EditProfileForm(props) {
                                 onChange={props.handleInputChange}
                                 name="confirmNewPassword"
                                 className="signUpFormControl"
-                                // required
+                            // required
                             />
                         </Form.Group>
                         <Button
                             type="button"
                             onClick={props.handleUploadImgBtn}
-                            style={{ width: "100%", marginBottom: "10px" }}
+                            className="updateProfileBtn"
                         >
                             Upload Image
                          </Button>
@@ -84,7 +84,18 @@ export default function EditProfileForm(props) {
                             name="recipeImage"
                         />
 
-                        <Button variant="primary" type="submit" className="signUpBtn">
+                        <Button
+                            variant="primary"
+                            type="submit"
+                            className="updateProfileBtn"
+                        >
+                            Update
+                        </Button>
+                        <Button
+                            variant="primary"
+                            type="submit"
+                            className="updateProfileBtn"
+                        >
                             Update
                         </Button>
 
