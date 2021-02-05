@@ -5,7 +5,7 @@ import UserProfile from '../../components/UserProfile'
 export default function ProfilePage(props) {
     const [userProfile, setUserProfile] = useState({
         name: "",
-        accountName:"",
+        accountName: "",
         email: "",
         recipes: [],
         savedRecipes: [],
@@ -38,7 +38,7 @@ export default function ProfilePage(props) {
                 localStorage.removeItem("token");
                 setUserProfile({
                     name: "",
-                    accountName:"",
+                    accountName: "",
                     email: "",
                     recipes: [],
                     savedRecipes: [],
@@ -51,14 +51,35 @@ export default function ProfilePage(props) {
         })
     }
 
+    const handleRecipeDeleteButton = event => {
+        event.preventDefault()
+        const token = localStorage.getItem("token")
+        let confirmAlert = window.confirm("Are you certain to delete recipe?")
+        let closeBtnId = event.currentTarget.id
+        if (confirmAlert === true) {
+            API.deleteRecipe(token, closeBtnId)
+        }
+    }
+    const handleSavedRecipeDeleteButton = event => {
+        event.preventDefault()
+        const token = localStorage.getItem("token")
+        let confirmAlert = window.confirm("Are you certain to delete recipe?")
+        let closeBtnId = event.currentTarget.id
+        if (confirmAlert === true) {
+            API.deleteSavedRecipe(token, closeBtnId)
+        }
+    }
+
     return (
         <div>
             <UserProfile
                 name={userProfile.name}
                 email={userProfile.email}
                 id={userProfile.id}
-            // profileImage={userProfile.profileImage}
+                // profileImage={userProfile.profileImage}
 
+                handleRecipeDeleteButton={handleRecipeDeleteButton}
+                handleSavedRecipeDeleteButton={handleSavedRecipeDeleteButton}
             />
         </div>
     )

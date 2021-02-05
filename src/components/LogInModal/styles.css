@@ -1,0 +1,33 @@
+.btn-light {
+    color: black; 
+    background-color: transparent;
+    border-color: none;
+    border: none;
+    background: none;
+    font-size: 18px;
+}
+.btn-light:hover {
+    background-color: transparent;
+    border-color: transparent;
+}
+.btn-light:focus {
+    background-color: transparent;
+    border-color: transparent;
+    outline: 0;
+    box-shadow: none;
+}
+.btn-light:focus:not(:focus-visible) {
+    outline: 0;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.modalProfilImage{
+    width: 100px;
+    margin-right: 15px;
+    height:auto;
+}
+
+.modalTitle{
+    margin-top: 15px;
+}

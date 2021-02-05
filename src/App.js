@@ -90,6 +90,8 @@ function App() {
     <Router >
       <NavBar
         id={profileState.id}
+        name={profileState.name}
+        email={profileState.email}
         accountName={profileState.accountName}
         isLoggedIn={profileState.isLoggedIn}
         handleLogOut={handleLogOut}

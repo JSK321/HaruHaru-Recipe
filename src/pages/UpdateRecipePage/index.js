@@ -27,6 +27,7 @@ export default function UpdateRecipePage(props) {
 
 
     useEffect(() => {
+        console.log(id)
         fetchRecipeData()
     }, [])
 
@@ -110,6 +111,7 @@ export default function UpdateRecipePage(props) {
         event.preventDefault()
         document.getElementById('uploadImg').click()
     };
+
     const handleUploadImg = async event => {
         event.preventDefault()
         const files = event.target.files
@@ -141,6 +143,12 @@ export default function UpdateRecipePage(props) {
             props.profile.token,
             id,
             directionState.directions,
+        )
+
+        API.updateSavedRecipe(
+            props.profile.token,
+            id,
+            recipeState.recipeName
         )
     }
 
