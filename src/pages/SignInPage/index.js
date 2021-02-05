@@ -29,11 +29,13 @@ export default function SignInPage() {
     const handleFormSubmit = event => {
         event.preventDefault()
         if (!loginFormState.email || !loginFormState.password) {
-            alert("잘못된 비밀번호 / 이메일을 다시 시도하십시오.")
+            // alert("잘못된 비밀번호 / 이메일을 다시 시도하십시오.")
+            alert("Incorrect email/password, please try again")
         } else {
             API.login(loginFormState).then(newToken => {
                 if (newToken === null) {
-                    alert("잘못된 비밀번호 / 이메일을 다시 시도하십시오.")
+                    // alert("잘못된 비밀번호 / 이메일을 다시 시도하십시오.")
+                    alert("Incorrect email/password, please try again")
                 } else {
                     localStorage.setItem("token", newToken.token)
                     API.getProfile(newToken.token).then(profileData => {

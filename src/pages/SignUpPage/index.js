@@ -5,6 +5,7 @@ import SignUpForm from '../../components/SignUpForm'
 export default function SignUpPage() {
     const [userState, setUserState] = useState({
         name: "",
+        accountName: "",
         email: "",
         password: ""
     })
@@ -34,6 +35,7 @@ export default function SignUpPage() {
                 email={userState.email}
                 password={userState.password}
                 name={userState.name}
+                accountName={userState.accountName}
             />
         </div>
     )
