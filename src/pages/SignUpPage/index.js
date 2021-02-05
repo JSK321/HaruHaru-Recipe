@@ -12,7 +12,7 @@ export default function SignUpPage() {
 
     const [profileState, setProfileState] = useState({
         name: "",
-        accountName:"",
+        accountName: "",
         email: "",
         recipes: [],
         token: "",
@@ -30,12 +30,12 @@ export default function SignUpPage() {
 
     const handleFormSubmit = event => {
         event.preventDefault()
-        API.createUser(userState)
-       
-        API.login(userState).then(newToken => {
-            console.log(newToken.token)
-            localStorage.setItem("token", newToken.token)
+        userCreateAndLogIn()
+    }
 
+    function userLogIn() {
+        API.login(userState).then(newToken => {
+            localStorage.setItem("token", newToken.token)
             API.getProfile(newToken.token).then(profileData => {
                 setProfileState({
                     name: profileData.name,
@@ -48,7 +48,11 @@ export default function SignUpPage() {
                 window.location.href = "/"
             })
         })
+    }
 
+    async function userCreateAndLogIn() {
+        const createUser = await API.createUser(userState)
+        await userLogIn(createUser)
     }
 
     return (
