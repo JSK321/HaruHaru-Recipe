@@ -204,6 +204,25 @@ const userAPI = {
             }
         }).catch(err => console.log(err))
     },
+    // Update Saved Recipe Function
+    updateSavedRecipe: function (token, id, recipeName) {
+        return fetch(`${URL_PREFIX}/api/savedrecipes/${id}`, {
+            method: "PUT",
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                recipeName: recipeName,
+            })
+        }).then(res => {
+            if (res.ok) {
+                return res.json()
+            } else {
+                throw new Error("Something went wrong")
+            }
+        }).catch(err => console.log(err))
+    },
     // Update Directions for Recipe Function
     updateDirection: function (token, id, directions) {
         return fetch(`${URL_PREFIX}/api/steps/${id}`, {
@@ -224,8 +243,8 @@ const userAPI = {
         }).catch(err => console.log(err))
     },
     // Delete Recipe Function
-    deleteRecipe: function (token, id){
-        return fetch (`${URL_PREFIX}/api/recipes/${id}`,{
+    deleteRecipe: function (token, id) {
+        return fetch(`${URL_PREFIX}/api/recipes/${id}`, {
             method: "DELETE",
             headers: {
                 'authorization': `Bearer ${token}`
@@ -241,7 +260,7 @@ const userAPI = {
         }).catch(err => null)
     },
     // Delete Saved Recipe Function
-    deleteSavedRecipe: function(token, id){
+    deleteSavedRecipe: function (token, id) {
         return fetch(`${URL_PREFIX}/api/savedrecipes/${id}`, {
             method: "DELETE",
             headers: {
