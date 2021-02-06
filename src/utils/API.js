@@ -162,6 +162,39 @@ const userAPI = {
             }
         }).catch(err => console.log(err))
     },
+    // Update User Profile
+    updateUserProfile: function (token, id, name, email, accountName, password, newPassword, confirmNewPassword, profileImage) {
+        return fetch(`${URL_PREFIX}/api/users/${id}`, {
+            method: "PUT",
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                accountName: accountName,
+                password: password,
+                newPassword: newPassword,
+                confirmNewPassword: confirmNewPassword,
+                profileImage: profileImage
+            })
+        }).then(res => {
+            if (res.ok) {
+                window.location.href = `/profile/${accountName}`
+                return res.json()
+            } 
+            else if (res.status === 409) {
+                alert("Account name/Email is already in use.")
+                window.location.reload()
+            } else if (res.status === 401) {
+                alert("Incorrect password/New password does not match, please try again.")
+                window.location.reload()
+            } else {
+                throw new Error("Something went wrong")
+            }
+        }).catch(err => console.log(err))
+    },
     // Update One Ingredient Fucntion
     updateOneIngre: function (token, id, ingredient, ingredientQuant, ingredientUnit) {
         return fetch(`${URL_PREFIX}/api/ingredients/${id}`, {
@@ -243,6 +276,22 @@ const userAPI = {
             }
         }).catch(err => console.log(err))
     },
+    // Delete User Profile Function
+    deleteUserProfile: function(token, id){
+        return fetch (`${URL_PREFIX}/api/users/${id}`, {
+            method: "DELETE",
+            headers: {
+                'authorization': `Bearer ${token}`
+            },
+        }).then(res => {
+            if (res.ok) {
+                alert("Profile has been deleted.")
+                window.location.href="/"
+            } else {
+                throw new Error("Something went wrong")
+            }
+        }).catch(err => console.log(err))
+    },
     // Delete Recipe Function
     deleteRecipe: function (token, id) {
         return fetch(`${URL_PREFIX}/api/recipes/${id}`, {
@@ -258,7 +307,7 @@ const userAPI = {
                 alert("Log in to delete recipe!")
                 throw new Error("Something went wrong")
             }
-        }).catch(err => null)
+        }).catch(err => console.log(err))
     },
     // Delete Saved Recipe Function
     deleteSavedRecipe: function (token, id) {
@@ -275,7 +324,7 @@ const userAPI = {
                 alert("Log in to delete recipe!")
                 throw new Error("Something went wrong")
             }
-        }).catch(err => null)
+        }).catch(err => console.log(err))
     },
 }
 

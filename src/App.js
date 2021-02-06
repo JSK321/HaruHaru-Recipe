@@ -8,6 +8,7 @@ import NavBar from './components/NavBar'
 import SignUpPage from './pages/SignUpPage'
 import SignInPage from './pages/SignInPage'
 import ProfilePage from './pages/ProfilePage'
+import EditProfilePage from './pages/EditProfilePage'
 import RecipePage from './pages/RecipePage'
 import IngrePage from './pages/IngrePage'
 import RecipeCardPage from './pages/RecipeCardPage'
@@ -24,6 +25,7 @@ function App() {
     name: "",
     accountName: "",
     email: "",
+    profileImage: "",
     recipes: [],
     savedRecipes: [],
     token: "",
@@ -48,6 +50,7 @@ function App() {
             name: profileData.name,
             accountName: profileData.accountName,
             email: profileData.email,
+            profileImage: profileData.profileImage,
             recipes: profileData.Recipes,
             savedRecipes: profileData.SavedRecipes,
             token: token,
@@ -60,6 +63,7 @@ function App() {
             name: "",
             accountName: "",
             email: "",
+            profileImage: "",
             recipes: [],
             savedRecips: [],
             token: "",
@@ -72,8 +76,8 @@ function App() {
   }
 
   const handleLogOut = event => {
-    let confirmAlert = window.confirm("Are you sure to log out?")
-    if (confirmAlert === true) {
+    // let confirmAlert = window.confirm("Are you sure to log out?")
+    // if (confirmAlert === true) {
       localStorage.removeItem("token");
       setProfileState({
         name: "",
@@ -83,7 +87,7 @@ function App() {
         isLoggedIn: false
       })
       window.location.reload(false)
-    }
+    // }
   }
 
   return (
@@ -93,6 +97,7 @@ function App() {
         name={profileState.name}
         email={profileState.email}
         accountName={profileState.accountName}
+        profileImage={profileState.profileImage}
         isLoggedIn={profileState.isLoggedIn}
         handleLogOut={handleLogOut}
       />
@@ -106,11 +111,14 @@ function App() {
         <Route exact path="/signin">
           <SignInPage />
         </Route>
-        {/* <Route exact path="/profile/:id"> */}
         <Route exact path={`/profile/${profileState.accountName}`}>
           <ProfilePage
-          // profile={profileState}
-          // users={usersState}
+
+          />
+        </Route>
+        <Route exact path={`/editprofile/${profileState.accountName}`}>
+          <EditProfilePage
+
           />
         </Route>
         <Route exact path="/breakfast">
@@ -154,9 +162,9 @@ function App() {
           />
         </Route>
         <Route exact path="/updaterecipe/:id">
-            <UpdateRecipePage 
-              profile={profileState}
-            />
+          <UpdateRecipePage
+            profile={profileState}
+          />
         </Route>
       </Switch>
     </Router>

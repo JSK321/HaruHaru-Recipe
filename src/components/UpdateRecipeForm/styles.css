@@ -1,6 +1,6 @@
 .updateRecipeCard {
     width: 45rem;
-    margin-top: 25px;
+    margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
     border: 1px solid black
@@ -37,6 +37,7 @@
 .text-muted{
     text-align: center;
 }
+
 
 @media screen and (max-width: 720px){
     .updateRecipeCard {

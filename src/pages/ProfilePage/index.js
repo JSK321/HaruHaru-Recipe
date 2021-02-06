@@ -11,7 +11,7 @@ export default function ProfilePage(props) {
         savedRecipes: [],
         token: "",
         id: "",
-        // profileImage: "",
+        profileImage: "",
         isLoggedIn: false,
     })
 
