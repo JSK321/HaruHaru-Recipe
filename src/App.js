@@ -76,8 +76,8 @@ function App() {
   }
 
   const handleLogOut = event => {
-    let confirmAlert = window.confirm("Are you sure to log out?")
-    if (confirmAlert === true) {
+    // let confirmAlert = window.confirm("Are you sure to log out?")
+    // if (confirmAlert === true) {
       localStorage.removeItem("token");
       setProfileState({
         name: "",
@@ -87,7 +87,7 @@ function App() {
         isLoggedIn: false
       })
       window.location.reload(false)
-    }
+    // }
   }
 
   return (

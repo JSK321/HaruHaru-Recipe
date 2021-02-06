@@ -30,6 +30,7 @@ export default function EditProfilePage() {
                     name: data.name,
                     accountName: data.accountName,
                     email: data.email,
+                    password: data.password,
                     token: token,
                     id: data.id,
                     profileImage: data.profileImage,
@@ -80,12 +81,18 @@ export default function EditProfilePage() {
         })
     };
 
+    const handleDeleteProfileBtn = event => {
+        event.preventDefault()
+        console.log("delete")
+    }
+
     const handleFormSubmit = event => {
         event.preventDefault()
         API.updateUserProfile(
             userProfile.token,
             userProfile.id,
             userProfile.name,
+            userProfile.email,
             userProfile.accountName,
             userProfile.password,
             userProfile.newPassword,
@@ -95,7 +102,6 @@ export default function EditProfilePage() {
             setUserProfile({
                 accountName: userProfile.accountName
             })
-            window.location.href = `/profile/${userProfile.accountName}`
         })
     }
 
@@ -103,6 +109,7 @@ export default function EditProfilePage() {
         <div>
             <EditProfileForm
                 name={userProfile.name}
+                email={userProfile.email}
                 accountName={userProfile.accountName}
                 password={userProfile.password}
                 newPassword={userProfile.newPassword}
@@ -112,6 +119,7 @@ export default function EditProfilePage() {
 
                 handleInputChange={handleInputChange}
                 handleFormSubmit={handleFormSubmit}
+                handleDeleteProfileBtn={handleDeleteProfileBtn}
                 handleUploadImgBtn={handleUploadImgBtn}
                 handleUploadImg={handleUploadImg}
             />

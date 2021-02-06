@@ -38,6 +38,15 @@ export default function EditProfileForm(props) {
                             />
                             <Form.Control
                                 type="text"
+                                placeholder="Email"
+                                value={props.email}
+                                onChange={props.handleInputChange}
+                                name="email"
+                                className="signUpFormControl"
+                            // required
+                            />
+                            <Form.Control
+                                type="text"
                                 placeholder="Accout Name"
                                 onChange={props.handleInputChange}
                                 value={props.accountName}
@@ -51,7 +60,7 @@ export default function EditProfileForm(props) {
                                 onChange={props.handleInputChange}
                                 name="password"
                                 className="signUpFormControl"
-                            // required
+                                required
                             />
                             <Form.Control
                                 type="password"
@@ -95,8 +104,9 @@ export default function EditProfileForm(props) {
                             variant="primary"
                             type="submit"
                             className="updateProfileBtn"
+                            onClick={props.handleDeleteProfileBtn}
                         >
-                            Update
+                            Delete Profile
                         </Button>
 
                     </Form>

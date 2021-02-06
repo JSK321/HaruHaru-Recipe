@@ -163,7 +163,7 @@ const userAPI = {
         }).catch(err => console.log(err))
     },
     // Update User Profile
-    updateUserProfile: function (token, id, name, accountName, password, newPassword, confirmNewPassword, profileImage) {
+    updateUserProfile: function (token, id, name, email, accountName, password, newPassword, confirmNewPassword, profileImage) {
         return fetch(`${URL_PREFIX}/api/users/${id}`, {
             method: "PUT",
             headers: {
@@ -172,6 +172,7 @@ const userAPI = {
             },
             body: JSON.stringify({
                 name: name,
+                email: email,
                 accountName: accountName,
                 password: password,
                 newPassword: newPassword,
@@ -179,8 +180,16 @@ const userAPI = {
                 profileImage: profileImage
             })
         }).then(res => {
-            if(res.ok){
+            if (res.ok) {
+                window.location.href = `/profile/${accountName}`
                 return res.json()
+            } 
+            else if (res.status === 409) {
+                alert("Account name/Email is already in use.")
+                window.location.reload()
+            } else if (res.status === 401) {
+                alert("Incorrect password/New password does not match, please try again.")
+                window.location.reload()
             } else {
                 throw new Error("Something went wrong")
             }
