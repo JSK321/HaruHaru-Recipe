@@ -83,7 +83,10 @@ export default function EditProfilePage() {
 
     const handleDeleteProfileBtn = event => {
         event.preventDefault()
-        console.log("delete")
+        let confirmAlert = window.confirm("Are you sure to delete profile?")
+        if (confirmAlert === true) {
+            API.deleteUserProfile(userProfile.token, userProfile.id)
+        }
     }
 
     const handleFormSubmit = event => {

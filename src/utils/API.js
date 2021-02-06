@@ -276,6 +276,22 @@ const userAPI = {
             }
         }).catch(err => console.log(err))
     },
+    // Delete User Profile Function
+    deleteUserProfile: function(token, id){
+        return fetch (`${URL_PREFIX}/api/users/${id}`, {
+            method: "DELETE",
+            headers: {
+                'authorization': `Bearer ${token}`
+            },
+        }).then(res => {
+            if (res.ok) {
+                alert("Profile has been deleted.")
+                window.location.href="/"
+            } else {
+                throw new Error("Something went wrong")
+            }
+        }).catch(err => console.log(err))
+    },
     // Delete Recipe Function
     deleteRecipe: function (token, id) {
         return fetch(`${URL_PREFIX}/api/recipes/${id}`, {
@@ -291,7 +307,7 @@ const userAPI = {
                 alert("Log in to delete recipe!")
                 throw new Error("Something went wrong")
             }
-        }).catch(err => null)
+        }).catch(err => console.log(err))
     },
     // Delete Saved Recipe Function
     deleteSavedRecipe: function (token, id) {
@@ -308,7 +324,7 @@ const userAPI = {
                 alert("Log in to delete recipe!")
                 throw new Error("Something went wrong")
             }
-        }).catch(err => null)
+        }).catch(err => console.log(err))
     },
 }
 
