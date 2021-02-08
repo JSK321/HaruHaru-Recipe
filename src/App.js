@@ -14,12 +14,7 @@ import RecipePage from './pages/RecipePage'
 import IngrePage from './pages/IngrePage'
 import RecipeCardPage from './pages/RecipeCardPage'
 import HomePage from './pages/HomePage'
-import CategoryPage from './pages/CategorPage'
-// import BreakfastPage from './pages/BreakfastPage'
-// import LunchPage from './pages/LunchPage'
-// import DinnerPage from './pages/DinnerPage'
-// import SoupsNStewsPage from './pages/SoupsNStewsPage'
-// import OtherPage from './pages/OtherPage'
+import CategoryPage from './pages/CategoryPage'
 import UpdateRecipePage from './pages/UpdateRecipePage'
 
 function App() {
@@ -34,17 +29,6 @@ function App() {
     id: "",
     isLoggedIn: false
   })
-
-  // const [usersState, setUsersState] = useState({
-  //   users: [
-  //     {
-  //       id: "",
-  //       name: "",
-  //       accountName: "",
-  //       email: "",
-  //     }
-  //   ]
-  // })
 
   useEffect(() => {
     fetchUserData()
@@ -66,7 +50,6 @@ function App() {
             id: profileData.id,
             isLoggedIn: true
           })
-          // fetchUserProfiles()
         } else {
           localStorage.removeItem("token")
           setProfileState({
@@ -84,23 +67,6 @@ function App() {
       })
     }
   }
-
-  // function fetchUserProfiles() {
-  //   usersState.users.shift()
-  //   API.getAllProfile().then(data => {
-  //     // console.log(data)
-  //     data.map(element => {
-  //       usersState.users.push(
-  //         {
-  //           id: element.id,
-  //           name: element.name,
-  //           accountName: element.accountName,
-  //           email: element.email,
-  //         }
-  //       )
-  //     })
-  //   })
-  // }
 
   const handleLogOut = event => {
     // let confirmAlert = window.confirm("Are you sure to log out?")
