@@ -9,7 +9,6 @@ export default function UserProfilePage() {
         accountName: "",
         email: "",
         profileImage: "",
-        recipes: []
     })
 
     const { accountName } = useParams();
@@ -25,7 +24,6 @@ export default function UserProfilePage() {
                 accountName: data.accountName,
                 email: data.email,
                 profileImage: data.profileImage,
-                recipes: data.Recipes
             })
         })
     }
@@ -36,7 +34,6 @@ export default function UserProfilePage() {
             accountName={userState.accountName}
             email={userState.email}
             profileImage={userState.profileImage}
-            recipes={userState.recipes}
         />
     )
 }
