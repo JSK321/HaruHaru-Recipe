@@ -75,7 +75,7 @@ export default function RecipeCard(props) {
                         null
                     }
 
-                    {props.isLoggedIn ?
+                    {props.isLoggedIn && props.userId === props.ownerId ?
                         <Button
                             variant="link"
                             href={`/profile/${props.accountName}`}
@@ -83,13 +83,26 @@ export default function RecipeCard(props) {
                             View my Profile
                        </Button>
                         :
+                        (props.isLoggedIn ?
+                            <Button
+                                variant="link"
+                                href="/signin"
+                            >
+                                Recipe Owner
+                            </Button>
+                            :
+                            null
+                        )
+                    }
+                    {props.isLoggedIn ?
+                        null
+                        :
                         <Button
                             variant="link"
                             href="/signin"
                         >
-                            Sign in
-                        </Button>
-                    }
+                            Sign In
+                        </Button>}
                 </Card.Footer>
             </Card>
         </Accordion >
