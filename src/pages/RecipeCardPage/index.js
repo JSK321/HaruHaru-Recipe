@@ -93,10 +93,11 @@ export default function RecipeCardPage(props) {
                 recipeName: recipeState.recipeName,
                 ownerId: recipeState.ownerId,
                 savedByUser: props.profile.accountName,
-                recipeId: recipeName,
+                recipeId: id,
                 isSaved: true
             }).then(afterSave => {
-                window.location.href = "/profile/"`${props.accountName}`
+                window.location.href =`/profile/${props.profile.accountName}`
+                // alert("Recipe saved!")
             })
         } else {
             alert("Please sign in to save recipe!")
@@ -106,7 +107,7 @@ export default function RecipeCardPage(props) {
     return (
         <div>
             <RecipeCard
-                // handleSaveRecipeBtn={handleSaveRecipeBtn}
+                handleSaveRecipeBtn={handleSaveRecipeBtn}
                 //Recipe
                 recipeName={recipeState.recipeName}
                 recipeDescript={recipeState.recipeDescript}
