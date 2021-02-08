@@ -16,6 +16,7 @@ import RecipeCardPage from './pages/RecipeCardPage'
 import HomePage from './pages/HomePage'
 import CategoryPage from './pages/CategoryPage'
 import UpdateRecipePage from './pages/UpdateRecipePage'
+import NoPage from './pages/NoPage'
 
 function App() {
   const [profileState, setProfileState] = useState({
@@ -138,6 +139,9 @@ function App() {
           <UpdateRecipePage
             profile={profileState}
           />
+        </Route>
+        <Route exact path="*">
+          <NoPage/>
         </Route>
       </Switch>
     </Router>
