@@ -39,7 +39,7 @@ export default function SignInForm(props) {
                     </Form>
                 </Card.Text>
             </Card.Body>
-            <Form.Text className="text-muted">
+            <Form.Text className="Registered text-muted">
                 Not registered?
                 </Form.Text>
             <Link

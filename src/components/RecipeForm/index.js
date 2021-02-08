@@ -2,6 +2,7 @@ import { Card } from 'react-bootstrap'
 import { Form } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
 import { Image } from 'react-bootstrap'
+import './styles.css'
 
 export default function RecipeForm(props) {
 
@@ -40,15 +41,15 @@ export default function RecipeForm(props) {
                                 onChange={props.handleRecipeInputChange}
                                 value={props.recipeName}
                                 name="recipeName"
+                                className="recipeFormControl"
                                 required
                             />
-                        </Form.Group>
-                        <Form.Group controlId="exampleForm.ControlSelect1">
-                            <Form.Control 
-                            as="select"
-                            onChange={props.handleSelectCategory}
-                            value={props.recipeCategory}
-                            required
+                            <Form.Control
+                                as="select"
+                                onChange={props.handleSelectCategory}
+                                value={props.recipeCategory}
+                                className="recipeFormControl"
+                                required
                             >
                                 <option selected disabled value="">Category</option>
                                 <option>Breakfast</option>
@@ -59,39 +60,36 @@ export default function RecipeForm(props) {
                                 {/* <option>Snack</option> */}
                                 <option>Other</option>
                             </Form.Control>
-                        </Form.Group>
-                        <Form.Group>
                             <Form.Control
                                 as="textarea"
                                 rows={3}
                                 placeholder="Recipe Description"
                                 onChange={props.handleRecipeInputChange}
                                 value={props.recipeDescript}
+                                className="recipeFormControl"
                                 name="recipeDescript"
                             />
                         </Form.Group>
                         <Button
                             type="button"
                             onClick={props.handleUploadImgBtn}
-                            style={{ width: "100%", marginBottom: "10px" }}
+                            style={{ width: "100%", marginBottom:"5px" }}
                         >
                             Upload Image
                          </Button>
-                        <Form.Group>
-                            <Form.File
-                                id="uploadImg"
-                                onChange={props.handleUploadImg}
-                                style={{ display: "none" }}
-                                name="recipeImage"
-                            />
-                            <Button
-                                variant="primary"
-                                type="submit"
-                                style={{ width: "100%" }}
-                            >
-                                Add Ingredients
-                            </Button>
-                        </Form.Group>
+                        <Form.File
+                            id="uploadImg"
+                            onChange={props.handleUploadImg}
+                            style={{ display: "none" }}
+                            name="recipeImage"
+                        />
+                        <Button
+                            variant="primary"
+                            type="submit"
+                            style={{ width: "100%" }}
+                        >
+                            Add Ingredients
+                        </Button>
                     </Form>
                 </Card.Text>
             </Card.Body>

@@ -51,7 +51,7 @@ export default function SignUpForm(props) {
                     </Form>
                 </Card.Text>
             </Card.Body>
-            <Form.Text className="text-muted">
+            <Form.Text className="Registered text-muted">
                 Already registered?
                 </Form.Text>
             <Link
