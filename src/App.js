@@ -8,6 +8,7 @@ import NavBar from './components/NavBar'
 import SignUpPage from './pages/SignUpPage'
 import SignInPage from './pages/SignInPage'
 import ProfilePage from './pages/ProfilePage'
+import UserProfilePage from './pages/UserProfilePage'
 import EditProfilePage from './pages/EditProfilePage'
 import RecipePage from './pages/RecipePage'
 import IngrePage from './pages/IngrePage'
@@ -33,9 +34,9 @@ function App() {
     isLoggedIn: false
   })
 
-  const [usersState, setUsersState] = useState({
-    users: []
-  })
+  // const [usersState, setUsersState] = useState({
+  //   users: []
+  // })
 
   useEffect(() => {
     fetchUserData()
@@ -118,6 +119,11 @@ function App() {
         </Route>
         <Route exact path={`/editprofile/${profileState.accountName}`}>
           <EditProfilePage
+
+          />
+        </Route>
+        <Route exact path={`/profile`}>
+          <UserProfilePage
 
           />
         </Route>

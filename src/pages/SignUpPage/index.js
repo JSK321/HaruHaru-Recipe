@@ -10,15 +10,15 @@ export default function SignUpPage() {
         password: ""
     })
 
-    const [profileState, setProfileState] = useState({
-        name: "",
-        accountName: "",
-        email: "",
-        recipes: [],
-        token: "",
-        id: "",
-        isLoggedIn: false
-    })
+    // const [profileState, setProfileState] = useState({
+    //     name: "",
+    //     accountName: "",
+    //     email: "",
+    //     recipes: [],
+    //     token: "",
+    //     id: "",
+    //     isLoggedIn: false
+    // })
 
     const handleInputChange = event => {
         const { name, value } = event.target
@@ -37,13 +37,13 @@ export default function SignUpPage() {
         API.login(userState).then(newToken => {
             localStorage.setItem("token", newToken.token)
             API.getProfile(newToken.token).then(profileData => {
-                setProfileState({
-                    name: profileData.name,
-                    accountName: profileData.accountName,
-                    email: profileData.email,
-                    id: profileData.id,
-                    isLoggedIn: true
-                })
+                // setProfileState({
+                //     name: profileData.name,
+                //     accountName: profileData.accountName,
+                //     email: profileData.email,
+                //     id: profileData.id,
+                //     isLoggedIn: true
+                // })
             }).then(res => {
                 window.location.href = "/"
             })
