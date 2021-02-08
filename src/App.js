@@ -124,7 +124,7 @@ function App() {
         </Route>
         <Route exact path={`/profile`}>
           <UserProfilePage
-
+  
           />
         </Route>
         <Route exact path="/breakfast">
