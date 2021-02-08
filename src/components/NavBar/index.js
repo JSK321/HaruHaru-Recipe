@@ -48,14 +48,14 @@ export default function NavBar(props) {
                     <NavDropdown title="View by Category" id="nav-dropdown">
                         {/* <NavDropdown.Item href={`/profile/${props.id}`}>Profile</NavDropdown.Item> */}
                         {/* <NavDropdown.Item onClick={handleCategorySelect} name="breakfast">Breakfast</NavDropdown.Item> */}
-                        <NavDropdown.Item href="/breakfast">Breakfast</NavDropdown.Item>
-                        <NavDropdown.Item href="/lunch">Lunch</NavDropdown.Item>
-                        <NavDropdown.Item href="/dinner">Dinner</NavDropdown.Item>
-                        <NavDropdown.Item href="/soupsandstews">Soup/Stew</NavDropdown.Item>
+                        <NavDropdown.Item href="/category/breakfast">Breakfast</NavDropdown.Item>
+                        <NavDropdown.Item href="/category/lunch">Lunch</NavDropdown.Item>
+                        <NavDropdown.Item href="/category/dinner">Dinner</NavDropdown.Item>
+                        <NavDropdown.Item href="/category/soup or stew">Soup/Stew</NavDropdown.Item>
                         {/* <NavDropdown.Item href="#action/3.3">Dessert</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.3">Snack</NavDropdown.Item> */}
                         <NavDropdown.Divider />
-                        <NavDropdown.Item href="/other">Other</NavDropdown.Item>
+                        <NavDropdown.Item href="/category/other">Other</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
             </Navbar.Collapse>

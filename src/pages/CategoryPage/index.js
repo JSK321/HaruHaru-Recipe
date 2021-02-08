@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import API from '../../utils/API'
 import RecipeViewCard from '../../components/RecipeViewCard'
+import { useParams } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
 import { Row } from 'react-bootstrap'
 import { InputGroup } from 'react-bootstrap'
 import { FormControl } from 'react-bootstrap'
+import './styles.css'
 
-export default function LunchPage() {
+export default function CategoryPage() {
     const [recipeInfoState, setRecipeInfoState] = useState({
         recipes: []
     })
@@ -15,13 +17,14 @@ export default function LunchPage() {
         search: ""
     })
 
+    const { category } = useParams();
+
     useEffect(() => {
-        fetchLunchRecipeInfo()
+        fetchDinnerRecipeInfo()
     }, [])
 
-    function fetchLunchRecipeInfo() {
-        const lunch = "lunch"
-        API.getAllCategoryRecipe(lunch).then(data => {
+    function fetchDinnerRecipeInfo() {
+        API.getAllCategoryRecipe(category).then(data => {
             setRecipeInfoState({
                 recipes: data
             })
@@ -37,7 +40,7 @@ export default function LunchPage() {
             )
         })
         if (keyword === "") {
-            fetchLunchRecipeInfo()
+            fetchDinnerRecipeInfo()
         }
         setRecipeInfoState({
             recipes: filtered
@@ -50,7 +53,7 @@ export default function LunchPage() {
 
     return (
         <Container>
-            <h1>Browse Lunch Recipes!</h1>
+            <h1 className="categoryName">Browse {category} Recipes!</h1>
             <InputGroup
                 style={{
                     width: "250px",

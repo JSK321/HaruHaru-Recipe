@@ -140,7 +140,7 @@ export default function UserProfile(props) {
                                                 userRecipesState.recipe.map(item => (
                                                     <Link
                                                         className="RecipeListGroup"
-                                                        to={`/recipe/${item.id}`}
+                                                        to={`/recipe/${item.id}/${item.recipeName}`}
                                                         id={item.id}
                                                     >
                                                         <CloseButton
@@ -175,7 +175,7 @@ export default function UserProfile(props) {
                                                 savedRecipesState.savedRecipe.map(item => (
                                                     <Link
                                                         className="RecipeListGroup"
-                                                        to={`/recipe/${item.recipeId}`}
+                                                        to={`/recipe/${item.recipeId}/${item.recipeName}`}
                                                     >
                                                         <CloseButton
                                                             onClick={props.handleSavedRecipeDeleteButton}

@@ -56,7 +56,7 @@ export default function RecipeForm(props) {
                                 <option>Lunch</option>
                                 <option>Dinner</option>
                                 {/* <option>Dessert</option> */}
-                                <option>Soup/Stew</option>
+                                <option>Soup or Stew</option>
                                 {/* <option>Snack</option> */}
                                 <option>Other</option>
                             </Form.Control>

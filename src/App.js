@@ -14,11 +14,7 @@ import RecipePage from './pages/RecipePage'
 import IngrePage from './pages/IngrePage'
 import RecipeCardPage from './pages/RecipeCardPage'
 import HomePage from './pages/HomePage'
-import BreakfastPage from './pages/BreakfastPage'
-import LunchPage from './pages/LunchPage'
-import DinnerPage from './pages/DinnerPage'
-import SoupsNStewsPage from './pages/SoupsNStewsPage'
-import OtherPage from './pages/OtherPage'
+import CategoryPage from './pages/CategoryPage'
 import UpdateRecipePage from './pages/UpdateRecipePage'
 
 function App() {
@@ -33,17 +29,6 @@ function App() {
     id: "",
     isLoggedIn: false
   })
-
-  // const [usersState, setUsersState] = useState({
-  //   users: [
-  //     {
-  //       id: "",
-  //       name: "",
-  //       accountName: "",
-  //       email: "",
-  //     }
-  //   ]
-  // })
 
   useEffect(() => {
     fetchUserData()
@@ -65,7 +50,6 @@ function App() {
             id: profileData.id,
             isLoggedIn: true
           })
-          // fetchUserProfiles()
         } else {
           localStorage.removeItem("token")
           setProfileState({
@@ -83,23 +67,6 @@ function App() {
       })
     }
   }
-
-  // function fetchUserProfiles() {
-  //   usersState.users.shift()
-  //   API.getAllProfile().then(data => {
-  //     // console.log(data)
-  //     data.map(element => {
-  //       usersState.users.push(
-  //         {
-  //           id: element.id,
-  //           name: element.name,
-  //           accountName: element.accountName,
-  //           email: element.email,
-  //         }
-  //       )
-  //     })
-  //   })
-  // }
 
   const handleLogOut = event => {
     // let confirmAlert = window.confirm("Are you sure to log out?")
@@ -138,44 +105,19 @@ function App() {
           <SignInPage />
         </Route>
         <Route exact path={`/profile/${profileState.accountName}`}>
-          <ProfilePage
-
-          />
+          <ProfilePage />
         </Route>
         <Route exact path={`/editprofile/${profileState.accountName}`}>
-          <EditProfilePage
-
-          />
+          <EditProfilePage />
         </Route>
         <Route
           path="/profile/:accountName"
           component={UserProfilePage}
         >
         </Route>
-        <Route exact path="/breakfast">
-          <BreakfastPage
-
-          />
-        </Route>
-        <Route exact path="/lunch">
-          <LunchPage
-
-          />
-        </Route>
-        <Route exact path="/dinner">
-          <DinnerPage
-
-          />
-        </Route>
-        <Route exact path="/soupsandstews">
-          <SoupsNStewsPage
-
-          />
-        </Route>
-        <Route exact path="/other">
-          <OtherPage
-
-          />
+        <Route
+          path="/category/:category"
+          component={CategoryPage}>
         </Route>
         <Route exact path="/recipeform">
           <RecipePage
@@ -187,7 +129,7 @@ function App() {
             profile={profileState}
           />
         </Route>
-        <Route exact path="/recipe/:id">
+        <Route exact path="/recipe/:id/:recipeName">
           <RecipeCardPage
             profile={profileState}
           />

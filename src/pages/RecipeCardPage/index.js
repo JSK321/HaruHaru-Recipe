@@ -24,6 +24,7 @@ export default function RecipeCardPage(props) {
         owner: ""
     })
  
+    const { recipeName } = useParams();
     const { id } = useParams();
 
     useEffect(() => {
@@ -39,7 +40,7 @@ export default function RecipeCardPage(props) {
                     recipeName: data.recipeName,
                     recipeDescript: data.recipeDescript,
                     recipeImage: data.recipeImage,
-                    recipeId: id,
+                    recipeId: recipeName,
                     ownerId: data.UserId
                 })
                 setDirectionState({
@@ -95,7 +96,7 @@ export default function RecipeCardPage(props) {
                 recipeId: id,
                 isSaved: true
             }).then(afterSave => {
-                window.location.href = "/profile/"`${props.accountName}`
+                window.location.href =`/profile/${props.profile.accountName}`
             })
         } else {
             alert("Please sign in to save recipe!")
