@@ -8,9 +8,6 @@ import { InputGroup } from 'react-bootstrap'
 import { FormControl } from 'react-bootstrap'
 import { Row } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
-import { Tabs } from 'react-bootstrap'
-import { Tab } from 'react-bootstrap'
-import { CloseButton } from 'react-bootstrap'
 
 
 export default function OtherUsersProfile(props) {
@@ -61,19 +58,13 @@ export default function OtherUsersProfile(props) {
                             <Card.Text>
                                 <strong>Account Name:</strong> {props.accountName}
                             </Card.Text>
-                            <Link
-                                className="editProfileBtn btn btn-primary"
-                                to={`/editprofile/${props.accountName}`}
-                            >
-                                Edit Profile
-                            </Link>
                         </Card.Body>
                     </Card>
                 </Col>
                 <Col md={9}>
                     <Card>
                         <Card.Body>
-                        <Card.Title>Recipes</Card.Title>
+                            <Card.Title>Recipes</Card.Title>
                             <InputGroup className="mb-3">
                                 <FormControl
                                     type="search"
@@ -83,20 +74,14 @@ export default function OtherUsersProfile(props) {
                             </InputGroup>
                             <ListGroup variant="flush">
                                 <Row lg={3} md={2} sm={2} xs={1} className="no-gutters">
-                                    {userRecipesState.recipe !== "" ?
-                                        userRecipesState.recipe.map(item => (
+                                    {props.recipes !== "" ?
+                                        props.recipes.map(item => (
                                             <Link
                                                 className="RecipeListGroup"
                                                 to={`/recipe/${item.id}`}
                                                 id={item.id}
                                             >
-                                                <CloseButton
-                                                    onClick={props.handleRecipeDeleteButton}
-                                                    id={item.id}
-                                                >
-                                                </CloseButton>
                                                 {item.recipeName}
-
                                             </Link>
 
                                         ))

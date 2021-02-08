@@ -32,9 +32,14 @@ const userAPI = {
         return fetch(`${URL_PREFIX}/api/users`, {
         }).then(res => res.json()).catch(err => console.log(err))
     },
+    // Retrieve One User Function
+    getOneUser: function(id){
+        return fetch(`${URL_PREFIX}/api/users/${id}`, {
+        }).then(res => res.json()).catch(err => console.log(err))
+    },
     // Retrieve One Profile Function
-    getOneProfile: function(id){
-        return fetch(`${URL_PREFIX}/api/users/profile/${id}`, {
+    getOneProfile: function(accountName){
+        return fetch(`${URL_PREFIX}/api/users/profile/${accountName}`, {
         }).then(res => res.json()).catch(err => console.log(err))
     },
     // Retrieve All Recipe Function
@@ -52,7 +57,6 @@ const userAPI = {
         return fetch(`${URL_PREFIX}/api/recipes/category/${category}`, {
         }).then(res => res.json()).catch(err => console.log(err))
     },
-
     // Retrieve One Saved Recipe
     getOneSavedRecipe: function (recipeId) {
         return fetch(`${URL_PREFIX}/api/savedrecipes/${recipeId}`, {

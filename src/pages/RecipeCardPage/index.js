@@ -30,12 +30,11 @@ export default function RecipeCardPage(props) {
         fetchData()
         fetchIngreData()
         fetchSavedRecipes()
-        // fetchUserProfile()
     }, [])
 
     function fetchData() {
         API.getOneRecipe(id).then(data => {
-            if (data !== null && data !== undefined) {
+            if (data !== null || data !== undefined) {
                 setRecipeState({
                     recipeName: data.recipeName,
                     recipeDescript: data.recipeDescript,
@@ -46,7 +45,7 @@ export default function RecipeCardPage(props) {
                 setDirectionState({
                     directions: data.Steps[0].directions
                 })
-                API.getOneProfile(data.UserId).then(data => {
+                API.getOneUser(data.UserId).then(data => {
                     setOwnerProfileState({
                         owner: data.accountName
                     })
@@ -79,20 +78,12 @@ export default function RecipeCardPage(props) {
                     })
                 }
             } else {
-                console.log("Recipe not found")
                 setSavedRecipeState({
                     isSaved: false
                 })
             }
         })
     }
-
-    // function fetchUserProfile() {
-    //     console.log(recipeState.ownerId)
-    //     API.getOneProfile(recipeState.ownerId).then(data => {
-    //         console.log(data)
-    //     })
-    //   }
 
     const handleSaveRecipeBtn = event => {
         event.preventDefault()
