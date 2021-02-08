@@ -92,7 +92,7 @@ export default function OtherUsersProfile(props) {
                                         userRecipesState.recipe.map(item => (
                                             <Link
                                                 className="RecipeListGroup"
-                                                to={`/recipe/${item.id}`}
+                                                to={`/recipe/${item.id}/${item.recipeName}`}
                                                 id={item.id}
                                             >
                                                 {item.recipeName}

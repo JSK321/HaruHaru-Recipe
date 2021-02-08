@@ -18,7 +18,7 @@ export default function NavBar(props) {
                 href="/"
                 className="ml-auto"
             >
-                조리법!
+                Recipes!
             </Navbar.Brand>
             {props.isLoggedIn ?
                 <Navbar.Brand>
@@ -38,7 +38,7 @@ export default function NavBar(props) {
                     {props.isLoggedIn ?
                         null
                         :
-                        <Nav.Link href="/signin">로그인</Nav.Link>
+                        <Nav.Link href="/signin">Sign in</Nav.Link>
                     }
                     {props.isLoggedIn ?
                         <Nav.Link href="/recipeform">Add new recipe</Nav.Link>

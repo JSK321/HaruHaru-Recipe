@@ -41,7 +41,7 @@ export default function SignInForm(props) {
             </Card.Body>
             <Form.Text className="Registered text-muted">
                 Not registered?
-                </Form.Text>
+            </Form.Text>
             <Link
                 to="/signup"
                 className="signInLink"

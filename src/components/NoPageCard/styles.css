@@ -1,0 +1,12 @@
+.NoPageCard {
+    width: 24rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    border: 0px
+}
+
+.addRecipeBtn {
+    width: 45%;
+    border-radius:15px;
+}

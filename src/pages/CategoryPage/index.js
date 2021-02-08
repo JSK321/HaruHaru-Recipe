@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import API from '../../utils/API'
 import RecipeViewCard from '../../components/RecipeViewCard'
+import NoPageCard from '../../components/NoPageCard'
 import { useParams } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
 import { Row } from 'react-bootstrap'
@@ -79,7 +80,7 @@ export default function CategoryPage() {
             </InputGroup>
             <Row>
                 {!recipeInfoState.recipes || recipeInfoState.recipes < 1 ?
-                    <div>Sorry, no recipes found.</div>
+                    <NoPageCard />
                     :
                     recipeInfoState.recipes.map(data => (
                         <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
