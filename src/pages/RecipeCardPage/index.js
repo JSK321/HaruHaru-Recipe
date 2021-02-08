@@ -24,6 +24,7 @@ export default function RecipeCardPage(props) {
         owner: ""
     })
  
+    const { recipeName } = useParams();
     const { id } = useParams();
 
     useEffect(() => {
@@ -39,7 +40,7 @@ export default function RecipeCardPage(props) {
                     recipeName: data.recipeName,
                     recipeDescript: data.recipeDescript,
                     recipeImage: data.recipeImage,
-                    recipeId: id,
+                    recipeId: recipeName,
                     ownerId: data.UserId
                 })
                 setDirectionState({
@@ -92,7 +93,7 @@ export default function RecipeCardPage(props) {
                 recipeName: recipeState.recipeName,
                 ownerId: recipeState.ownerId,
                 savedByUser: props.profile.accountName,
-                recipeId: id,
+                recipeId: recipeName,
                 isSaved: true
             }).then(afterSave => {
                 window.location.href = "/profile/"`${props.accountName}`
@@ -105,7 +106,7 @@ export default function RecipeCardPage(props) {
     return (
         <div>
             <RecipeCard
-                handleSaveRecipeBtn={handleSaveRecipeBtn}
+                // handleSaveRecipeBtn={handleSaveRecipeBtn}
                 //Recipe
                 recipeName={recipeState.recipeName}
                 recipeDescript={recipeState.recipeDescript}

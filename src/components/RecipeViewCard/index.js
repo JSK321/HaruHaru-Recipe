@@ -16,7 +16,7 @@ export default function RecipeViewCard(props) {
                     {props.recipeDescript}
                 </Card.Text>
                 <Link
-                    to={`/recipe/${props.recipeId}`}
+                    to={`/recipe/${props.recipeId}/${props.recipeName}`}
                 >
                     View Recipe
                 </Link>

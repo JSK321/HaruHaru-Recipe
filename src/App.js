@@ -187,7 +187,7 @@ function App() {
             profile={profileState}
           />
         </Route>
-        <Route exact path="/recipe/:id">
+        <Route exact path="/recipe/:id/:recipeName">
           <RecipeCardPage
             profile={profileState}
           />
