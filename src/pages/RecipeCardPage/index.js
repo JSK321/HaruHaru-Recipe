@@ -97,7 +97,6 @@ export default function RecipeCardPage(props) {
                 isSaved: true
             }).then(afterSave => {
                 window.location.href =`/profile/${props.profile.accountName}`
-                // alert("Recipe saved!")
             })
         } else {
             alert("Please sign in to save recipe!")

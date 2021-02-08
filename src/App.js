@@ -14,11 +14,12 @@ import RecipePage from './pages/RecipePage'
 import IngrePage from './pages/IngrePage'
 import RecipeCardPage from './pages/RecipeCardPage'
 import HomePage from './pages/HomePage'
-import BreakfastPage from './pages/BreakfastPage'
-import LunchPage from './pages/LunchPage'
-import DinnerPage from './pages/DinnerPage'
-import SoupsNStewsPage from './pages/SoupsNStewsPage'
-import OtherPage from './pages/OtherPage'
+import CategoryPage from './pages/CategorPage'
+// import BreakfastPage from './pages/BreakfastPage'
+// import LunchPage from './pages/LunchPage'
+// import DinnerPage from './pages/DinnerPage'
+// import SoupsNStewsPage from './pages/SoupsNStewsPage'
+// import OtherPage from './pages/OtherPage'
 import UpdateRecipePage from './pages/UpdateRecipePage'
 
 function App() {
@@ -138,44 +139,19 @@ function App() {
           <SignInPage />
         </Route>
         <Route exact path={`/profile/${profileState.accountName}`}>
-          <ProfilePage
-
-          />
+          <ProfilePage />
         </Route>
         <Route exact path={`/editprofile/${profileState.accountName}`}>
-          <EditProfilePage
-
-          />
+          <EditProfilePage />
         </Route>
         <Route
           path="/profile/:accountName"
           component={UserProfilePage}
         >
         </Route>
-        <Route exact path="/breakfast">
-          <BreakfastPage
-
-          />
-        </Route>
-        <Route exact path="/lunch">
-          <LunchPage
-
-          />
-        </Route>
-        <Route exact path="/dinner">
-          <DinnerPage
-
-          />
-        </Route>
-        <Route exact path="/soupsandstews">
-          <SoupsNStewsPage
-
-          />
-        </Route>
-        <Route exact path="/other">
-          <OtherPage
-
-          />
+        <Route
+          path="/category/:category"
+          component={CategoryPage}>
         </Route>
         <Route exact path="/recipeform">
           <RecipePage
