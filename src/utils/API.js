@@ -33,8 +33,8 @@ const userAPI = {
         }).then(res => res.json()).catch(err => console.log(err))
     },
     // Retrieve One Profile Function
-    getOneProfile: function(accountName){
-        return fetch(`${URL_PREFIX}/api/users/profile/${accountName}`, {
+    getOneProfile: function(id){
+        return fetch(`${URL_PREFIX}/api/users/profile/${id}`, {
         }).then(res => res.json()).catch(err => console.log(err))
     },
     // Retrieve All Recipe Function

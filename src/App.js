@@ -87,7 +87,7 @@ function App() {
   function fetchUserProfiles() {
     usersState.users.shift()
     API.getAllProfile().then(data => {
-      console.log(data)
+      // console.log(data)
       data.map(element => {
         usersState.users.push(
           {
@@ -147,9 +147,9 @@ function App() {
 
           />
         </Route>
-        <Route exact path={`/profile`}>
+        <Route exact path={`/profile/:${usersState.accountName}`}>
           <UserProfilePage
-
+            
           />
         </Route>
         <Route exact path="/breakfast">

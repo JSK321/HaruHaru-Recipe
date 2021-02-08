@@ -86,7 +86,7 @@ export default function RecipeCard(props) {
                         (props.isLoggedIn ?
                             <Button
                                 variant="link"
-                                href="/signin"
+                                href={`/profile/${props.owner}`}
                             >
                                 Recipe Owner
                             </Button>

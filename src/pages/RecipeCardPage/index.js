@@ -20,12 +20,17 @@ export default function RecipeCardPage(props) {
     const [savedRecipeState, setSavedRecipeState] = useState({
         isSaved: false
     })
+    const [ownerProfileState, setOwnerProfileState] = useState({
+        owner: ""
+    })
+ 
     const { id } = useParams();
 
     useEffect(() => {
         fetchData()
         fetchIngreData()
         fetchSavedRecipes()
+        // fetchUserProfile()
     }, [])
 
     function fetchData() {
@@ -40,6 +45,11 @@ export default function RecipeCardPage(props) {
                 })
                 setDirectionState({
                     directions: data.Steps[0].directions
+                })
+                API.getOneProfile(data.UserId).then(data => {
+                    setOwnerProfileState({
+                        owner: data.accountName
+                    })
                 })
             }
         })
@@ -77,6 +87,13 @@ export default function RecipeCardPage(props) {
         })
     }
 
+    // function fetchUserProfile() {
+    //     console.log(recipeState.ownerId)
+    //     API.getOneProfile(recipeState.ownerId).then(data => {
+    //         console.log(data)
+    //     })
+    //   }
+
     const handleSaveRecipeBtn = event => {
         event.preventDefault()
         if (props.profile.isLoggedIn !== false) {
@@ -113,6 +130,7 @@ export default function RecipeCardPage(props) {
                 accountName={props.profile.accountName}
                 isSaved={savedRecipeState.isSaved}
                 savedOwnerId={savedRecipeState.ownerId}
+                owner={ownerProfileState.owner}
             />
         </div>
     )
