@@ -27,16 +27,16 @@ const userAPI = {
             }
         }).then(res => res.json()).catch(err => null)
     },
-    // // Retrieve All Profile Function
-    // getAllProfile: function(){
-    //     return fetch(`${URL_PREFIX}/api/users`, {
-    //     }).then(res => res.json()).catch(err => console.log(err))
-    // },
-    // // Retrieve One Profile Function
-    // getOneProfile: function(userId){
-    //     return fetch(`${URL_PREFIX}/api/users/${userId}`, {
-    //     }).then(res => res.json()).catch(err => console.log(err))
-    // },
+    // Retrieve All Profile Function
+    getAllProfile: function(){
+        return fetch(`${URL_PREFIX}/api/users`, {
+        }).then(res => res.json()).catch(err => console.log(err))
+    },
+    // Retrieve One Profile Function
+    getOneProfile: function(accountName){
+        return fetch(`${URL_PREFIX}/api/users/profile/${accountName}`, {
+        }).then(res => res.json()).catch(err => console.log(err))
+    },
     // Retrieve All Recipe Function
     getRecipes: function () {
         return fetch(`${URL_PREFIX}/api/recipes`, {

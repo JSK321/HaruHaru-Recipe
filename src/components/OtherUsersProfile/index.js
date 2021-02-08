@@ -12,6 +12,7 @@ import { Tabs } from 'react-bootstrap'
 import { Tab } from 'react-bootstrap'
 import { CloseButton } from 'react-bootstrap'
 
+
 export default function OtherUsersProfile(props) {
     const [userRecipesState, setUserRecipesState] = useState({
         recipe: [],
@@ -39,6 +40,7 @@ export default function OtherUsersProfile(props) {
             search: keyword
         })
     }
+
     return (
         <Container>
             <Row className="justify-content-md-center no-gutters">
