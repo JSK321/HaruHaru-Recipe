@@ -34,16 +34,16 @@ function App() {
     isLoggedIn: false
   })
 
-  const [usersState, setUsersState] = useState({
-    users: [
-      {
-        id: "",
-        name: "",
-        accountName: "",
-        email: "",
-      }
-    ]
-  })
+  // const [usersState, setUsersState] = useState({
+  //   users: [
+  //     {
+  //       id: "",
+  //       name: "",
+  //       accountName: "",
+  //       email: "",
+  //     }
+  //   ]
+  // })
 
   useEffect(() => {
     fetchUserData()
@@ -65,7 +65,7 @@ function App() {
             id: profileData.id,
             isLoggedIn: true
           })
-          fetchUserProfiles()
+          // fetchUserProfiles()
         } else {
           localStorage.removeItem("token")
           setProfileState({
@@ -84,22 +84,22 @@ function App() {
     }
   }
 
-  function fetchUserProfiles() {
-    usersState.users.shift()
-    API.getAllProfile().then(data => {
-      // console.log(data)
-      data.map(element => {
-        usersState.users.push(
-          {
-            id: element.id,
-            name: element.name,
-            accountName: element.accountName,
-            email: element.email,
-          }
-        )
-      })
-    })
-  }
+  // function fetchUserProfiles() {
+  //   usersState.users.shift()
+  //   API.getAllProfile().then(data => {
+  //     // console.log(data)
+  //     data.map(element => {
+  //       usersState.users.push(
+  //         {
+  //           id: element.id,
+  //           name: element.name,
+  //           accountName: element.accountName,
+  //           email: element.email,
+  //         }
+  //       )
+  //     })
+  //   })
+  // }
 
   const handleLogOut = event => {
     // let confirmAlert = window.confirm("Are you sure to log out?")
@@ -147,10 +147,10 @@ function App() {
 
           />
         </Route>
-        <Route exact path={`/profile/:${usersState.accountName}`}>
-          <UserProfilePage
-            
-          />
+        <Route
+          path="/profile/:accountName"
+          component={UserProfilePage}
+        >
         </Route>
         <Route exact path="/breakfast">
           <BreakfastPage

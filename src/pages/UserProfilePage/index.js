@@ -8,10 +8,8 @@ export default function UserProfilePage() {
         name: "",
         accountName: "",
         email: "",
-        recipes: [],
-        token: "",
-        id: "",
         profileImage: "",
+        recipes: []
     })
 
     const { accountName } = useParams();
@@ -21,17 +19,24 @@ export default function UserProfilePage() {
     }, [])
 
     function fetchUserData() {
-        console.log(accountName)
         API.getOneProfile(accountName).then(data => {
-            console.log(data)
+            setUserState({
+                name: data.name,
+                accountName: data.accountName,
+                email: data.email,
+                profileImage: data.profileImage,
+                recipes: data.Recipes
+            })
         })
     }
 
     return (
-
-
         <OtherUsersProfile
-
+            name={userState.name}
+            accountName={userState.accountName}
+            email={userState.email}
+            profileImage={userState.profileImage}
+            recipes={userState.recipes}
         />
     )
 }
