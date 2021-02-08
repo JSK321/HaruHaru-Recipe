@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import API from '../../utils/API'
-import { Card } from 'react-bootstrap'
 import { Link } from "react-router-dom"
+import { useParams } from 'react-router-dom'
+import { Card } from 'react-bootstrap'
 import { Container } from 'react-bootstrap'
 import { ListGroup } from 'react-bootstrap'
 import { InputGroup } from 'react-bootstrap'
@@ -18,6 +19,12 @@ export default function OtherUsersProfile(props) {
         search: ""
     })
 
+    const { accountName } = useParams();
+
+    useEffect(() => {
+        fetchRecipeInfo()
+    }, [])
+
     const handleSearchInput = event => {
         event.preventDefault()
         let keyword = event.target.value
@@ -26,9 +33,9 @@ export default function OtherUsersProfile(props) {
                 recipeObj.recipeName.toLowerCase().indexOf(keyword) > -1
             )
         })
-        // if (keyword === "") {
-        //     fetchRecipeInfo()
-        // }
+        if (keyword === "") {
+            fetchRecipeInfo()
+        }
         setUserRecipesState({
             recipe: filtered
         })
@@ -38,6 +45,13 @@ export default function OtherUsersProfile(props) {
         })
     }
 
+    function fetchRecipeInfo() {
+        API.getOneProfile(accountName).then(data => {
+            setUserRecipesState({
+                recipe: data.Recipes
+            })
+        })
+    }
     return (
         <Container>
             <Row className="justify-content-md-center no-gutters">
@@ -74,8 +88,8 @@ export default function OtherUsersProfile(props) {
                             </InputGroup>
                             <ListGroup variant="flush">
                                 <Row lg={3} md={2} sm={2} xs={1} className="no-gutters">
-                                    {props.recipes !== "" ?
-                                        props.recipes.map(item => (
+                                    {userRecipesState.recipe !== "" ?
+                                        userRecipesState.recipe.map(item => (
                                             <Link
                                                 className="RecipeListGroup"
                                                 to={`/recipe/${item.id}`}
