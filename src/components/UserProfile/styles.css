@@ -1,44 +1,51 @@
 .profileCard{
-    background: transparent;
-    /* background: linear-gradient(to bottom left, transparent, lightgoldenrodyellow); */
+    /* background: transparent; */
+    background: linear-gradient(to bottom left, transparent, lightgoldenrodyellow);
     border: 1px solid lightgoldenrodyellow;
-    color:lightgoldenrodyellow
+    color:midnightblue
 }
 
 #controlled-tab-example-tab-recipe, #controlled-tab-example-tab-savedRecipes{
-    background:transparent;
-    /* background: linear-gradient(to bottom left, transparent, lightgoldenrodyellow); */
-    color:lightgoldenrodyellow;
+    /* background:transparent; */
+    background: linear-gradient(to bottom left,transparent,goldenrod, yellow);
+    border: 2px solid lightgoldenrodyellow;
+    color:midnightblue;
 }
 
 .editProfileBtn, .editProfileBtn:link, .editProfileBtn:hover, .editProfileBtn:active, .editProfileBtn:focus, .editProfileBtn:visited {
     width: 100%;
-    background: midnightblue;
+    background: linear-gradient(to bottom left, transparent, gold, goldenrod, yellow);
     border: 0px;
-    color:lightgoldenrodyellow;
+    color:midnightblue;
 
 }
 
+.tabBackground{
+    font-weight: bold;
+}
 .recipeDeleteBtn, .recipeDeleteBtn:hover{
     color:crimson;
 }
 
 .profileSearchBar, .profileSearchBar:hover, .profileSearchBar:active, .profileSearchBar:focus{
-    background: transparent;
+    /* background: transparent; */
+    background: linear-gradient(to bottom left, transparent, goldenrod);
     border: 2px solid lightgoldenrodyellow;
     border-radius: 15px;
-    color:lightgoldenrodyellow
+    color:midnightblue
 }
 
 .profileSearchBar::placeholder{
-    color: lightgoldenrodyellow
+    color: midnightblue;
+    font-weight: bold;
 }
 
 .RecipeListGroup, .RecipeListGroup:hover, .RecipeListGroup:link, .RecipeListGroup:active, .RecipeListGroup:focus, .RecipeListGroup:visited {
     border: 1px solid lightgoldenrodyellow;
     padding: 10px;
-    color: lightgoldenrodyellow;
-    background: linear-gradient(to bottom left, transparent, midnightblue);
+    color: midnightblue;
+    /* background: linear-gradient(to bottom left, transparent, midnightblue); */
+    background: linear-gradient(to bottom left, transparent, goldenrod, yellow);
     text-decoration: none;
 }
 

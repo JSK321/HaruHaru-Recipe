@@ -44,7 +44,7 @@ export default function LogInModal(props) {
                 </Modal.Body>
                 <Modal.Footer className="modalFooter">
                     <Button className="signOutBtn" onClick={props.logOut}>
-                        Sign Out
+                        <strong>Sign Out</strong>
                 </Button>
                 </Modal.Footer>
             </Modal>

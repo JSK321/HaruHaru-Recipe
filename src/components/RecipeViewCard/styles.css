@@ -4,12 +4,12 @@
     margin-right: auto;
     margin-top: 15px;
     border: 1px solid lightgoldenrodyellow;
-    background: linear-gradient(to bottom left, transparent, lightgoldenrodyellow)
-  
+    /* background: linear-gradient(to top left, transparent, lightgoldenrodyellow) */
+      background: linear-gradient(to bottom right,goldenrod, lightgoldenrodyellow, transparent)
 }
 
 .viewRecipeLink, .viewRecipeLink:link, .viewRecipeLink:hover, .viewRecipeLink:active, .viewRecipeLink:focus, .viewRecipeLink:visited{
-    color:firebrick;
+    color:midnightblue;
     text-decoration: none;
     margin:0 auto;
     margin-bottom: 10px;

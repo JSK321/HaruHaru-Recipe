@@ -11,8 +11,8 @@ export default function RecipeViewCard(props) {
                 className="recipeViewCardImage"
             />
             <Card.Body>
-                <Card.Title><strong>{props.recipeName}</strong></Card.Title>
-                <Card.Text>
+                <Card.Title style={{ color: "midnightblue" }}><strong>{props.recipeName}</strong></Card.Title>
+                <Card.Text style={{ color: "midnightblue" }}>
                     {props.recipeDescript}
                 </Card.Text>
             </Card.Body>
@@ -20,7 +20,7 @@ export default function RecipeViewCard(props) {
                 to={`/recipe/${props.recipeId}/${props.recipeName}`}
                 className="viewRecipeLink"
             >
-                View Recipe
+                <strong>View Recipe</strong>
             </Link>
         </Card>
     )

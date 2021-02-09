@@ -10,12 +10,12 @@ import { Image } from 'react-bootstrap'
 export default function UpdateRecipeForm(props) {
     return (
         <Card className="updateRecipeCard">
-            <Card.Header className="updateRecipeTitle"><strong>Update Recipe!</strong></Card.Header>
+            <Card.Title className="updateRecipeTitle"><strong>Update Recipe!</strong></Card.Title>
             <Card.Body>
                 <Form onSubmit={props.handleFormSubmit}>
                     <Form.Group>
                         {props.loading ? (
-                            <h3 style={{ textAlign: "center" }}><strong>Loading Image...</strong></h3>
+                            <h3 style={{ textAlign: "center", color:"midnightblue" }}><strong>Loading Image...</strong></h3>
                         )
                             :
                             (
@@ -35,6 +35,7 @@ export default function UpdateRecipeForm(props) {
                                 placeholder={props.recipeName !== "" ? props.recipeName : "Recipe Name"}
                                 onChange={props.handleRecipeInputChange}
                                 name="recipeName"
+                                className="updateRecipeFormControl"
                             />
                         </Col>
                         <Col xs={4}>
@@ -43,6 +44,7 @@ export default function UpdateRecipeForm(props) {
                                 onChange={props.handleSelectCategory}
                                 // value={props.recipeCategory}
                                 name="recipeCategory"
+                                className="updateRecipeFormControl"
                             >
                                 <option selected disabled value="">Category</option>
                                 <option>Breakfast</option>
@@ -62,9 +64,10 @@ export default function UpdateRecipeForm(props) {
                             placeholder={props.recipeDescript !== "" ? props.recipeDescript : "Recipe Description"}
                             onChange={props.handleRecipeInputChange}
                             name="recipeDescript"
+                            className="updateRecipeFormControl"
                         />
                     </Form.Group>
-                    <Form.Text className="text-muted">
+                    <Form.Text className="addIngreTextHelp">
                         <strong> Press Set for each ingredient to update.</strong>
                     </Form.Text>
                     <Form.Group>
@@ -76,6 +79,7 @@ export default function UpdateRecipeForm(props) {
                                             placeholder={item.ingredient !== "" ? item.ingredient : "Ingredient"}
                                             type="text"
                                             name="ingredient"
+                                            className="updateRecipeFormControl"
                                             value={props.ingredient}
                                             onChange={props.handleIngreInputChange}
                                             id={item.id}
@@ -88,6 +92,7 @@ export default function UpdateRecipeForm(props) {
                                             type="number"
                                             min="0"
                                             name="ingredientQuant"
+                                            className="updateRecipeFormControl"
                                             value={props.ingredientQuant}
                                             onChange={props.handleIngreInputChange}
                                             id={item.id}
@@ -99,6 +104,7 @@ export default function UpdateRecipeForm(props) {
                                             placeholder={item.ingredientUnit !== "" ? item.ingredientUnit : "Unit"}
                                             type="text"
                                             name="ingredientUnit"
+                                            className="updateRecipeFormControl"
                                             onChange={props.handleIngreInputChange}
                                             id={item.id}
                                             recipeId={item.RecipeId}
@@ -106,12 +112,13 @@ export default function UpdateRecipeForm(props) {
                                     </Col>
                                     <Col xs={2}>
                                         <Button
-                                            variant="outline-primary"
+                                            // variant="outline-primary"
+                                            className="updateIngreSetBtn"
                                             style={{ width: "100%" }}
                                             onClick={props.handleIngreSetButton}
                                         >
-                                            Set
-                                            </Button>
+                                            <strong>Set</strong>
+                                        </Button>
                                     </Col>
                                 </Row>
                             ))
@@ -127,6 +134,7 @@ export default function UpdateRecipeForm(props) {
                             placeholder={props.directions !== "" ? props.directions : "Recipe Directions"}
                             onChange={props.handleDirectInputChange}
                             name="directions"
+                            className="updateRecipeFormControl"
                         />
                     </Form.Group>
 

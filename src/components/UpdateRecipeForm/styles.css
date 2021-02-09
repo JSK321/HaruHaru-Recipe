@@ -3,27 +3,36 @@
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid black
+    border: 0px;
+    background: linear-gradient(to top left, transparent,goldenrod, lightgoldenrodyellow, transparent)
 }
 
 .updateRecipeTitle {
+    margin-top:10px;
     text-align: center;
+    color:midnightblue;
 }
 
 .updateRecipeDescript {
     margin-top: 10px;
 }
 
-.updateFormButton{
+.updateRecipeFormControl, .updateRecipeFormControl:link, .updateRecipeFormControl:hover, .updateRecipeFormControl:active, .updateRecipeFormControl:focus, .updateRecipeFormControl:visited {
+    background: transparent;
+    border: 1px solid midnightblue;
+    color:firebrick;
+}
+
+.updateRecipeFormControl::placeholder{
+    color: firebrick
+}
+
+.updateFormButton, .updateFormButton:link, .updateFormButton:hover, .updateFormButton:active, .updateFormButton:focus, .updateFormButton:visited{
     width: 100%;
     margin-top:10px;
-    /* width:60%;
-    margin-top:5px;
-    position: relative;
-    left: 50%;
-    transform: translate(-50%, 0%); */
-    /* top: 50%; */
-    /* -ms-transform: translate(-50%, -50%); */
+    border: 0px;
+    background: midnightblue;
+    color:lightgoldenrodyellow;
 }
 .recipeImageUpdate{
     display: block;
@@ -33,9 +42,10 @@
     height:auto;
     border-radius: 15px;
 }
-
-.text-muted{
-    text-align: center;
+.updateIngreSetBtn, .updateIngreSetBtn:link, .updateIngreSetBtn:hover, .updateIngreSetBtn:active, .updateIngreSetBtn:focus, .updateIngreSetBtn:visited{
+    border: 1px solid midnightblue;
+    color: midnightblue;
+    background:transparent;
 }
 
 

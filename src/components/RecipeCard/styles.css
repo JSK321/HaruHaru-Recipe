@@ -2,7 +2,9 @@
     width: 70%;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid black
+    border: 0px;
+    /* background: linear-gradient(to top left, transparent, gold, goldenrod, yellow); */
+    background: linear-gradient(to bottom left, transparent, lightgoldenrodyellow)
 }
 .RecipeCardImage {
     width: 400px;
@@ -10,6 +12,41 @@
     margin-left: auto;
     margin-right: auto;
     object-fit: contain;
+}
+.ingreCardHeader{
+    color:midnightblue;
+    text-align: center;
+    background: linear-gradient(to top left, transparent, gold, goldenrod, yellow);
+}
+.ingreAccordion{
+    background: linear-gradient(to top left, transparent, gold, goldenrod, yellow);
+    color: midnightblue;
+}
+
+.ingreGroupBody{
+    /* background: linear-gradient(to bottom left, transparent,goldenrod, lightgoldenrodyellow); */
+    color: firebrick;
+}
+.ingreGroupList{
+    background: transparent;
+    color:firebrick;
+}
+
+.ingreCardFooter{
+    color:midnightblue;
+    text-align: center;
+    /* background: linear-gradient(to bottom left, transparent, gold, goldenrod, yellow); */
+}
+
+.likeBadge{
+ font-size: 20px;
+}
+
+.recipeCardViewBtn, .recipeCardViewBtn:link, .recipeCardViewBtn:hover, .recipeCardViewBtn:active, .recipeCardViewBtn:focus, .recipeCardViewBtn:visited {
+    color:midnightblue;
+    text-decoration: none;
+    margin:0 auto;
+    font-size: 20px;
 }
 
 @media screen and (max-width: 400px){

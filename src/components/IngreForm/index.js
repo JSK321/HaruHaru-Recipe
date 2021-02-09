@@ -10,7 +10,7 @@ export default function IngreForm(props) {
     return (
         <Card className="SignInCard">
             <Card.Body>
-                <Card.Title style={{ textAlign: "center", color:"lightgoldenrodyellow" }}><strong>Add Ingredients</strong></Card.Title>
+                <Card.Title style={{ textAlign: "center", color: "midnightblue" }}><strong>Add Ingredients</strong></Card.Title>
                 <Form onSubmit={props.handleFormSubmit}>
                     <Form.Group>
                         <Row noGutters>
@@ -56,17 +56,19 @@ export default function IngreForm(props) {
                         >
                             Add Ingredient
                         </Button>
-                        {props.ingredients !== null ?
-                            props.ingredients.map(item => (
-                                <ListGroup variant="flush" style={{ textAlign: "center" }}>
-                                    <ListGroup.Item className="ingreFormListGroup">
-                                        <strong>
-                                            <strong>{item.ingredientQuant} {item.ingredientUnit} {item.ingredient}</strong>
-                                        </strong>
-                                    </ListGroup.Item>
-                                </ListGroup>
-                            ))
-                            : null}
+                        {/* <Row lg={2} md={2} sm={2} xs={1} className="no-gutters"> */}
+                            {props.ingredients !== null ?
+                                props.ingredients.map(item => (
+                                    <ListGroup variant="flush" style={{ textAlign: "center" }}>
+                                        <ListGroup.Item className="ingreFormListGroup">
+                                            <strong>
+                                                <strong>{item.ingredientQuant} {item.ingredientUnit} {item.ingredient}</strong>
+                                            </strong>
+                                        </ListGroup.Item>
+                                    </ListGroup>
+                                ))
+                                : null}
+                        {/* </Row> */}
                         <Form.Control
                             as="textarea"
                             rows={3}
@@ -75,7 +77,7 @@ export default function IngreForm(props) {
                             value={props.directions}
                             name="directions"
                             className="ingreFormControl"
-                            style={{marginTop:"10px"}}
+                            style={{ marginTop: "10px" }}
                             required
                         />
                     </Form.Group>
