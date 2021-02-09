@@ -122,6 +122,19 @@ export default function UpdateRecipePage(props) {
         )
     }
 
+    const handleIngreDeleteButton = event => {
+        event.preventDefault()
+        let id = event.target.id
+        let index = recipeIngreState.item.findIndex(obj => obj.id == id)
+        let ingre = recipeIngreState.item[index]
+        const token = localStorage.getItem("token")
+        let confirmAlert = window.confirm(`Are you certain to delete ${ingre.ingredient}?`)
+        let closeBtnId = event.currentTarget.id
+        if (confirmAlert === true) {
+            API.deleteIngredient(token, closeBtnId)
+        }
+    }
+
     const handleUploadImgBtn = event => {
         event.preventDefault()
         document.getElementById('uploadImg').click()
@@ -194,6 +207,7 @@ export default function UpdateRecipePage(props) {
                 handleUploadImgBtn={handleUploadImgBtn}
                 handleUploadImg={handleUploadImg}
                 handleIngreSetButton={handleIngreSetButton}
+                handleIngreDeleteButton={handleIngreDeleteButton}
                 handleFormSubmit={handleFormSubmit}
             />
         </div>

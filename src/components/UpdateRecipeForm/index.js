@@ -73,7 +73,7 @@ export default function UpdateRecipeForm(props) {
                         {props.ingredients !== undefined ?
                             props.ingredients.map(item => (
                                 <Row noGutters>
-                                    <Col xs={6}>
+                                    <Col xs={5}>
                                         <Form.Control
                                             placeholder={item.ingredient !== "" ? item.ingredient : "Ingredient"}
                                             type="text"
@@ -82,7 +82,8 @@ export default function UpdateRecipeForm(props) {
                                             onChange={props.handleIngreInputChange}
                                             id={item.id}
                                             recipeId={item.RecipeId}
-                                        />
+                                        >
+                                        </Form.Control>
                                     </Col>
                                     <Col xs={2}>
                                         <Form.Control
@@ -114,6 +115,16 @@ export default function UpdateRecipeForm(props) {
                                             id={item.id}
                                         >
                                             <strong id={item.id}>Set</strong>
+                                        </Button>
+                                    </Col>
+                                    <Col xs={1}>
+                                        <Button
+                                            className="ingreDeleteBtn"
+                                            onClick={props.handleIngreDeleteButton}
+                                            id={item.id}
+                                            name={item.ingredient}
+                                        >
+                                            <strong id={item.id}>X</strong>
                                         </Button>
                                     </Col>
                                 </Row>
