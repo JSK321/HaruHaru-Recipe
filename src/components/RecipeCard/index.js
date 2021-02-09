@@ -2,6 +2,7 @@ import { Card } from 'react-bootstrap'
 import { ListGroup } from 'react-bootstrap'
 import { Accordion } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
+import { Badge } from 'react-bootstrap'
 import './styles.css'
 
 export default function RecipeCard(props) {
@@ -53,6 +54,7 @@ export default function RecipeCard(props) {
                     </Card.Body>
                 </Accordion.Collapse>
                 <Card.Footer style={{ textAlign: "center" }}>
+                    <h5><Badge variant="primary">Likes: {props.numberOflikes}</Badge></h5>
                     {props.userId === props.ownerId ?
                         <Button
                             variant="link"
