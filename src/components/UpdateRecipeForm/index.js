@@ -11,11 +11,11 @@ export default function UpdateRecipeForm(props) {
     return (
         <Card className="updateRecipeCard">
             <Card.Body>
-            <Card.Title className="updateRecipeTitle"><strong>Update Recipe!</strong></Card.Title>
+                <Card.Title className="updateRecipeTitle"><strong>Update Recipe!</strong></Card.Title>
                 <Form onSubmit={props.handleFormSubmit}>
                     <Form.Group>
                         {props.loading ? (
-                            <h3 style={{ textAlign: "center", color:"midnightblue" }}><strong>Loading Image...</strong></h3>
+                            <h3 style={{ textAlign: "center", color: "midnightblue" }}><strong>Loading Image...</strong></h3>
                         )
                             :
                             (
@@ -152,10 +152,17 @@ export default function UpdateRecipeForm(props) {
                     <Button
                         variant="primary"
                         className="updateFormButton"
+                        href={`/addingredientform/${props.recipeId}`}
+                    >
+                        Add more ingredients
+                    </Button>
+                    <Button
+                        variant="primary"
+                        className="updateFormButton"
                         type="submit"
                     >
                         Update
-                        </Button>
+                    </Button>
 
                 </Form>
             </Card.Body>

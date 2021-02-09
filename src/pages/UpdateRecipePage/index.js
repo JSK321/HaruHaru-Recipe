@@ -108,12 +108,12 @@ export default function UpdateRecipePage(props) {
         })
     };
 
-    const handleIngreSetButton = async event => {
+    const handleIngreSetButton = event => {
         event.preventDefault()
         let id = event.target.id
-        let index = await ingredientState.data.findIndex(obj => obj.id == id)
-        let updateIngre = await ingredientState.data[index]
-        await API.updateOneIngre(
+        let index = ingredientState.data.findIndex(obj => obj.id == id)
+        let updateIngre = ingredientState.data[index]
+        API.updateOneIngre(
             props.profile.token,
             updateIngre.id,
             updateIngre.ingredient,
@@ -187,10 +187,8 @@ export default function UpdateRecipePage(props) {
                 handleRecipeInputChange={handleRecipeInputChange}
                 handleSelectCategory={handleSelectCategory}
                 handleIngreInputChange={handleIngreInputChange}
-
                 handleIngreQuantInputChange={handleIngreQuantInputChange}
                 handleIngreUnitInputChange={handleIngreUnitInputChange}
-
                 handleDirectInputChange={handleDirectInputChange}
                 // Button clicks
                 handleUploadImgBtn={handleUploadImgBtn}

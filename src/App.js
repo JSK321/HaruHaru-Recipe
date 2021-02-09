@@ -12,6 +12,7 @@ import UserProfilePage from './pages/UserProfilePage'
 import EditProfilePage from './pages/EditProfilePage'
 import RecipePage from './pages/RecipePage'
 import IngrePage from './pages/IngrePage'
+import AddMoreIngrePage from './pages/AddMoreIngrePage'
 import RecipeCardPage from './pages/RecipeCardPage'
 import HomePage from './pages/HomePage'
 import CategoryPage from './pages/CategoryPage'
@@ -130,6 +131,11 @@ function App() {
             profile={profileState}
           />
         </Route>
+        <Route exact path="/addingredientform/:id">
+          <AddMoreIngrePage
+            profile={profileState}
+          />
+        </Route>
         <Route exact path="/recipe/:id/:recipeName">
           <RecipeCardPage
             profile={profileState}
@@ -141,7 +147,7 @@ function App() {
           />
         </Route>
         <Route exact path="*">
-          <NoPage/>
+          <NoPage />
         </Route>
       </Switch>
     </Router>
