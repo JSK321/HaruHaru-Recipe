@@ -8,7 +8,7 @@ export default function RecipeViewCard(props) {
             <Card.Img
                 variant="top"
                 src={props.recipeImage}
-                style={{width:"100%", height:"300px"}}
+                className="recipeViewCardImage"
             />
             <Card.Body>
                 <Card.Title>{props.recipeName}</Card.Title>
@@ -17,6 +17,7 @@ export default function RecipeViewCard(props) {
                 </Card.Text>
                 <Link
                     to={`/recipe/${props.recipeId}/${props.recipeName}`}
+                    className="viewRecipeLink"
                 >
                     View Recipe
                 </Link>

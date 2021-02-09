@@ -8,7 +8,7 @@ export default function SignInForm(props) {
     return (
         <Card className="SignInCard">
             <Card.Body>
-                <Card.Title style={{ textAlign: "center" }}>Log In</Card.Title>
+                <Card.Title style={{ textAlign: "center", color:"lightgoldenrodyellow" }}><strong>Log In</strong></Card.Title>
                 <Card.Text>
                     <Form onSubmit={props.handleFormSubmit}>
                         <Form.Group>
@@ -30,7 +30,6 @@ export default function SignInForm(props) {
                             />
                         </Form.Group>
                         <Button
-                            variant="primary"
                             type="submit"
                             className="signInBtn"
                         >

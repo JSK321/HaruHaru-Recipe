@@ -3,13 +3,29 @@
      margin-left: auto;
      margin-right: auto;
      margin-top: 15px;
-     border: 1px solid black
+     border: 0px;
+     background: linear-gradient(to bottom left, transparent, lightgoldenrodyellow)
 }
 
-.signInFormControl {
+.signInFormControl, .signInFormControl:link, .signInFormControl:hover, .signInFormControl:active, .signInFormControl:focus, .signInFormControl:visited  {
      margin-bottom: 5px;
+     background-color: transparent;
+     border: 1px solid midnightblue;
+     color: midnightblue;
 }
 
-.signInBtn {
-     width: 100%
+.signInFormControl::placeholder{
+     color: midnightblue
+}
+
+.signInBtn, .signInBtn:link, .signInBtn:hover, .signInBtn:active, .signInBtn:focus, .signInBtn:visited {
+     width: 100%;
+     background: midnightblue;
+     border: 0px;
+     color:lightgoldenrodyellow;
+}
+
+.signInLink, .signInLink:link, .signInLink:hover, .signInLink:active, .signInLink:focus, .signInLink:visited {
+     text-decoration: none;
+     color:midnightblue;
 }

@@ -10,13 +10,14 @@ export default function IngreForm(props) {
     return (
         <Card className="SignInCard">
             <Card.Body>
-                <Card.Title style={{ textAlign: "center" }}>Add Ingredients</Card.Title>
+                <Card.Title style={{ textAlign: "center", color:"lightgoldenrodyellow" }}><strong>Add Ingredients</strong></Card.Title>
                 <Form onSubmit={props.handleFormSubmit}>
                     <Form.Group>
                         <Row noGutters>
                             <Col sm="12">
                                 <Form.Control
                                     type="text"
+                                    className="ingreFormControl"
                                     placeholder="Ingredient"
                                     onChange={props.handleIngreInputChange}
                                     value={props.ingredient}
@@ -26,6 +27,7 @@ export default function IngreForm(props) {
                             <Col xs="6">
                                 <Form.Control
                                     type="number"
+                                    className="ingreFormControl"
                                     min="0"
                                     placeholder="Quantity"
                                     onChange={props.handleIngreInputChange}
@@ -36,6 +38,7 @@ export default function IngreForm(props) {
                             <Col xs="6">
                                 <Form.Control
                                     type="text"
+                                    className="ingreFormControl"
                                     placeholder="Unit"
                                     onChange={props.handleIngreInputChange}
                                     value={props.ingredientUnit}
@@ -43,23 +46,22 @@ export default function IngreForm(props) {
                                 />
                             </Col>
                         </Row>
-                        <Form.Text className="text-muted">
+                        <Form.Text className="addIngreTextHelp">
                             Press Add Ingredient to add multiple ingredients.
                         </Form.Text>
                         <Button
                             onClick={props.handleAddIngreBtn}
-                            variant="primary"
+                            className="ingreFormAddBtn"
                             type="button"
-                            style={{ width: "100%" }}
                         >
                             Add Ingredient
                         </Button>
                         {props.ingredients !== null ?
                             props.ingredients.map(item => (
                                 <ListGroup variant="flush" style={{ textAlign: "center" }}>
-                                    <ListGroup.Item>
+                                    <ListGroup.Item className="ingreFormListGroup">
                                         <strong>
-                                            {item.ingredientQuant} {item.ingredientUnit} {item.ingredient}
+                                            <strong>{item.ingredientQuant} {item.ingredientUnit} {item.ingredient}</strong>
                                         </strong>
                                     </ListGroup.Item>
                                 </ListGroup>
@@ -73,13 +75,13 @@ export default function IngreForm(props) {
                             value={props.directions}
                             name="directions"
                             className="ingreFormControl"
+                            style={{marginTop:"10px"}}
                             required
                         />
                     </Form.Group>
                     <Button
-                        variant="primary"
+                        className="ingreFormAddBtn"
                         type="submit"
-                        style={{ width: "100%" }}
                     >
                         Submit
                     </Button>

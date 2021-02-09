@@ -9,12 +9,12 @@ export default function RecipeForm(props) {
     return (
         <Card className="SignInCard">
             <Card.Body>
-                <Card.Title style={{ textAlign: "center" }}>Add Recipe</Card.Title>
+                <Card.Title style={{ textAlign: "center", color: "lightgoldenrodyellow" }}><strong>Add Recipe</strong></Card.Title>
                 <Card.Text>
                     <Form onSubmit={props.handleFormSubmit}>
                         <Form.Group>
                             {props.loading ? (
-                                <h3 style={{ textAlign: "center" }}><strong>Loading Image...</strong></h3>
+                                <h3 style={{ textAlign: "center", color:"lightgoldenrodyellow" }}><strong>Loading Image...</strong></h3>
                             ) : (
                                     <Image
                                         src={
@@ -25,7 +25,7 @@ export default function RecipeForm(props) {
                                         style={
                                             props.recipeImage ?
                                                 ({
-                                                    maxWidth: "300px",
+                                                    maxWidth: "100%",
                                                     height: "auto",
                                                     margin: "0 auto"
                                                 })
@@ -71,9 +71,10 @@ export default function RecipeForm(props) {
                             />
                         </Form.Group>
                         <Button
+                            className="recipeFormBtn"
                             type="button"
                             onClick={props.handleUploadImgBtn}
-                            style={{ width: "100%", marginBottom:"5px" }}
+                            style={{ width: "100%", marginBottom: "5px" }}
                         >
                             Upload Image
                          </Button>
@@ -84,7 +85,7 @@ export default function RecipeForm(props) {
                             name="recipeImage"
                         />
                         <Button
-                            variant="primary"
+                            className="recipeFormBtn"
                             type="submit"
                             style={{ width: "100%" }}
                         >
