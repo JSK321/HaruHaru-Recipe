@@ -117,6 +117,7 @@ export default function RecipeCardPage(props) {
                 recipeImage={recipeState.recipeImage}
                 ownerId={recipeState.ownerId}
                 recipeId={id}
+                numberOflikes={recipeState.numberOfLikes}
                 // Ingredients
                 ingredients={ingredientState.item}
                 // Directions
