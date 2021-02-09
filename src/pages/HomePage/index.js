@@ -6,7 +6,7 @@ import { Container } from 'react-bootstrap'
 import { Row } from 'react-bootstrap'
 import { InputGroup } from 'react-bootstrap'
 import { FormControl } from 'react-bootstrap'
-
+import './styles.css'
 
 
 export default function HomePage() {
@@ -68,15 +68,10 @@ export default function HomePage() {
                     placeholder="Search"
                     className="form-control"
                     onChange={handleSearchInput}
-                    style={{
-                        marginTop: "10px",
-                        borderRadius: "10px",
-                        // border: "2px solid slateblue",
-                        // color: "midnightblue"
-                    }}
+                    className="homeSearchBar"
                 />
             </InputGroup>
-            <Row>
+            <Row noGutters>
                 {!recipeInfoState.recipes || recipeInfoState.recipes < 1 ?
                     <NoPageCard />
                     :

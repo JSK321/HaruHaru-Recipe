@@ -18,7 +18,7 @@ export default function NavBar(props) {
                 href="/"
                 className="ml-auto"
             >
-                Recipes!
+                <strong>Home</strong>
             </Navbar.Brand>
             {props.isLoggedIn ?
                 <Navbar.Brand>
@@ -38,24 +38,24 @@ export default function NavBar(props) {
                     {props.isLoggedIn ?
                         null
                         :
-                        <Nav.Link href="/signin">Sign in</Nav.Link>
+                        <Nav.Link href="/signin"><strong>Sign in</strong></Nav.Link>
                     }
                     {props.isLoggedIn ?
-                        <Nav.Link href="/recipeform">Add new recipe</Nav.Link>
+                        <Nav.Link href="/recipeform"><strong>Add new recipe</strong></Nav.Link>
                         :
-                        <Nav.Link href="/signup">Register</Nav.Link>
+                        <Nav.Link href="/signup"><strong>Register</strong></Nav.Link>
                     }
                     <NavDropdown title="View by Category" id="nav-dropdown">
                         {/* <NavDropdown.Item href={`/profile/${props.id}`}>Profile</NavDropdown.Item> */}
                         {/* <NavDropdown.Item onClick={handleCategorySelect} name="breakfast">Breakfast</NavDropdown.Item> */}
-                        <NavDropdown.Item href="/category/breakfast">Breakfast</NavDropdown.Item>
-                        <NavDropdown.Item href="/category/lunch">Lunch</NavDropdown.Item>
-                        <NavDropdown.Item href="/category/dinner">Dinner</NavDropdown.Item>
-                        <NavDropdown.Item href="/category/soup or stew">Soup/Stew</NavDropdown.Item>
+                        <NavDropdown.Item href="/category/breakfast"><strong>Breakfast</strong></NavDropdown.Item>
+                        <NavDropdown.Item href="/category/lunch"><strong>Lunch</strong></NavDropdown.Item>
+                        <NavDropdown.Item href="/category/dinner"><strong>Dinner</strong></NavDropdown.Item>
+                        <NavDropdown.Item href="/category/soup or stew"><strong>Soup/Stew</strong></NavDropdown.Item>
                         {/* <NavDropdown.Item href="#action/3.3">Dessert</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.3">Snack</NavDropdown.Item> */}
                         <NavDropdown.Divider />
-                        <NavDropdown.Item href="/category/other">Other</NavDropdown.Item>
+                        <NavDropdown.Item href="/category/other"><strong>Other</strong></NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
             </Navbar.Collapse>

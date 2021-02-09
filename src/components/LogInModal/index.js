@@ -13,14 +13,17 @@ export default function LogInModal(props) {
 
     return (
         <>
-            <Button variant="light" onClick={handleShow}>
-                {props.name}
-            </Button>
+            <Link
+                onClick={handleShow}
+                className="accoutNameLink"
+            >
+                <strong>{props.name}</strong>
+            </Link>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Image
-                        src={props.profileImage} 
+                        src={props.profileImage}
                         className="modalProfilImage"
                         roundedCircle
                     />

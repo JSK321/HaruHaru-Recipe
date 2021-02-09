@@ -135,7 +135,7 @@ export default function UpdateRecipeForm(props) {
                         className="updateFormButton"
                         onClick={props.handleUploadImgBtn}
                     >
-                        Upload Image
+                        Update Image
                          </Button>
                     {/* Hidden upload button for css */}
                     <Form.File
