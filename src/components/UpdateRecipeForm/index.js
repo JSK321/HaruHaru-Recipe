@@ -10,12 +10,12 @@ import { Image } from 'react-bootstrap'
 export default function UpdateRecipeForm(props) {
     return (
         <Card className="updateRecipeCard">
-            <Card.Title className="updateRecipeTitle"><strong>Update Recipe!</strong></Card.Title>
             <Card.Body>
+                <Card.Title className="updateRecipeTitle"><strong>Update Recipe!</strong></Card.Title>
                 <Form onSubmit={props.handleFormSubmit}>
                     <Form.Group>
                         {props.loading ? (
-                            <h3 style={{ textAlign: "center", color:"midnightblue" }}><strong>Loading Image...</strong></h3>
+                            <h3 style={{ textAlign: "center", color: "midnightblue" }}><strong>Loading Image...</strong></h3>
                         )
                             :
                             (
@@ -42,7 +42,6 @@ export default function UpdateRecipeForm(props) {
                             <Form.Control
                                 as="select"
                                 onChange={props.handleSelectCategory}
-                                // value={props.recipeCategory}
                                 name="recipeCategory"
                                 className="updateRecipeFormControl"
                             >
@@ -71,7 +70,7 @@ export default function UpdateRecipeForm(props) {
                         <strong> Press Set for each ingredient to update.</strong>
                     </Form.Text>
                     <Form.Group>
-                        {props.ingredients !== null || props.ingredients < 1 ?
+                        {props.ingredients !== undefined ?
                             props.ingredients.map(item => (
                                 <Row noGutters>
                                     <Col xs={6}>
@@ -80,7 +79,6 @@ export default function UpdateRecipeForm(props) {
                                             type="text"
                                             name="ingredient"
                                             className="updateRecipeFormControl"
-                                            value={props.ingredient}
                                             onChange={props.handleIngreInputChange}
                                             id={item.id}
                                             recipeId={item.RecipeId}
@@ -93,8 +91,7 @@ export default function UpdateRecipeForm(props) {
                                             min="0"
                                             name="ingredientQuant"
                                             className="updateRecipeFormControl"
-                                            value={props.ingredientQuant}
-                                            onChange={props.handleIngreInputChange}
+                                            onChange={props.handleIngreQuantInputChange}
                                             id={item.id}
                                             recipeId={item.RecipeId}
                                         />
@@ -105,19 +102,18 @@ export default function UpdateRecipeForm(props) {
                                             type="text"
                                             name="ingredientUnit"
                                             className="updateRecipeFormControl"
-                                            onChange={props.handleIngreInputChange}
+                                            onChange={props.handleIngreUnitInputChange}
                                             id={item.id}
                                             recipeId={item.RecipeId}
                                         />
                                     </Col>
                                     <Col xs={2}>
                                         <Button
-                                            // variant="outline-primary"
                                             className="updateIngreSetBtn"
-                                            style={{ width: "100%" }}
                                             onClick={props.handleIngreSetButton}
+                                            id={item.id}
                                         >
-                                            <strong>Set</strong>
+                                            <strong id={item.id}>Set</strong>
                                         </Button>
                                     </Col>
                                 </Row>
@@ -156,10 +152,17 @@ export default function UpdateRecipeForm(props) {
                     <Button
                         variant="primary"
                         className="updateFormButton"
+                        href={`/addingredientform/${props.recipeId}`}
+                    >
+                        Add more ingredients
+                    </Button>
+                    <Button
+                        variant="primary"
+                        className="updateFormButton"
                         type="submit"
                     >
                         Update
-                        </Button>
+                    </Button>
 
                 </Form>
             </Card.Body>

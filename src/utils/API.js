@@ -199,6 +199,28 @@ const userAPI = {
             }
         }).catch(err => console.log(err))
     },
+    // // Update Ingredients At RecipeId Function
+    // updateIngre: function (token, id, ingredient, ingredientQuant, ingredientUnit) {
+    //     return fetch(`${URL_PREFIX}/api/ingredients/all/${id}`, {
+    //         method: "PUT",
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //             'authorization': `Bearer ${token}`
+    //         },
+    //         body: JSON.stringify({
+    //             ingredient: ingredient,
+    //             ingredientQuant: ingredientQuant,
+    //             ingredientUnit: ingredientUnit,
+    //         })
+    //     }).then(res => {
+    //         if (res.ok) {
+    //             return res.json()
+    //         } else {
+    //             console.log(res)
+    //             throw new Error("Something went wrong")
+    //         }
+    //     }).catch(err => console.log(err))
+    // },
     // Update One Ingredient Fucntion
     updateOneIngre: function (token, id, ingredient, ingredientQuant, ingredientUnit) {
         return fetch(`${URL_PREFIX}/api/ingredients/${id}`, {
