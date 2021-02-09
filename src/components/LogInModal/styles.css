@@ -4,37 +4,42 @@
 }
 
 .modalProfilImage{
-    width: 100px;
+    width: 175px;
+    margin-top:10px;
     margin-right: 15px;
     height:auto;
 }
 
 .modalTitle{
     margin-top: 15px;
+    color:midnightblue;
+}
+
+.modalBody{
+    margin: 0 auto;
+}
+.modal-content{
+    background: linear-gradient(goldenrod,gold, yellow,orange,orangered);
+}
+
+.viewProfileLinkBtn, .viewProfileLinkBtn:link, .viewProfileLinkBtn:hover, .viewProfileLinkBtn:active, .viewProfileLinkBtn:focus, .viewProfileLinkBtn:visited {
+    text-decoration: none;
+    color:midnightblue;
+}
+
+.signOutBtn, .signOutBtn:link, .signOutBtn:hover, .signOutBtn:active, .signOutBtn:focus, .signOutBtn:visited {
+    width: 100%;
+    background: linear-gradient(to bottom left, transparent, gold, goldenrod);
+    border: 0px;
+    color:midnightblue;
 }
 
 
-
-/* .btn-light {
-    color: black; 
-    background-color: transparent;
-    border-color: none;
-    border: none;
-    background: none;
-    font-size: 18px;
+@media screen and (max-width: 400px){
+    .modalProfilImage{
+        width: 100px;
+        margin-top:15px;
+        margin-right: 15px;
+        height:auto;
+    }
 }
-.btn-light:hover {
-    background-color: transparent;
-    border-color: transparent;
-}
-.btn-light:focus {
-    background-color: transparent;
-    border-color: transparent;
-    outline: 0;
-    box-shadow: none;
-}
-.btn-light:focus:not(:focus-visible) {
-    outline: 0;
-    background-color: transparent;
-    border-color: transparent;
-} */

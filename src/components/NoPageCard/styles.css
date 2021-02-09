@@ -3,10 +3,16 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 15px;
-    border: 0px
+    border: 0px;
+    border-radius: 15px;
+    background: linear-gradient(to top left, transparent, lightgoldenrodyellow)
 }
 
-.addRecipeBtn {
+.addRecipeBtn, .addRecipeBtn:link, .addRecipeBtn:hover, .addRecipeBtn:active, .addRecipeBtn:focus, .addRecipeBtn:visited {
     width: 45%;
+    margin-top:5px;
     border-radius:15px;
+    background: linear-gradient(to bottom left, transparent, gold, goldenrod);
+    border: 0px;
+    color:midnightblue;
 }

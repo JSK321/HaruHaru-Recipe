@@ -56,7 +56,7 @@ export default function OtherUsersProfile(props) {
         <Container>
             <Row className="justify-content-md-center no-gutters">
                 <Col md={3}>
-                    <Card>
+                    <Card className="profileCard">
                         <Card.Img
                             className="ProfileImage"
                             variant="top"
@@ -76,7 +76,7 @@ export default function OtherUsersProfile(props) {
                     </Card>
                 </Col>
                 <Col md={9}>
-                    <Card>
+                    <Card className="profileCard">
                         <Card.Body>
                             <Card.Title>Recipes</Card.Title>
                             <InputGroup className="mb-3">
@@ -84,6 +84,7 @@ export default function OtherUsersProfile(props) {
                                     type="search"
                                     placeholder="Search"
                                     onChange={handleSearchInput}
+                                    className="profileSearchBar"
                                 />
                             </InputGroup>
                             <ListGroup variant="flush">
@@ -95,7 +96,7 @@ export default function OtherUsersProfile(props) {
                                                 to={`/recipe/${item.id}/${item.recipeName}`}
                                                 id={item.id}
                                             >
-                                                {item.recipeName}
+                                                <strong>{item.recipeName}</strong>
                                             </Link>
 
                                         ))

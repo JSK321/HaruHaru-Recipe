@@ -7,19 +7,19 @@ export default function NoPageCard(props) {
     return (
         <Card className="NoPageCard">
             <Card.Body>
-                <Card.Text style={{ textAlign: "center" }}>
-                    The recipe you're trying to find doesn't exist.
+                <Card.Text style={{ textAlign: "center", color:"midnightblue" }}>
+                    <strong>The recipe you're trying to find doesn't exist.</strong>
                 </Card.Text>
-                <Card.Text style={{ textAlign: "center" }}>
-                    Please try again.
+                <Card.Text style={{ textAlign: "center", color:"midnightblue" }}>
+                    <strong>Please try again.</strong>
                     <br></br>
-                    or...
+                    <strong>or...</strong>
                     <br></br>
                 <Link
                         className="addRecipeBtn btn btn-primary"
                         to="/recipeform"
                     >
-                        Add Recipe!
+                        <strong>Add a Recipe!</strong>
                 </Link>
                 </Card.Text>
             </Card.Body>

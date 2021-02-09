@@ -3,12 +3,16 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 15px;
-    border: 1px solid black
+    border: 0px;
+    background: linear-gradient(to bottom left, transparent, lightgoldenrodyellow)
 }
 
-.updateProfileBtn {
+.updateProfileBtn, .updateProfileBtn:link, .updateProfileBtn:hover, .updateProfileBtn:active, .updateProfileBtn:focus, .updateProfileBtn:visited {
     width: 100%;
     margin-bottom: 5px;
+    background: midnightblue;
+    border: 0px;
+    color:lightgoldenrodyellow;
 }
 
 @media screen and (max-width: 540px){

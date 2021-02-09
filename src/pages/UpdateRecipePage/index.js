@@ -150,6 +150,7 @@ export default function UpdateRecipePage(props) {
             id,
             recipeState.recipeName
         )
+        window.location.href=`/recipe/${id}/${recipeState.recipeName}`
     }
 
     return (

@@ -1,7 +1,9 @@
 .NoPage{
-    width: 24rem;
+    width: 22rem;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 15px;
-    border: 0px
+    margin-top: 25px;
+    border: 0px;
+    color:midnightblue;
+    background: linear-gradient(to top right,goldenrod, lightgoldenrodyellow, transparent)
 }

@@ -66,9 +66,8 @@ export default function HomePage() {
                 <FormControl
                     type="search"
                     placeholder="Search"
-                    className="form-control"
+                    className="homeSearchBar form-control"
                     onChange={handleSearchInput}
-                    className="homeSearchBar"
                 />
             </InputGroup>
             <Row noGutters>
