@@ -11,9 +11,7 @@ export default function UpdateRecipePage(props) {
         recipeImage: ""
     })
     const [ingredientState, setIngredientState] = useState({
-        ingredient: "",
-        ingredientQuant: "",
-        ingredientUnit: ""
+        data: []
     })
     const [directionState, setDirectionState] = useState({
         directions: ""
@@ -27,7 +25,6 @@ export default function UpdateRecipePage(props) {
 
 
     useEffect(() => {
-        console.log(id)
         fetchRecipeData()
     }, [])
 
@@ -74,19 +71,34 @@ export default function UpdateRecipePage(props) {
 
     const handleIngreInputChange = event => {
         let id = event.target.id
-        const { name, value } = event.target
-        if (recipeIngreState.item !== null || recipeIngreState.item < 1) {
-            for (let i = 0; i < recipeIngreState.item.length; i++) {
-                if (recipeIngreState.item[i].id == id) {
-                    setIngredientState({
-                        ...ingredientState,
-                        [name]: value,
-                        RecipeId: id
-                    })
-                }
-            }
-        }
+        const { value } = event.target
+        let data = recipeIngreState.item
+        let index = data.findIndex(obj => obj.id == id)
+        data[index].ingredient = value
+        setIngredientState({ data })
+
     };
+
+    const handleIngreQuantInputChange = event => {
+        let id = event.target.id
+        const { value } = event.target
+        let data = recipeIngreState.item
+        let index = data.findIndex(obj => obj.id == id)
+        data[index].ingredientQuant = value
+        // console.log({ data })
+        setIngredientState({ data })
+    }
+
+    const handleIngreUnitInputChange = event => {
+        let id = event.target.id
+        const { value } = event.target
+        let data = recipeIngreState.item
+        let index = data.findIndex(obj => obj.id == id)
+        data[index].ingredientUnit = value
+        // console.log({ data })
+        setIngredientState({ data })
+
+    }
 
     const handleDirectInputChange = event => {
         const { name, value } = event.target
@@ -96,14 +108,17 @@ export default function UpdateRecipePage(props) {
         })
     };
 
-    const handleIngreSetButton = event => {
+    const handleIngreSetButton = async event => {
         event.preventDefault()
-        API.updateOneIngre(
+        let id = event.target.id
+        let index = await ingredientState.data.findIndex(obj => obj.id == id)
+        let updateIngre = await ingredientState.data[index]
+        await API.updateOneIngre(
             props.profile.token,
-            ingredientState.RecipeId,
-            ingredientState.ingredient,
-            ingredientState.ingredientQuant,
-            ingredientState.ingredientUnit,
+            updateIngre.id,
+            updateIngre.ingredient,
+            updateIngre.ingredientQuant,
+            updateIngre.ingredientUnit
         )
     }
 
@@ -150,7 +165,8 @@ export default function UpdateRecipePage(props) {
             id,
             recipeState.recipeName
         )
-        window.location.href=`/recipe/${id}/${recipeState.recipeName}`
+
+        window.location.href = `/recipe/${id}/${recipeState.recipeName}`
     }
 
     return (
@@ -171,6 +187,10 @@ export default function UpdateRecipePage(props) {
                 handleRecipeInputChange={handleRecipeInputChange}
                 handleSelectCategory={handleSelectCategory}
                 handleIngreInputChange={handleIngreInputChange}
+
+                handleIngreQuantInputChange={handleIngreQuantInputChange}
+                handleIngreUnitInputChange={handleIngreUnitInputChange}
+
                 handleDirectInputChange={handleDirectInputChange}
                 // Button clicks
                 handleUploadImgBtn={handleUploadImgBtn}
