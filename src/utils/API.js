@@ -28,17 +28,17 @@ const userAPI = {
         }).then(res => res.json()).catch(err => null)
     },
     // Retrieve All Profile Function
-    getAllProfile: function(){
+    getAllProfile: function () {
         return fetch(`${URL_PREFIX}/api/users`, {
         }).then(res => res.json()).catch(err => console.log(err))
     },
     // Retrieve One User Function
-    getOneUser: function(id){
+    getOneUser: function (id) {
         return fetch(`${URL_PREFIX}/api/users/${id}`, {
         }).then(res => res.json()).catch(err => console.log(err))
     },
     // Retrieve One Profile Function
-    getOneProfile: function(accountName){
+    getOneProfile: function (accountName) {
         return fetch(`${URL_PREFIX}/api/users/profile/${accountName}`, {
         }).then(res => res.json()).catch(err => console.log(err))
     },
@@ -187,7 +187,7 @@ const userAPI = {
             if (res.ok) {
                 window.location.href = `/profile/${accountName}`
                 return res.json()
-            } 
+            }
             else if (res.status === 409) {
                 alert("Account name/Email is already in use.")
                 window.location.reload()
@@ -242,6 +242,24 @@ const userAPI = {
             }
         }).catch(err => console.log(err))
     },
+    // Update Number Of Likes Recipe Function
+    updateNumOfLikes: function (id, numberOfLikes) {
+        return fetch(`${URL_PREFIX}/api/recipes/likes/${id}`, {
+            method: "PUT",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                numberOfLikes: numberOfLikes,
+            })
+        }).then(res => {
+            if (res.ok) {
+                return res.json()
+            } else {
+                throw new Error("Something went wrong")
+            }
+        }).catch(err => console.log(err))
+    },
     // Update Saved Recipe Function
     updateSavedRecipe: function (token, id, recipeName) {
         return fetch(`${URL_PREFIX}/api/savedrecipes/${id}`, {
@@ -281,8 +299,8 @@ const userAPI = {
         }).catch(err => console.log(err))
     },
     // Delete User Profile Function
-    deleteUserProfile: function(token, id){
-        return fetch (`${URL_PREFIX}/api/users/${id}`, {
+    deleteUserProfile: function (token, id) {
+        return fetch(`${URL_PREFIX}/api/users/${id}`, {
             method: "DELETE",
             headers: {
                 'authorization': `Bearer ${token}`
@@ -290,7 +308,7 @@ const userAPI = {
         }).then(res => {
             if (res.ok) {
                 alert("Profile has been deleted.")
-                window.location.href="/"
+                window.location.href = "/"
             } else {
                 throw new Error("Something went wrong")
             }
@@ -305,7 +323,6 @@ const userAPI = {
             },
         }).then(res => {
             if (res.ok) {
-                alert("Recipe deleted!")
                 window.location.reload()
             } else {
                 alert("Log in to delete recipe!")
@@ -322,7 +339,6 @@ const userAPI = {
             },
         }).then(res => {
             if (res.ok) {
-                alert("Recipe deleted!")
                 window.location.reload()
             } else {
                 alert("Log in to delete recipe!")

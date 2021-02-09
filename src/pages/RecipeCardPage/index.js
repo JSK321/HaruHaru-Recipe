@@ -9,7 +9,8 @@ export default function RecipeCardPage(props) {
         recipeDescript: "",
         recipeImage: "",
         recipeId: "",
-        ownerId: ""
+        ownerId: "",
+        numberOfLikes: 0
     });
     const [ingredientState, setIngredientState] = useState({
         item: []
@@ -23,7 +24,7 @@ export default function RecipeCardPage(props) {
     const [ownerProfileState, setOwnerProfileState] = useState({
         owner: ""
     })
- 
+
     const { recipeName } = useParams();
     const { id } = useParams();
 
@@ -41,7 +42,8 @@ export default function RecipeCardPage(props) {
                     recipeDescript: data.recipeDescript,
                     recipeImage: data.recipeImage,
                     recipeId: recipeName,
-                    ownerId: data.UserId
+                    ownerId: data.UserId,
+                    numberOfLikes: data.numberOfLikes
                 })
                 setDirectionState({
                     directions: data.Steps[0].directions
@@ -86,21 +88,23 @@ export default function RecipeCardPage(props) {
         })
     }
 
+    function numOfLikes() {
+        const newLikes = recipeState.numberOfLikes + 1
+        API.updateNumOfLikes(id, newLikes)
+    }
+
     const handleSaveRecipeBtn = event => {
         event.preventDefault()
-        if (props.profile.isLoggedIn !== false) {
-            API.saveRecipe(props.profile.token, {
-                recipeName: recipeState.recipeName,
-                ownerId: recipeState.ownerId,
-                savedByUser: props.profile.accountName,
-                recipeId: id,
-                isSaved: true
-            }).then(afterSave => {
-                window.location.href =`/profile/${props.profile.accountName}`
-            })
-        } else {
-            alert("Please sign in to save recipe!")
-        }
+        numOfLikes()
+        API.saveRecipe(props.profile.token, {
+            recipeName: recipeState.recipeName,
+            ownerId: recipeState.ownerId,
+            savedByUser: props.profile.accountName,
+            recipeId: id,
+            isSaved: true
+        }).then(afterSave => {
+            window.location.reload()
+        })
     }
 
     return (
