@@ -1,7 +1,7 @@
 const URL_PREFIX = "http://localhost:8080"
 // const URL_PREFIX = "https://mykeebs-api.herokuapp.com"
 
-const userAPI = {
+const API = {
     // Login Function
     login: function (userData) {
         return fetch(`${URL_PREFIX}/api/users/login`, {
@@ -368,6 +368,22 @@ const userAPI = {
             }
         }).catch(err => console.log(err))
     },
+    // Delete One Ingredient Function
+    deleteIngredient: function (token, id) {
+        return fetch(`${URL_PREFIX}/api/ingredients/${id}`, {
+            method: "DELETE",
+            headers: {
+                'authorization': `Bearer ${token}`
+            },
+        }).then(res => {
+            if (res.ok) {
+                window.location.reload()
+            } else {
+                alert("Log in to delete ingredient!")
+                throw new Error("Something went wrong")
+            }
+        }).catch(err => console.log(err))
+    }
 }
 
-module.exports = userAPI;
+module.exports = API;

@@ -48,6 +48,12 @@
     background:transparent;
 }
 
+.ingreDeleteBtn, .ingreDeleteBtn:hover, .ingreDeleteBtn:link, .ingreDeleteBtn:active, .ingreDeleteBtn:focus, .ingreDeleteBtn:visited{
+    color:crimson;
+    border: 1px solid midnightblue;
+    background:transparent;
+}
+
 
 @media screen and (max-width: 720px){
     .updateRecipeCard {
