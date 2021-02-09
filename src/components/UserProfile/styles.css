@@ -1,10 +1,45 @@
-.editProfileBtn {
-    width: 100%
+.profileCard{
+    background: transparent;
+    /* background: linear-gradient(to bottom left, transparent, lightgoldenrodyellow); */
+    border: 1px solid lightgoldenrodyellow;
+    color:lightgoldenrodyellow
 }
 
-.RecipeListGroup {
-    border: 1px solid black;
+#controlled-tab-example-tab-recipe, #controlled-tab-example-tab-savedRecipes{
+    background:transparent;
+    /* background: linear-gradient(to bottom left, transparent, lightgoldenrodyellow); */
+    color:lightgoldenrodyellow;
+}
+
+.editProfileBtn, .editProfileBtn:link, .editProfileBtn:hover, .editProfileBtn:active, .editProfileBtn:focus, .editProfileBtn:visited {
+    width: 100%;
+    background: midnightblue;
+    border: 0px;
+    color:lightgoldenrodyellow;
+
+}
+
+.recipeDeleteBtn, .recipeDeleteBtn:hover{
+    color:crimson;
+}
+
+.profileSearchBar, .profileSearchBar:hover, .profileSearchBar:active, .profileSearchBar:focus{
+    background: transparent;
+    border: 2px solid lightgoldenrodyellow;
+    border-radius: 15px;
+    color:lightgoldenrodyellow
+}
+
+.profileSearchBar::placeholder{
+    color: lightgoldenrodyellow
+}
+
+.RecipeListGroup, .RecipeListGroup:hover, .RecipeListGroup:link, .RecipeListGroup:active, .RecipeListGroup:focus, .RecipeListGroup:visited {
+    border: 1px solid lightgoldenrodyellow;
     padding: 10px;
+    color: lightgoldenrodyellow;
+    background: linear-gradient(to bottom left, transparent, midnightblue);
+    text-decoration: none;
 }
 
 @media screen and (max-width: 767px){

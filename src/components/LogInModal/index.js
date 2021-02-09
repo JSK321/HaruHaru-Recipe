@@ -21,25 +21,29 @@ export default function LogInModal(props) {
             </Link>
 
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
+                <Modal.Header className="modalHeader" closeButton>
                     <Image
-                        src={props.profileImage}
+                        src={props.profileImage === "" || props.profileImage === null ? null : props.profileImage}
                         className="modalProfilImage"
                         roundedCircle
                     />
                     <Modal.Title className="modalTitle">
-                        {props.name}
+                        <strong>{props.name}</strong>
                         <br></br>
                         {props.email}
                     </Modal.Title>
                 </Modal.Header>
-                <Modal.Body style={{ margin: "0 auto" }}>
-                    <Link to={`/profile/${props.accountName}`} onClick={handleClose}>
-                        View Profile
+                <Modal.Body className="modalBody">
+                    <Link
+                        to={`/profile/${props.accountName}`}
+                        onClick={handleClose}
+                        className="viewProfileLinkBtn"
+                    >
+                        <strong>View Profile</strong>
                     </Link>
                 </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="primary" style={{ width: "70%", margin: "0 auto" }} onClick={props.logOut}>
+                <Modal.Footer className="modalFooter">
+                    <Button className="signOutBtn" onClick={props.logOut}>
                         Sign Out
                 </Button>
                 </Modal.Footer>

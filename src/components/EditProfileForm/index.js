@@ -9,12 +9,12 @@ export default function EditProfileForm(props) {
     return (
         <Card className="EditProfileForm">
             <Card.Body>
-                <Card.Title style={{ textAlign: "center" }}>Update Profile</Card.Title>
+                <Card.Title style={{ textAlign: "center", color:"lightgoldenrodyellow" }}><strong>Update Profile</strong></Card.Title>
                 <Card.Text>
                     <Form onSubmit={props.handleFormSubmit}>
                         <Form.Group>
                             {props.loading ? (
-                                <h3 style={{ textAlign: "center" }}><strong>Loading Image...</strong></h3>
+                                <h3 style={{ textAlign: "center", color:"lightgoldenrodyellow" }}><strong>Loading Image...</strong></h3>
                             ) : (
                                     <Image
                                         src={
@@ -84,7 +84,7 @@ export default function EditProfileForm(props) {
                             onClick={props.handleUploadImgBtn}
                             className="updateProfileBtn"
                         >
-                            Upload Image
+                            Update Image
                          </Button>
                         <Form.File
                             id="uploadImg"

@@ -68,7 +68,7 @@ export default function CategoryPage() {
                 <FormControl
                     type="search"
                     placeholder="Search"
-                    className="form-control"
+                    className="homeSearchBar form-control"
                     onChange={handleSearchInput}
                     style={{
                         marginTop: "10px",

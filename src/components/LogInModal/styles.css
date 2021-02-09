@@ -4,37 +4,32 @@
 }
 
 .modalProfilImage{
-    width: 100px;
+    width: 175px;
+    margin-top:10px;
     margin-right: 15px;
     height:auto;
 }
 
 .modalTitle{
     margin-top: 15px;
+    color:midnightblue;
 }
 
+.modalBody{
+    margin: 0 auto;
+}
+.modal-content{
+    background: linear-gradient(goldenrod,gold, yellow,orangered);
+}
 
+.viewProfileLinkBtn, .viewProfileLinkBtn:link, .viewProfileLinkBtn:hover, .viewProfileLinkBtn:active, .viewProfileLinkBtn:focus, .viewProfileLinkBtn:visited {
+    text-decoration: none;
+    color:midnightblue;
+}
 
-/* .btn-light {
-    color: black; 
-    background-color: transparent;
-    border-color: none;
-    border: none;
-    background: none;
-    font-size: 18px;
+.signOutBtn, .signOutBtn:link, .signOutBtn:hover, .signOutBtn:active, .signOutBtn:focus, .signOutBtn:visited {
+    width: 100%;
+    background: midnightblue;
+    border: 0px;
+    color:lightgoldenrodyellow;
 }
-.btn-light:hover {
-    background-color: transparent;
-    border-color: transparent;
-}
-.btn-light:focus {
-    background-color: transparent;
-    border-color: transparent;
-    outline: 0;
-    box-shadow: none;
-}
-.btn-light:focus:not(:focus-visible) {
-    outline: 0;
-    background-color: transparent;
-    border-color: transparent;
-} */

@@ -93,7 +93,7 @@ export default function UserProfile(props) {
         <Container>
             <Row className="justify-content-md-center no-gutters">
                 <Col md={3}>
-                    <Card>
+                    <Card className="profileCard">
                         <Card.Img
                             className="ProfileImage"
                             variant="top"
@@ -124,14 +124,15 @@ export default function UserProfile(props) {
                         activeKey={key}
                         onSelect={(k) => setKey(k)}
                     >
-                        <Tab eventKey="recipe" title="Recipes">
-                            <Card>
+                        <Tab eventKey="recipe" title="Recipes" className="tabBackground">
+                            <Card className="profileCard">
                                 <Card.Body>
                                     <InputGroup className="mb-3">
                                         <FormControl
                                             type="search"
-                                            placeholder="Search"
+                                            placeholder="Search recipes..."
                                             onChange={handleSearchInput}
+                                            className="profileSearchBar"
                                         />
                                     </InputGroup>
                                     <ListGroup variant="flush">
@@ -146,9 +147,10 @@ export default function UserProfile(props) {
                                                         <CloseButton
                                                             onClick={props.handleRecipeDeleteButton}
                                                             id={item.id}
+                                                            className="recipeDeleteBtn"
                                                         >
                                                         </CloseButton>
-                                                        {item.recipeName}
+                                                        <strong>{item.recipeName}</strong>
 
                                                     </Link>
 
@@ -159,14 +161,15 @@ export default function UserProfile(props) {
                                 </Card.Body>
                             </Card>
                         </Tab>
-                        <Tab eventKey="savedRecipes" title="Saved Recipes">
-                            <Card>
+                        <Tab eventKey="savedRecipes" title="Saved Recipes" className="tabBackground">
+                            <Card className="profileCard">
                                 <Card.Body>
                                     <InputGroup className="mb-3">
                                         <FormControl
                                             type="search"
-                                            placeholder="Search"
+                                            placeholder="Search saved recipes..."
                                             onChange={handleSavedSearchInput}
+                                            className="profileSearchBar"
                                         />
                                     </InputGroup>
                                     <ListGroup variant="flush">
@@ -176,13 +179,15 @@ export default function UserProfile(props) {
                                                     <Link
                                                         className="RecipeListGroup"
                                                         to={`/recipe/${item.recipeId}/${item.recipeName}`}
+                                                        id={item.id}
                                                     >
                                                         <CloseButton
                                                             onClick={props.handleSavedRecipeDeleteButton}
                                                             id={item.id}
+                                                            className="recipeDeleteBtn"
                                                         >
                                                         </CloseButton>
-                                                        {item.recipeName}
+                                                       <strong>{item.recipeName}</strong>
                                                     </Link>
                                                 ))
                                                 : null}
