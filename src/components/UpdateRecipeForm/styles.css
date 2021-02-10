@@ -48,6 +48,17 @@
     background:transparent;
 }
 
+.addIngreButton, .addIngreButton:link, .addIngreButton:hover, .addIngreButton:active, .addIngreButton:focus, .addIngreButton:visited {
+    width: 100%;
+    padding: .375rem;
+    margin-top:10px;
+    border: 0px;
+    background: midnightblue;
+    color:lightgoldenrodyellow;
+    text-align: center;
+    text-decoration: none;
+}
+
 .ingreDeleteBtn, .ingreDeleteBtn:hover, .ingreDeleteBtn:link, .ingreDeleteBtn:active, .ingreDeleteBtn:focus, .ingreDeleteBtn:visited{
     color:crimson;
     border: 1px solid midnightblue;
