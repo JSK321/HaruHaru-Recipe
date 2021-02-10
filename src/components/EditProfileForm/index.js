@@ -56,7 +56,7 @@ export default function EditProfileForm(props) {
                             />
                             <Form.Control
                                 type="password"
-                                placeholder="Current Password"
+                                placeholder="Current Password (Required)"
                                 onChange={props.handleInputChange}
                                 name="password"
                                 className="signUpFormControl"

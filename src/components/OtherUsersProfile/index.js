@@ -30,7 +30,7 @@ export default function OtherUsersProfile(props) {
         let keyword = event.target.value
         let filtered = userRecipesState.recipe.filter(recipeObj => {
             return (
-                recipeObj.recipeName.toLowerCase().indexOf(keyword) > -1
+                recipeObj.recipeName.toLowerCase().indexOf(keyword.toLowerCase()) > -1
             )
         })
         if (keyword === "") {

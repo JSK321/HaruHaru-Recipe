@@ -37,7 +37,7 @@ export default function HomePage() {
         let keyword = event.target.value
         let filtered = recipeInfoState.recipes.filter(recipeObj => {
             return (
-                recipeObj.recipeName.toLowerCase().indexOf(keyword) > -1
+                recipeObj.recipeName.toLowerCase().indexOf(keyword.toLowerCase()) > -1 
             )
         })
         if (keyword === "") {

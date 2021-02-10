@@ -21,6 +21,7 @@ export default function RecipeCardPage(props) {
     const [savedRecipeState, setSavedRecipeState] = useState({
         accountName: "",
         id: "",
+        savedRecipeId: "",
     })
     const [ownerProfileState, setOwnerProfileState] = useState({
         owner: ""
@@ -74,16 +75,14 @@ export default function RecipeCardPage(props) {
             const profile = await API.getProfile(token)
             let account = profile.accountName
             let savedData = await API.getAllSavedRecipeByRecipeId(id)
-            // console.log(savedData)
             let user = await savedData.find(obj => obj.savedByUser === account)
-            // console.log(user)
             if (user != undefined && user.savedByUser === account) {
                 setSavedRecipeState({
                     accountName: user.savedByUser,
                     id: user.UserId,
+                    savedRecipeId: user.id,
                 })
             } else {
-                console.log("else")
                 setSavedRecipeState({
                     accountName: "",
                     id: "",
@@ -113,10 +112,21 @@ export default function RecipeCardPage(props) {
         })
     }
 
+    const handleUnSaveRecipeBtn = event => {
+        event.preventDefault()
+        const token = localStorage.getItem("token")
+        let confirmAlert = window.confirm("Are you sure to unsave recipe?")
+        let targetId = event.currentTarget.id
+        if (confirmAlert === true) {
+            API.deleteSavedRecipe(token, targetId)
+        }
+    }
+
     return (
         <div>
             <RecipeCard
                 handleSaveRecipeBtn={handleSaveRecipeBtn}
+                handleUnSaveRecipeBtn={handleUnSaveRecipeBtn}
                 //Recipe
                 recipeName={recipeState.recipeName}
                 recipeDescript={recipeState.recipeDescript}
@@ -132,9 +142,9 @@ export default function RecipeCardPage(props) {
                 userId={props.profile.id}
                 isLoggedIn={props.profile.isLoggedIn}
                 accountName={props.profile.accountName}
-                isSaved={savedRecipeState.isSaved}
                 owner={ownerProfileState.owner}
                 savedByUser={savedRecipeState.accountName}
+                savedRecipeId={savedRecipeState.savedRecipeId}
             />
         </div>
     )

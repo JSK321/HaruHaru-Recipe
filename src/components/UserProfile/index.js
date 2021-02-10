@@ -54,7 +54,7 @@ export default function UserProfile(props) {
         let keyword = event.target.value
         let filtered = userRecipesState.recipe.filter(recipeObj => {
             return (
-                recipeObj.recipeName.toLowerCase().indexOf(keyword) > -1
+                recipeObj.recipeName.toLowerCase().indexOf(keyword.toLowerCase()) > -1
             )
         })
         if (keyword === "") {
@@ -74,7 +74,7 @@ export default function UserProfile(props) {
         let keyword = event.target.value
         let savedFiltered = savedRecipesState.savedRecipe.filter(recipeObj => {
             return (
-                recipeObj.recipeName.toLowerCase().indexOf(keyword) > -1
+                recipeObj.recipeName.toLowerCase().indexOf(keyword.toLowerCase()) > -1
             )
         })
         if (keyword === "") {

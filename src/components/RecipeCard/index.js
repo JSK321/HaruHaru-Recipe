@@ -56,7 +56,7 @@ export default function RecipeCard(props) {
                 </Accordion.Collapse>
                 <Card.Footer className="ingreCardFooter">
                     <h5>
-                        <FontAwesomeIcon icon={faHeart}/>
+                        <FontAwesomeIcon icon={faHeart} />
                         <Badge className="likeBadge">Likes: {props.numberOflikes}</Badge>
                     </h5>
                     {props.userId === props.ownerId ?
@@ -80,7 +80,17 @@ export default function RecipeCard(props) {
                             Save Recipe
                         </Button>
                         :
-                        null
+                        (props.isLoggedIn ?
+                            <Button
+                                variant="link"
+                                className="recipeCardViewBtn"
+                                onClick={props.handleUnSaveRecipeBtn}
+                                id={props.savedRecipeId}
+                            >
+                                Unsave Recipe
+                            </Button>
+                            : null
+                        )
                     }
 
                     {props.isLoggedIn && props.userId === props.ownerId ?

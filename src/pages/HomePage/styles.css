@@ -8,6 +8,7 @@
 .homeSearchBar::placeholder{
     color: lightgoldenrodyellow
 }
+
 input[type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: none;
     height: 1em;
@@ -17,3 +18,13 @@ input[type="search"]::-webkit-search-cancel-button {
     background-size: contain;
     background-color: firebrick;
 }
+
+body {
+    background: url('https://i.imgur.com/gNcjsZc.jpg') center center fixed; 
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+    
