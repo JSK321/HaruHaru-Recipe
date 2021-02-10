@@ -54,7 +54,7 @@ export default function HomePage() {
 
     return (
         <Container>
-            <h1>Browse All Recipes!</h1>
+            <h1>HaruHaru Recipes!</h1>
             <InputGroup
                 style={{
                     width: "250px",
