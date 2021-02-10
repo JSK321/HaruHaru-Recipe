@@ -4,7 +4,7 @@
     margin-right: auto;
     border: 0px;
     /* background: linear-gradient(to top left, transparent, gold, goldenrod, yellow); */
-    background: linear-gradient(to bottom left, transparent, lightgoldenrodyellow)
+    background: linear-gradient(to bottom left, transparent, lightgoldenrodyellow, goldenrod)
 }
 .RecipeCardImage {
     width: 400px;
