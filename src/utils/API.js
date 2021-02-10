@@ -1,5 +1,5 @@
-const URL_PREFIX = "http://localhost:8080"
-// const URL_PREFIX = "https://mykeebs-api.herokuapp.com"
+// const URL_PREFIX = "http://localhost:8080"
+const URL_PREFIX = "https://haruharurecipes.herokuapp.com"
 
 const API = {
     // Login Function
