@@ -147,7 +147,7 @@ export default function UpdateRecipeForm(props) {
                     </Form.Group>
 
                     <Button
-                        type="button"
+                        // type="button"
                         className="updateFormButton"
                         onClick={props.handleUploadImgBtn}
                     >
@@ -161,13 +161,13 @@ export default function UpdateRecipeForm(props) {
                         name="recipeImage"
                     />
 
-                    <Link
-                        type="button"
+                    <Button
+                        // type="button"
                         className="addIngreButton"
-                        to={`/addingredientform/${props.recipeId}`}
+                        href={`/addingredientform/${props.recipeId}`}
                     >
                         Add more ingredients
-                    </Link>
+                    </Button>
                     <Button
                         variant="primary"
                         className="updateFormButton"
