@@ -107,7 +107,7 @@ export default function UserProfile(props) {
                                 <strong>Email:</strong> {props.email}
                             </Card.Text>
                             <Card.Text>
-                                <strong>Account Name:</strong> {props.accountName}
+                                <strong>Account:</strong> {props.accountName}
                             </Card.Text>
                             <Link
                                 className="editProfileBtn btn btn-primary"
@@ -187,7 +187,7 @@ export default function UserProfile(props) {
                                                             className="recipeDeleteBtn"
                                                         >
                                                         </CloseButton>
-                                                       <strong>{item.recipeName}</strong>
+                                                        <strong>{item.recipeName}</strong>
                                                     </Link>
                                                 ))
                                                 : null}

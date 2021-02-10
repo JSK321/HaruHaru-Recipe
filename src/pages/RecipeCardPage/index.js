@@ -69,6 +69,7 @@ export default function RecipeCardPage(props) {
 
     function fetchSavedRecipes() {
         API.getOneSavedRecipe(id).then(data => {
+            console.log(data)
             if (data !== null) {
                 if (data.UserId === data.ownerId) {
                     setSavedRecipeState({
@@ -122,6 +123,7 @@ export default function RecipeCardPage(props) {
                 ingredients={ingredientState.item}
                 // Directions
                 directions={directionState.directions}
+                // User Info
                 userId={props.profile.id}
                 isLoggedIn={props.profile.isLoggedIn}
                 accountName={props.profile.accountName}

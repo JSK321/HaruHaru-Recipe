@@ -6,6 +6,8 @@ import { Container } from 'react-bootstrap'
 import { Row } from 'react-bootstrap'
 import { InputGroup } from 'react-bootstrap'
 import { FormControl } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import './styles.css'
 
 
@@ -63,6 +65,7 @@ export default function HomePage() {
                     zIndex: "1",
                 }}
             >
+               
                 <FormControl
                     type="search"
                     placeholder="Search"

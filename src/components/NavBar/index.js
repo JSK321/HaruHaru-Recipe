@@ -1,8 +1,9 @@
-// import React, { useState, useEffect } from 'react'
+import LogInModal from '../LogInModal'
 import { Navbar } from 'react-bootstrap'
 import { Nav } from 'react-bootstrap'
 import { NavDropdown } from 'react-bootstrap'
-import LogInModal from '../LogInModal'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
 import "./styles.css"
 
 export default function NavBar(props) {
@@ -18,6 +19,7 @@ export default function NavBar(props) {
                 href="/"
                 className="ml-auto"
             >
+                <FontAwesomeIcon icon={faHome} className="fa-fw"/>
                 <strong>Home</strong>
             </Navbar.Brand>
             {props.isLoggedIn ?
@@ -41,7 +43,7 @@ export default function NavBar(props) {
                         <Nav.Link href="/signin"><strong>Sign in</strong></Nav.Link>
                     }
                     {props.isLoggedIn ?
-                        <Nav.Link href="/recipeform"><strong>Add new recipe</strong></Nav.Link>
+                        <Nav.Link href="/recipeform"><strong>Add new Recipe</strong></Nav.Link>
                         :
                         <Nav.Link href="/signup"><strong>Register</strong></Nav.Link>
                     }
