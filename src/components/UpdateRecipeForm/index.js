@@ -1,5 +1,6 @@
 import React from 'react'
 import './styles.css'
+import { Link } from "react-router-dom"
 import { Card } from 'react-bootstrap'
 import { Form } from 'react-bootstrap'
 import { Row } from 'react-bootstrap'
@@ -160,13 +161,13 @@ export default function UpdateRecipeForm(props) {
                         name="recipeImage"
                     />
 
-                    <Button
-                        variant="primary"
-                        className="updateFormButton"
-                        href={`/addingredientform/${props.recipeId}`}
+                    <Link
+                        type="button"
+                        className="addIngreButton"
+                        to={`/addingredientform/${props.recipeId}`}
                     >
                         Add more ingredients
-                    </Button>
+                    </Link>
                     <Button
                         variant="primary"
                         className="updateFormButton"
