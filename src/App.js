@@ -81,7 +81,7 @@ function App() {
       token: "",
       isLoggedIn: false
     })
-    window.location.reload(false)
+    window.location.href="/"
     // }
   }
 
