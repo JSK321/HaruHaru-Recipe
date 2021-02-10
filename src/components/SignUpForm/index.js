@@ -22,7 +22,7 @@ export default function SignUpForm(props) {
                             />
                             <Form.Control
                                 type="text"
-                                placeholder="Accout Name"
+                                placeholder="Account Name"
                                 onChange={props.handleInputChange}
                                 name="accountName"
                                 className="signUpFormControl"
