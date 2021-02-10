@@ -80,7 +80,7 @@ export default function RecipeCard(props) {
                             Save Recipe
                         </Button>
                         :
-                        (props.userId !== props.ownerId && props.isLoggedIn !== false && props.savedByUser != props.accountName ?
+                        (props.userId !== props.ownerId && props.isLoggedIn !== false && props.savedByUser == props.accountName ?
                             <Button
                                 variant="link"
                                 className="recipeCardViewBtn"
