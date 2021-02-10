@@ -67,6 +67,11 @@ const API = {
         return fetch(`${URL_PREFIX}/api/savedrecipes`, {
         }).then(res => res.json()).catch(err => console.log(err))
     },
+    // Retrieve All Saved Recipe by Recipe Id
+    getAllSavedRecipeByRecipeId: function (recipeId) {
+        return fetch(`${URL_PREFIX}/api/savedrecipes/all/${recipeId}`, {
+        }).then(res => res.json()).catch(err => console.log(err))
+    },
     // Retrieve All Ingredients for Recipe with RecipeId
     getAllIngreForRecipe: function (recipeId) {
         return fetch(`${URL_PREFIX}/api/ingredients/all/${recipeId}`, {
