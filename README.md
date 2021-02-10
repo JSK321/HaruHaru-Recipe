@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# HaruHaru Recipe
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![GPLv3 license](https://img.shields.io/badge/License-MIT-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 
-## Available Scripts
+## Description
+    Haruharu is a Korean term which means everyday. HaruHaru Recipe is a react application to share recipes. Users are able to register to begin sharing their recipes with others! Each new recipe is added on the main page of the application. Users are able to save other users recipes which will be available to view in their profile. Each recipe can be viewed by category through the navbar. Register today to begin sharing your amazing recipes!
 
-In the project directory, you can run:
+## React-Application
+View the application at: https://haruharurecipe.herokuapp.com/
 
-### `npm start`
+## Table of Contents
+- [Installation](#installation)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [Usage](#usage)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- [Back-end](#back-end)
 
-### `npm test`
+<!-- - [Screenshot](#screenshot) -->
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [License](#license)
 
-### `npm run build`
+- [Contributors](#contributors)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Questions](#questions)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
+NPM packages react, react-dom, react-router, react-router-dom, sequelize, jquery, and bootstrap are required on the front-end. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+NPM packages cloudinary, bcrypt, cors, dotenv, express, jsonwebtoken, mysql2, and sequelize are required on the back-end.
 
-### `npm run eject`
+## Usage
+    Any user is able to view recipes that have been uploaded onto the application. The main page displays all the recipes that have been shared by other users. 
+    
+    Click on the view recipe button to view it in detail. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    Click on the ingredients tab to view all the ingredients of the recipe. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    Click on the directions tab to view the necessary steps to create the delicious recipe! 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    If a user signs in, they are able to save the recipe to their profile which also increments the number of likes on the recipe. Only the owner of the recipe can update it. 
+    
+    A user can search for a recipe using the search bar on the main page, if they would like to view a recipe by category they can choose which category to view through the navigation bar.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Back-end
+The back-end server side is required to run the application locally, it is found here at: https://github.com/JSK321/ummas-cb-backend
 
-## Learn More
+<!-- ## Screenshot -->
+<!-- ![Website index](https://i.imgur.com/HOzCiuP.png) -->
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License
+This project uses MIT
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contributors
+[JSK321](https://github.com/JSK321)
 
-### Code Splitting
+## Questions
+View my other [projects!](https://github.com/JSK321?tab=repositories)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Have any questions?
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Email me at: jaeshinkim321@gmail.com
