@@ -4,6 +4,8 @@ import { Accordion } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
 import { Row } from 'react-bootstrap'
 import { Badge } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import './styles.css'
 
 export default function RecipeCard(props) {
@@ -53,7 +55,10 @@ export default function RecipeCard(props) {
                     </Card.Body>
                 </Accordion.Collapse>
                 <Card.Footer className="ingreCardFooter">
-                    <h5><Badge className="likeBadge">Likes: {props.numberOflikes}</Badge></h5>
+                    <h5>
+                        <FontAwesomeIcon icon={faHeart}/>
+                        <Badge className="likeBadge">Likes: {props.numberOflikes}</Badge>
+                    </h5>
                     {props.userId === props.ownerId ?
                         <Button
                             variant="link"
@@ -66,7 +71,7 @@ export default function RecipeCard(props) {
                         null
                     }
 
-                    {props.userId !== props.ownerId && props.isLoggedIn && props.isSaved === false ?
+                    {props.userId !== props.ownerId && props.isLoggedIn && props.savedOwnerId !== props.userId && props.isSaved ?
                         < Button
                             variant="link"
                             className="recipeCardViewBtn"
