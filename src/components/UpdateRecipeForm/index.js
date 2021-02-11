@@ -91,6 +91,7 @@ export default function UpdateRecipeForm(props) {
                                             placeholder={item.ingredientQuant !== "" ? item.ingredientQuant : "Quanity"}
                                             type="number"
                                             min="0"
+                                            step=".01"
                                             name="ingredientQuant"
                                             className="updateRecipeFormControl"
                                             onChange={props.handleIngreQuantInputChange}

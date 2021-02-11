@@ -28,6 +28,7 @@ export default function AddIngreForm(props) {
                                     type="number"
                                     className="ingreFormControl"
                                     min="0"
+                                    step=".01"
                                     placeholder="Quantity"
                                     onChange={props.handleIngreInputChange}
                                     value={props.ingredientQuant}
