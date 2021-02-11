@@ -7,7 +7,7 @@ export default function RecipeViewCard(props) {
         <Card className="RecipeViewCard">
             <Card.Img
                 variant="top"
-                src={props.recipeImage}
+                src={props.recipeImage ? props.recipeImage : null}
                 className="recipeViewCardImage"
             />
             <Card.Body>

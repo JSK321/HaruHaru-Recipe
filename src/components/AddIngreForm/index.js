@@ -47,7 +47,7 @@ export default function AddIngreForm(props) {
                             </Col>
                         </Row>
                         <Form.Text className="addIngreTextHelp">
-                            Press Add Ingredient to add multiple ingredients.
+                            Press add ingredient to add multiple ingredients.
                         </Form.Text>
                         <Button
                             onClick={props.handleAddIngreBtn}
@@ -74,7 +74,7 @@ export default function AddIngreForm(props) {
                         className="ingreFormAddBtn"
                         type="submit"
                     >
-                        Submit
+                        Save
                     </Button>
                 </Form>
             </Card.Body>

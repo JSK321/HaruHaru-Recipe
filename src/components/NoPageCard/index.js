@@ -19,7 +19,7 @@ export default function NoPageCard(props) {
                         className="addRecipeBtn btn btn-primary"
                         to="/recipeform"
                     >
-                        <strong>Add a Recipe!</strong>
+                        <strong>Add A Recipe!</strong>
                 </Link>
                 </Card.Text>
             </Card.Body>

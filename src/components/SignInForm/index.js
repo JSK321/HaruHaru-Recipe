@@ -8,7 +8,7 @@ export default function SignInForm(props) {
     return (
         <Card className="SignInCard">
             <Card.Body>
-                <Card.Title style={{ textAlign: "center", color:"midnightblue" }}><strong>Log In</strong></Card.Title>
+                <Card.Title style={{ textAlign: "center", color:"midnightblue" }}><strong>HaruHaru Recipe</strong></Card.Title>
                 <Card.Text>
                     <Form onSubmit={props.handleFormSubmit}>
                         <Form.Group>

@@ -54,7 +54,7 @@ export default function CategoryPage() {
 
     return (
         <Container>
-            <h1 className="categoryName">Browse {category} Recipes!</h1>
+            <h1 className="categoryName">Browse {category} Recipes</h1>
             <InputGroup
                 style={{
                     width: "250px",

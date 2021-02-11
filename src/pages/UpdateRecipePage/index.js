@@ -128,7 +128,7 @@ export default function UpdateRecipePage(props) {
         let index = recipeIngreState.item.findIndex(obj => obj.id == id)
         let ingre = recipeIngreState.item[index]
         const token = localStorage.getItem("token")
-        let confirmAlert = window.confirm(`Are you certain to delete ${ingre.ingredient}?`)
+        let confirmAlert = window.confirm(`Are you sure to remove ${ingre.ingredient}?`)
         let closeBtnId = event.currentTarget.id
         if (confirmAlert === true) {
             API.deleteIngredient(token, closeBtnId)

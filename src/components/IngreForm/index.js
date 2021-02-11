@@ -47,7 +47,7 @@ export default function IngreForm(props) {
                             </Col>
                         </Row>
                         <Form.Text className="addIngreTextHelp">
-                            Press Add Ingredient to add multiple ingredients.
+                            Press add ingredient to add multiple ingredients.
                         </Form.Text>
                         <Button
                             onClick={props.handleAddIngreBtn}
@@ -57,17 +57,17 @@ export default function IngreForm(props) {
                             Add Ingredient
                         </Button>
                         {/* <Row lg={2} md={2} sm={2} xs={1} className="no-gutters"> */}
-                            {props.ingredients !== null ?
-                                props.ingredients.map(item => (
-                                    <ListGroup variant="flush" style={{ textAlign: "center" }}>
-                                        <ListGroup.Item className="ingreFormListGroup">
-                                            <strong>
-                                                <strong>{item.ingredientQuant} {item.ingredientUnit} {item.ingredient}</strong>
-                                            </strong>
-                                        </ListGroup.Item>
-                                    </ListGroup>
-                                ))
-                                : null}
+                        {props.ingredients !== null ?
+                            props.ingredients.map(item => (
+                                <ListGroup variant="flush" style={{ textAlign: "center" }}>
+                                    <ListGroup.Item className="ingreFormListGroup">
+                                        <strong>
+                                            <strong>{item.ingredientQuant} {item.ingredientUnit} {item.ingredient}</strong>
+                                        </strong>
+                                    </ListGroup.Item>
+                                </ListGroup>
+                            ))
+                            : null}
                         {/* </Row> */}
                         <Form.Control
                             as="textarea"

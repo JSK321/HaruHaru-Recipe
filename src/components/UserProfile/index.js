@@ -11,6 +11,8 @@ import { Col } from 'react-bootstrap'
 import { Tabs } from 'react-bootstrap'
 import { Tab } from 'react-bootstrap'
 import { CloseButton } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faIdBadge, faUserEdit, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import './styles.css'
 
 export default function UserProfile(props) {
@@ -101,18 +103,22 @@ export default function UserProfile(props) {
                         />
                         <Card.Body>
                             <Card.Text>
+                                <FontAwesomeIcon icon={faIdBadge} className="fa-fw" />
                                 <strong>Name:</strong> {props.name}
                             </Card.Text>
                             <Card.Text>
+                                <FontAwesomeIcon icon={faEnvelope} className="fa-fw" />
                                 <strong>Email:</strong> {props.email}
                             </Card.Text>
                             <Card.Text>
+                                <FontAwesomeIcon icon={faUser} className="fa-fw" />
                                 <strong>Account:</strong> {props.accountName}
                             </Card.Text>
                             <Link
                                 className="editProfileBtn btn btn-primary"
                                 to={`/editprofile/${props.accountName}`}
                             >
+                                <FontAwesomeIcon icon={faUserEdit} className="fa-fw" />
                                 <strong>Edit Profile</strong>
                             </Link>
                         </Card.Body>
@@ -124,7 +130,7 @@ export default function UserProfile(props) {
                         activeKey={key}
                         onSelect={(k) => setKey(k)}
                     >
-                        <Tab eventKey="recipe" title="Recipes" className="tabBackground">
+                        <Tab eventKey="recipe" title="My Recipes" className="tabBackground">
                             <Card className="profileCard">
                                 <Card.Body>
                                     <InputGroup className="mb-3">
@@ -148,6 +154,7 @@ export default function UserProfile(props) {
                                                             onClick={props.handleRecipeDeleteButton}
                                                             id={item.id}
                                                             className="recipeDeleteBtn"
+                                                            name={item.recipeName}
                                                         >
                                                         </CloseButton>
                                                         <strong>{item.recipeName}</strong>
@@ -184,6 +191,7 @@ export default function UserProfile(props) {
                                                         <CloseButton
                                                             onClick={props.handleSavedRecipeDeleteButton}
                                                             id={item.id}
+                                                            name={item.recipeName}
                                                             className="recipeDeleteBtn"
                                                         >
                                                         </CloseButton>

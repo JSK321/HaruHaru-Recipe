@@ -58,7 +58,6 @@ export default function AddMoreIngrePage(props) {
                 fetchIngreData()
             })
         } else {
-            // alert("Please fill out all fields for ingredients")
             fetchIngreData()
         }
     }

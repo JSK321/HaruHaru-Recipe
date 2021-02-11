@@ -9,12 +9,12 @@ export default function EditProfileForm(props) {
     return (
         <Card className="EditProfileForm">
             <Card.Body>
-                <Card.Title style={{ textAlign: "center", color:"lightgoldenrodyellow" }}><strong>Update Profile</strong></Card.Title>
+                <Card.Title style={{ textAlign: "center", color:"midnightblue" }}><strong>Edit Profile</strong></Card.Title>
                 <Card.Text>
                     <Form onSubmit={props.handleFormSubmit}>
                         <Form.Group>
                             {props.loading ? (
-                                <h3 style={{ textAlign: "center", color:"lightgoldenrodyellow" }}><strong>Loading Image...</strong></h3>
+                                <h3 style={{ textAlign: "center", color:"midnightblue" }}><strong>Loading Image...</strong></h3>
                             ) : (
                                     <Image
                                         src={
@@ -47,7 +47,7 @@ export default function EditProfileForm(props) {
                             />
                             <Form.Control
                                 type="text"
-                                placeholder="Accout Name"
+                                placeholder="Account Name"
                                 onChange={props.handleInputChange}
                                 value={props.accountName}
                                 name="accountName"
@@ -72,13 +72,21 @@ export default function EditProfileForm(props) {
                             />
                             <Form.Control
                                 type="password"
-                                placeholder="Confirm new Password"
+                                placeholder="Confirm New Password"
                                 onChange={props.handleInputChange}
                                 name="confirmNewPassword"
                                 className="signUpFormControl"
                             // required
                             />
                         </Form.Group>
+                        
+                        <Button
+                            variant="primary"
+                            type="submit"
+                            className="updateProfileBtn"
+                        >
+                            Save
+                        </Button>
                         <Button
                             type="button"
                             onClick={props.handleUploadImgBtn}
@@ -92,14 +100,6 @@ export default function EditProfileForm(props) {
                             style={{ display: "none" }}
                             name="recipeImage"
                         />
-
-                        <Button
-                            variant="primary"
-                            type="submit"
-                            className="updateProfileBtn"
-                        >
-                            Update
-                        </Button>
                         <Button
                             variant="primary"
                             type="submit"

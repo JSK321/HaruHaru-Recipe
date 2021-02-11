@@ -9,7 +9,7 @@ export default function RecipeForm(props) {
     return (
         <Card className="SignInCard">
             <Card.Body>
-                <Card.Title style={{ textAlign: "center", color: "midnightblue" }}><strong>Add Recipe</strong></Card.Title>
+                <Card.Title style={{ textAlign: "center", color: "midnightblue" }}><strong>Add New Recipe</strong></Card.Title>
                 <Card.Text>
                     <Form onSubmit={props.handleFormSubmit}>
                         <Form.Group>

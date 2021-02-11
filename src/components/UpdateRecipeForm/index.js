@@ -1,18 +1,19 @@
 import React from 'react'
 import './styles.css'
-import { Link } from "react-router-dom"
 import { Card } from 'react-bootstrap'
 import { Form } from 'react-bootstrap'
 import { Row } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
 import { Image } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSave, faEdit, faPlusSquare } from '@fortawesome/free-solid-svg-icons'
 
 export default function UpdateRecipeForm(props) {
     return (
         <Card className="updateRecipeCard">
             <Card.Body>
-                <Card.Title className="updateRecipeTitle"><strong>Update Recipe!</strong></Card.Title>
+                <Card.Title className="updateRecipeTitle"><strong>Update Recipe</strong></Card.Title>
                 <Form onSubmit={props.handleFormSubmit}>
                     <Form.Group>
                         {props.loading ? (
@@ -30,12 +31,16 @@ export default function UpdateRecipeForm(props) {
                                 />
                             )}
                     </Form.Group>
+                    <Form.Text className="addIngreTextHelp">
+                        <strong> Update recipe name, category, or description.</strong>
+                    </Form.Text>
                     <Row noGutters>
                         <Col xs={8}>
                             <Form.Control
                                 placeholder={props.recipeName !== "" ? props.recipeName : "Recipe Name"}
                                 onChange={props.handleRecipeInputChange}
                                 name="recipeName"
+                                // value={props.recipeName}
                                 className="updateRecipeFormControl"
                             />
                         </Col>
@@ -68,7 +73,7 @@ export default function UpdateRecipeForm(props) {
                         />
                     </Form.Group>
                     <Form.Text className="addIngreTextHelp">
-                        <strong> Press Set for each ingredient to update.</strong>
+                        <strong> Press set for each ingredient to update.</strong>
                     </Form.Text>
                     <Form.Group>
                         {props.ingredients !== undefined ?
@@ -116,7 +121,7 @@ export default function UpdateRecipeForm(props) {
                                             onClick={props.handleIngreSetButton}
                                             id={item.id}
                                         >
-                                            <strong id={item.id}>Set</strong>
+                                            <strong id={item.id}>SET</strong>
                                         </Button>
                                     </Col>
                                     <Col xs={1}>
@@ -135,23 +140,37 @@ export default function UpdateRecipeForm(props) {
                             null
                         }
                     </Form.Group>
-
+                    <Form.Text className="addIngreTextHelp">
+                        <strong> Update the recipe directions.</strong>
+                    </Form.Text>
                     <Form.Group>
                         <Form.Control
                             as="textarea"
                             rows={2}
                             placeholder={props.directions !== "" ? props.directions : "Recipe Directions"}
                             onChange={props.handleDirectInputChange}
+                            value={props.directions}
                             name="directions"
                             className="updateRecipeFormControl"
                         />
                     </Form.Group>
-
+                    <Form.Text className="addIngreTextHelp">
+                        <strong> Press update to save changes.</strong>
+                    </Form.Text>
+                    <Button
+                        variant="primary"
+                        className="updateFormButton"
+                        type="submit"
+                    >
+                        <FontAwesomeIcon icon={faSave} className="fa-fw" />
+                        Update
+                    </Button>
                     <Button
                         // type="button"
                         className="updateFormButton"
                         onClick={props.handleUploadImgBtn}
                     >
+                        <FontAwesomeIcon icon={faEdit} className="fa-fw" />
                         Update Image
                          </Button>
                     {/* Hidden upload button for css */}
@@ -161,20 +180,13 @@ export default function UpdateRecipeForm(props) {
                         style={{ display: "none" }}
                         name="recipeImage"
                     />
-
                     <Button
                         // type="button"
                         className="addIngreButton"
                         href={`/addingredientform/${props.recipeId}`}
                     >
-                        Add more ingredients
-                    </Button>
-                    <Button
-                        variant="primary"
-                        className="updateFormButton"
-                        type="submit"
-                    >
-                        Update
+                        <FontAwesomeIcon icon={faPlusSquare} className="fa-fw" />
+                        Add More Ingredients
                     </Button>
 
                 </Form>

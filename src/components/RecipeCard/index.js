@@ -99,7 +99,7 @@ export default function RecipeCard(props) {
                             className="recipeCardViewBtn"
                             href={`/profile/${props.accountName}`}
                         >
-                            View my Profile
+                            View My Profile
                        </Button>
                         :
                         (props.isLoggedIn ?

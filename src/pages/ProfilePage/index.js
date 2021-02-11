@@ -54,7 +54,8 @@ export default function ProfilePage(props) {
     const handleRecipeDeleteButton = event => {
         event.preventDefault()
         const token = localStorage.getItem("token")
-        let confirmAlert = window.confirm("Are you sure to remove recipe?")
+        const name = event.currentTarget.name
+        let confirmAlert = window.confirm(`Are you sure to remove ${name}?`)
         let closeBtnId = event.currentTarget.id
         if (confirmAlert === true) {
             API.deleteRecipe(token, closeBtnId)
@@ -63,7 +64,8 @@ export default function ProfilePage(props) {
     const handleSavedRecipeDeleteButton = event => {
         event.preventDefault()
         const token = localStorage.getItem("token")
-        let confirmAlert = window.confirm("Are you sure to remove recipe?")
+        const name = event.currentTarget.name
+        let confirmAlert = window.confirm(`Are you sure to remove ${name}?`)
         let closeBtnId = event.currentTarget.id
         if (confirmAlert === true) {
             API.deleteSavedRecipe(token, closeBtnId)

@@ -9,6 +9,8 @@ import { InputGroup } from 'react-bootstrap'
 import { FormControl } from 'react-bootstrap'
 import { Row } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faIdBadge, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function OtherUsersProfile(props) {
@@ -64,13 +66,16 @@ export default function OtherUsersProfile(props) {
                         />
                         <Card.Body>
                             <Card.Text>
+                                <FontAwesomeIcon icon={faIdBadge} className="fa-fw" />
                                 <strong>Name:</strong> {props.name}
                             </Card.Text>
                             <Card.Text>
+                                <FontAwesomeIcon icon={faEnvelope} className="fa-fw" />
                                 <strong>Email:</strong> {props.email}
                             </Card.Text>
                             <Card.Text>
-                                <strong>Account Name:</strong> {props.accountName}
+                                <FontAwesomeIcon icon={faUser} className="fa-fw" />
+                                <strong>Account:</strong> {props.accountName}
                             </Card.Text>
                         </Card.Body>
                     </Card>
@@ -78,11 +83,11 @@ export default function OtherUsersProfile(props) {
                 <Col md={9}>
                     <Card className="profileCard">
                         <Card.Body>
-                            <Card.Title>Recipes</Card.Title>
+                            <Card.Title>Recipes by {props.accountName} </Card.Title>
                             <InputGroup className="mb-3">
                                 <FormControl
                                     type="search"
-                                    placeholder="Search"
+                                    placeholder="Search recipes..."
                                     onChange={handleSearchInput}
                                     className="profileSearchBar"
                                 />
