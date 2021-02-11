@@ -6,7 +6,7 @@
     border: 0px;
     /* border: 1px solid lightgoldenrodyellow; */
     /* background: linear-gradient(to top left, transparent, lightgoldenrodyellow) */
-      background: linear-gradient(to bottom right,goldenrod, lightgoldenrodyellow, transparent)
+      background: linear-gradient(to bottom right,goldenrod, lightgoldenrodyellow)
 }
 
 .viewRecipeLink, .viewRecipeLink:link, .viewRecipeLink:hover, .viewRecipeLink:active, .viewRecipeLink:focus, .viewRecipeLink:visited{
