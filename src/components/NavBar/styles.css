@@ -1,9 +1,12 @@
 .NavBar {
-    background: linear-gradient( yellow, gold, goldenrod, orangered)
+    background: linear-gradient( yellow, gold, goldenrod, orange);
+    /* background: linear-gradient(to bottom right,darksalmon, darkgoldenrod,goldenrod,gold,lightgoldenrodyellow,lightyellow); */
 }
 
 div.dropdown-menu.show {
-    background: linear-gradient(goldenrod,yellow, orangered)
+    background:transparent;
+    border:1px solid black;
+    /* background: linear-gradient(goldenrod,yellow, orangered) */
 }
 
 a.dropdown-item {

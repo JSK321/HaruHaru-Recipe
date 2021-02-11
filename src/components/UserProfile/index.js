@@ -94,7 +94,7 @@ export default function UserProfile(props) {
     return (
         <Container>
             <Row className="justify-content-md-center no-gutters">
-                <Col md={3}>
+                <Col md={4}>
                     <Card className="profileCard">
                         <Card.Img
                             className="ProfileImage"
@@ -104,15 +104,18 @@ export default function UserProfile(props) {
                         <Card.Body>
                             <Card.Text>
                                 <FontAwesomeIcon icon={faIdBadge} className="fa-fw" />
-                                <strong>Name:</strong> {props.name}
+                                {/* <strong>Name:</strong>  */}
+                                : {props.name}
                             </Card.Text>
                             <Card.Text>
                                 <FontAwesomeIcon icon={faEnvelope} className="fa-fw" />
-                                <strong>Email:</strong> {props.email}
+                                {/* <strong>Email:</strong>  */}
+                                : {props.email}
                             </Card.Text>
                             <Card.Text>
                                 <FontAwesomeIcon icon={faUser} className="fa-fw" />
-                                <strong>Account:</strong> {props.accountName}
+                                {/* <strong>Account:</strong>  */}
+                                : {props.accountName}
                             </Card.Text>
                             <Link
                                 className="editProfileBtn btn btn-primary"
@@ -124,7 +127,7 @@ export default function UserProfile(props) {
                         </Card.Body>
                     </Card>
                 </Col>
-                <Col md={9}>
+                <Col md={8}>
                     <Tabs
                         id="controlled-tab-example"
                         activeKey={key}

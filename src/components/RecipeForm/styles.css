@@ -11,7 +11,7 @@
 
 .recipeFormBtn, .recipeFormBtn:link, .recipeFormBtn:hover, .recipeFormBtn:active, .recipeFormBtn:focus, .recipeFormBtn:visited{
     width: 100%;
-    background: midnightblue;
+    background: linear-gradient(to bottom right,royalblue, midnightblue, cornflowerblue);
     border: 0px;
     color:lightgoldenrodyellow;
 }

@@ -19,7 +19,8 @@
     margin: 0 auto;
 }
 .modal-content{
-    background: linear-gradient(goldenrod,gold, yellow,orange,orangered);
+    /* background: linear-gradient(goldenrod,gold, yellow,orange,orangered); */
+    background: linear-gradient(to bottom right,darksalmon, darkgoldenrod,goldenrod,gold,lightgoldenrodyellow,lightyellow);
 }
 
 .viewProfileLinkBtn, .viewProfileLinkBtn:link, .viewProfileLinkBtn:hover, .viewProfileLinkBtn:active, .viewProfileLinkBtn:focus, .viewProfileLinkBtn:visited {
@@ -29,9 +30,9 @@
 
 .signOutBtn, .signOutBtn:link, .signOutBtn:hover, .signOutBtn:active, .signOutBtn:focus, .signOutBtn:visited {
     width: 100%;
-    background: linear-gradient(to bottom left, transparent, gold, goldenrod);
+    background: linear-gradient(to bottom right,royalblue, midnightblue, cornflowerblue);
     border: 0px;
-    color:midnightblue;
+    color:lightgoldenrodyellow;
 }
 
 

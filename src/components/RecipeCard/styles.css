@@ -16,10 +16,10 @@
 .ingreCardHeader{
     color:midnightblue;
     text-align: center;
-    background: linear-gradient(to top left, transparent, gold, goldenrod, yellow);
+    background: linear-gradient(to bottom left, gold, goldenrod, yellow);
 }
 .ingreAccordion{
-    background: linear-gradient(to top left, transparent, gold, goldenrod, yellow);
+    background: linear-gradient(to bottom left, gold, goldenrod, yellow);
     color: midnightblue;
 }
 

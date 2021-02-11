@@ -1,6 +1,6 @@
 .homeSearchBar, .homeSearchBar:hover, .homeSearchBar:active, .homeSearchBar:focus{
     /* background: transparent; */
-    background: linear-gradient(transparent, midnightblue);
+    background: linear-gradient(to bottom right,royalblue, midnightblue,cornflowerblue);
     border: 1px solid lightgoldenrodyellow;
     border-radius: 15px;
     color:lightgoldenrodyellow

@@ -10,7 +10,7 @@
 .updateProfileBtn, .updateProfileBtn:link, .updateProfileBtn:hover, .updateProfileBtn:active, .updateProfileBtn:focus, .updateProfileBtn:visited {
     width: 100%;
     margin-bottom: 5px;
-    background: midnightblue;
+    background: linear-gradient(to bottom right,royalblue, midnightblue, cornflowerblue);
     border: 0px;
     color:lightgoldenrodyellow;
 }

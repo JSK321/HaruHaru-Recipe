@@ -1,22 +1,24 @@
 .profileCard{
-    /* background: transparent; */
-    background: linear-gradient(to bottom left, transparent, lightgoldenrodyellow);
+    background: linear-gradient(to bottom right,darksalmon, darkgoldenrod,goldenrod,gold,lightgoldenrodyellow,lightyellow);
     border: 1px solid lightgoldenrodyellow;
     color:midnightblue
 }
 
 #controlled-tab-example-tab-recipe, #controlled-tab-example-tab-savedRecipes{
     /* background:transparent; */
-    background: linear-gradient(to bottom left,transparent,goldenrod, yellow);
-    border: 2px solid lightgoldenrodyellow;
+    /* background: linear-gradient(to top left,goldenrod, lightgoldenrodyellow, lightyellow); */
+    background: linear-gradient(to bottom right,darksalmon,goldenrod);
+    border: 1px solid lightgoldenrodyellow;
     color:midnightblue;
+    font-weight: bold;
 }
 
 .editProfileBtn, .editProfileBtn:link, .editProfileBtn:hover, .editProfileBtn:active, .editProfileBtn:focus, .editProfileBtn:visited {
     width: 100%;
-    background: linear-gradient(to bottom left, transparent, gold, goldenrod, yellow);
+    /* background: linear-gradient(to bottom left, transparent, gold, goldenrod, yellow); */
+    background: linear-gradient(to bottom right,royalblue, midnightblue, cornflowerblue);
     border: 0px;
-    color:midnightblue;
+    color:lightgoldenrodyellow;
 
 }
 
@@ -28,9 +30,9 @@
 }
 
 .profileSearchBar, .profileSearchBar:hover, .profileSearchBar:active, .profileSearchBar:focus{
-    /* background: transparent; */
-    background: linear-gradient(to bottom left, transparent, goldenrod);
-    border: 2px solid lightgoldenrodyellow;
+    background: transparent;
+    /* background: linear-gradient(to bottom left, transparent, goldenrod); */
+    border: 2px solid midnightblue;
     border-radius: 15px;
     color:midnightblue
 }
@@ -41,17 +43,17 @@
 }
 
 .RecipeListGroup, .RecipeListGroup:hover, .RecipeListGroup:link, .RecipeListGroup:active, .RecipeListGroup:focus, .RecipeListGroup:visited {
-    border: 1px solid lightgoldenrodyellow;
+    /* border: 1px solid midnightblue; */
     padding: 10px;
     color: midnightblue;
-    /* background: linear-gradient(to bottom left, transparent, midnightblue); */
-    background: linear-gradient(to bottom left, transparent, goldenrod, yellow);
+    background: transparent;
+    /* background: linear-gradient(to bottom left, transparent, goldenrod, yellow); */
     text-decoration: none;
 }
 
 @media screen and (max-width: 767px){
     .ProfileImage {
-        width: 300px;
+        width: 350px;
         margin-left: auto;
         margin-right: auto;
         height:auto;
@@ -61,6 +63,21 @@
 @media screen and (max-width: 400px){
     .ProfileImage {
         width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        height:auto;
+    }
+}
+@media screen and (max-width: 300px){
+    .profileCard{
+        width:100%;
+        background: linear-gradient(to bottom right,darksalmon, darkgoldenrod,goldenrod,gold,lightgoldenrodyellow,lightyellow);
+        border: 1px solid lightgoldenrodyellow;
+        color:midnightblue
+    }
+
+    .ProfileImage {
+        width: 200px;
         margin-left: auto;
         margin-right: auto;
         height:auto;

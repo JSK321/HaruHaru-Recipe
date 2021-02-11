@@ -20,7 +20,7 @@
 
 .signUpBtn, .signUpBtn:link, .signUpBtn:hover, .signUpBtn:active, .signUpBtn:focus, .signUpBtn:visited {
     width: 100%;
-    background: midnightblue;
+    background: linear-gradient(to bottom right,royalblue, midnightblue, cornflowerblue);
     border: 0px;
     color:lightgoldenrodyellow;
 }
@@ -34,5 +34,5 @@
 .Registered {
     margin-top: -10px;
     text-align: center;
-    font-weight: bold;
+    font-weight: 1000;
 }

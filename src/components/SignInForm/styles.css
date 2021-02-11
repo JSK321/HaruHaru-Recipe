@@ -20,7 +20,7 @@
 
 .signInBtn, .signInBtn:link, .signInBtn:hover, .signInBtn:active, .signInBtn:focus, .signInBtn:visited {
      width: 100%;
-     background: midnightblue;
+     background: linear-gradient(to bottom right,royalblue, midnightblue, cornflowerblue);
      border: 0px;
      color:lightgoldenrodyellow;
 }

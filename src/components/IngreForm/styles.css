@@ -23,7 +23,7 @@
 
 .ingreFormAddBtn, .ingreFormAddBtn:link, .ingreFormAddBtn:hover, .ingreFormAddBtn:active, .ingreFormAddBtn:focus, .ingreFormAddBtn:visited {
     width: 100%;
-    background: midnightblue;
+    background: linear-gradient(to bottom right,royalblue, midnightblue, cornflowerblue);
     border: 0px;
     color:lightgoldenrodyellow;
 }
