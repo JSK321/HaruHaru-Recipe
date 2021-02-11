@@ -4,7 +4,7 @@ import { Modal } from 'react-bootstrap'
 import { Image } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 import "./styles.css"
 
 export default function LogInModal(props) {
@@ -19,7 +19,7 @@ export default function LogInModal(props) {
                 onClick={handleShow}
                 className="accoutNameLink"
             >
-                <FontAwesomeIcon icon={faUser} className="fa-fw"/>
+                <FontAwesomeIcon icon={faUser} className="fa-fw" />
                 <strong>{props.accountName}</strong>
             </Link>
 
@@ -47,8 +47,9 @@ export default function LogInModal(props) {
                 </Modal.Body>
                 <Modal.Footer className="modalFooter">
                     <Button className="signOutBtn" onClick={props.logOut}>
+                        <FontAwesomeIcon icon={faSignOutAlt} className="fa-fw" />
                         <strong>Sign Out</strong>
-                </Button>
+                    </Button>
                 </Modal.Footer>
             </Modal>
         </>

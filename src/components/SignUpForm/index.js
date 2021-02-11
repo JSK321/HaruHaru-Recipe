@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import { Card } from 'react-bootstrap'
 import { Form } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserPlus } from '@fortawesome/free-solid-svg-icons'
 import './styles.css'
 
 export default function SignUpForm(props) {
@@ -46,6 +48,7 @@ export default function SignUpForm(props) {
                             />
                         </Form.Group>
                         <Button variant="primary" type="submit" className="signUpBtn">
+                            <FontAwesomeIcon icon={faUserPlus} className="fa-fw"/>
                             Sign Up
                         </Button>
                     </Form>

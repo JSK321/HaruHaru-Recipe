@@ -4,6 +4,8 @@ import { Form } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
 import { Row } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCaretSquareUp, faPlusSquare } from '@fortawesome/free-solid-svg-icons'
 import './styles.css'
 
 export default function IngreForm(props) {
@@ -54,6 +56,7 @@ export default function IngreForm(props) {
                             className="ingreFormAddBtn"
                             type="button"
                         >
+                            <FontAwesomeIcon icon={faPlusSquare} className="fa-fw" />
                             Add Ingredient
                         </Button>
                         {/* <Row lg={2} md={2} sm={2} xs={1} className="no-gutters"> */}
@@ -85,6 +88,7 @@ export default function IngreForm(props) {
                         className="ingreFormAddBtn"
                         type="submit"
                     >
+                        <FontAwesomeIcon icon={faCaretSquareUp} className="fa-fw" />
                         Submit
                     </Button>
                 </Form>

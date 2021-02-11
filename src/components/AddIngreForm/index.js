@@ -4,6 +4,8 @@ import { Form } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
 import { Row } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSave, faPlusSquare } from '@fortawesome/free-solid-svg-icons'
 
 export default function AddIngreForm(props) {
     return (
@@ -54,6 +56,7 @@ export default function AddIngreForm(props) {
                             className="ingreFormAddBtn"
                             type="button"
                         >
+                            <FontAwesomeIcon icon={faPlusSquare} className="fa-fw" />
                             Add Ingredient
                         </Button>
                         {/* <Row lg={2} md={2} sm={2} xs={1} className="no-gutters"> */}
@@ -74,6 +77,7 @@ export default function AddIngreForm(props) {
                         className="ingreFormAddBtn"
                         type="submit"
                     >
+                        <FontAwesomeIcon icon={faSave} className="fa-fw" />
                         Save
                     </Button>
                 </Form>

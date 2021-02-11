@@ -3,6 +3,8 @@ import { Card } from 'react-bootstrap'
 import { Form } from 'react-bootstrap'
 import { Image } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSave, faEdit, faUserTimes } from '@fortawesome/free-solid-svg-icons'
 import './styles.css'
 
 export default function EditProfileForm(props) {
@@ -85,6 +87,7 @@ export default function EditProfileForm(props) {
                             type="submit"
                             className="updateProfileBtn"
                         >
+                            <FontAwesomeIcon icon={faSave} className="fa-fw" />
                             Save
                         </Button>
                         <Button
@@ -92,6 +95,7 @@ export default function EditProfileForm(props) {
                             onClick={props.handleUploadImgBtn}
                             className="updateProfileBtn"
                         >
+                            <FontAwesomeIcon icon={faEdit} className="fa-fw" />
                             Update Image
                          </Button>
                         <Form.File
@@ -106,6 +110,7 @@ export default function EditProfileForm(props) {
                             className="updateProfileBtn"
                             onClick={props.handleDeleteProfileBtn}
                         >
+                            <FontAwesomeIcon icon={faUserTimes} className="fa-fw" />
                             Delete Profile
                         </Button>
 
