@@ -78,7 +78,7 @@ export default function HomePage() {
                     <NoPageCard />
                     :
                     recipeInfoState.recipes.map(data => (
-                        <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                        <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <RecipeViewCard
                                 key={data.id}
                                 recipeId={data.id}

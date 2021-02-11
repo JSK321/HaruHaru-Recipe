@@ -16,3 +16,15 @@
     border: 0px;
     color:midnightblue;
 }
+
+@media screen and (max-width: 420px){
+    .addRecipeBtn, .addRecipeBtn:link, .addRecipeBtn:hover, .addRecipeBtn:active, .addRecipeBtn:focus, .addRecipeBtn:visited {
+        width: 60%;
+        margin-top:5px;
+        border-radius:15px;
+        background: linear-gradient(to bottom left, transparent, gold, goldenrod);
+        border: 0px;
+        color:midnightblue;
+    }
+
+}

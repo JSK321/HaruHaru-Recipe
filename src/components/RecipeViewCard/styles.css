@@ -1,9 +1,10 @@
 .RecipeViewCard {
-    width: 19rem;
+    width: 21rem;
     margin-left: auto;
     margin-right: auto;
     margin-top: 15px;
-    border: 1px solid lightgoldenrodyellow;
+    border: 0px;
+    /* border: 1px solid lightgoldenrodyellow; */
     /* background: linear-gradient(to top left, transparent, lightgoldenrodyellow) */
       background: linear-gradient(to bottom right,goldenrod, lightgoldenrodyellow, transparent)
 }

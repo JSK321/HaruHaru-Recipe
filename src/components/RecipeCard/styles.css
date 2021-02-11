@@ -4,7 +4,7 @@
     margin-right: auto;
     border: 0px;
     /* background: linear-gradient(to top left, transparent, gold, goldenrod, yellow); */
-    background: linear-gradient(to bottom left, transparent, lightgoldenrodyellow, goldenrod)
+    background: linear-gradient(to top left,goldenrod, lightgoldenrodyellow, goldenrod)
 }
 .RecipeCardImage {
     width: 400px;
@@ -49,12 +49,51 @@
     font-size: 20px;
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 580px){
     .RecipeCard {
         width: 100vw
     }
     .RecipeCardImage {
-        width: 300px;
+        width: 500px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        object-fit: contain;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .RecipeCard {
+        width: 100vw
+    }
+    .RecipeCardImage {
+        width: 450px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        object-fit: contain;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .RecipeCard {
+        width: 100vw
+    }
+    .RecipeCardImage {
+        width: 350px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        object-fit: contain;
+    }
+}
+
+@media screen and (max-width: 350px){
+    .RecipeCard {
+        width: 100vw
+    }
+    .RecipeCardImage {
+        width: 250px;
         height: auto;
         margin-left: auto;
         margin-right: auto;
