@@ -1,6 +1,4 @@
-# HaruHaru Recipe
-
-[![GPLv3 license](https://img.shields.io/badge/License-MIT-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
+# HaruHaru Recipe [![GPLv3 license](https://img.shields.io/badge/License-MIT-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 
 ## Description
 Haruharu is a Korean term which means everyday. HaruHaru Recipe is a react application to share recipes. Users are able to register to begin sharing their recipes with others! Each new recipe is added on the main page of the application. Users are able to save other users recipes which will be available to view in their profile. Each recipe can be viewed by category through the navbar. Register today to begin sharing your amazing recipes!
@@ -15,7 +13,7 @@ View the application at: https://haruharurecipe.herokuapp.com/
 
 - [Back-end](#back-end)
 
-<!-- - [Screenshot](#screenshot) -->
+- [Screenshot](#screenshot)
 
 - [License](#license)
 
@@ -44,8 +42,8 @@ A user can search for a recipe using the search bar on the main page, if they wo
 ## Back-end
 The back-end server side is required to run the application locally, it is found here at: https://github.com/JSK321/ummas-cb-backend
 
-<!-- ## Screenshot -->
-<!-- ![Website index](https://i.imgur.com/HOzCiuP.png) -->
+## Screenshot
+![Website index](https://i.imgur.com/dtNYLNr.png)
 
 ## License
 This project uses MIT
