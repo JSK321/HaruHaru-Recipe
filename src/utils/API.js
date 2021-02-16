@@ -96,6 +96,7 @@ const API = {
             } else if (res.status === 409) {
                 alert("Account name/Email is already in use.")
             } else {
+                alert("Account name/Email is already in use.")
                 throw new Error("Something went wrong")
             }
         }).catch(err => null)
