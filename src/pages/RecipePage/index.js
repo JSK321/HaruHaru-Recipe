@@ -64,7 +64,8 @@ export default function RecipePage(props) {
                 )
             })
         } else {
-            alert("Sign in to add new recipe")
+            alert("Sign in to add new recipe.")
+            window.location.href = "/signin"
         }
     }
 

@@ -1,5 +1,5 @@
-const URL_PREFIX = "http://localhost:8080"
-// const URL_PREFIX = "https://haruharurecipes.herokuapp.com"
+// const URL_PREFIX = "http://localhost:8080"
+const URL_PREFIX = "https://haruharurecipes.herokuapp.com"
 
 const API = {
     // Login Function
@@ -92,11 +92,10 @@ const API = {
             body: JSON.stringify(userData)
         }).then(res => {
             if (res.ok) {
-                // window.location.href = `/profile/${userData.accoutName}`
-                // window.location.href= '/'
                 return res.json()
+            } else if (res.status === 409) {
+                alert("Account name/Email is already in use.")
             } else {
-                alert("Email already exists!")
                 throw new Error("Something went wrong")
             }
         }).catch(err => null)
@@ -114,7 +113,6 @@ const API = {
             if (res.ok) {
                 return res.json()
             } else {
-                alert("Sign in to add recipe!")
                 throw new Error("Something went wrong")
             }
         }).catch(err => console.log(err))
