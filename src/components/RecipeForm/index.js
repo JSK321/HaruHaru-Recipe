@@ -1,9 +1,6 @@
-import { Card } from 'react-bootstrap'
-import { Form } from 'react-bootstrap'
-import { Button } from 'react-bootstrap'
-import { Image } from 'react-bootstrap'
+import { Button, Card, Form, Image } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEdit, faPlusSquare } from '@fortawesome/free-solid-svg-icons'
+import { faImage, faPlusSquare } from '@fortawesome/free-solid-svg-icons'
 import './styles.css'
 
 export default function RecipeForm(props) {
@@ -78,7 +75,7 @@ export default function RecipeForm(props) {
                             onClick={props.handleUploadImgBtn}
                             style={{ width: "100%", marginBottom: "5px" }}
                         >
-                            <FontAwesomeIcon icon={faEdit} className="fa-fw" />
+                            <FontAwesomeIcon icon={faImage} className="fa-fw" />
                             Upload Image
                          </Button>
                         <Form.File

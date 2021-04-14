@@ -2,9 +2,9 @@
      width: 22rem;
      margin-left: auto;
      margin-right: auto;
-     margin-top: 15px;
+     margin-top: 3rem;
      border: 0px;
-     background: linear-gradient(to bottom left, transparent, lightgoldenrodyellow)
+     background: linear-gradient(to bottom left, whitesmoke,lavender)
 }
 
 .signInFormControl, .signInFormControl:link, .signInFormControl:hover, .signInFormControl:active, .signInFormControl:focus, .signInFormControl:visited  {
@@ -22,7 +22,7 @@
      width: 100%;
      background: linear-gradient(to bottom right,royalblue, midnightblue, cornflowerblue);
      border: 0px;
-     color:lightgoldenrodyellow;
+     color:whitesmoke;
 }
 
 .signInLink, .signInLink:link, .signInLink:hover, .signInLink:active, .signInLink:focus, .signInLink:visited {

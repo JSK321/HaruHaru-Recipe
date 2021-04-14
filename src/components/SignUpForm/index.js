@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Card } from 'react-bootstrap'
-import { Form } from 'react-bootstrap'
-import { Button } from 'react-bootstrap'
+import { Card, Form, Button } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons'
 import './styles.css'

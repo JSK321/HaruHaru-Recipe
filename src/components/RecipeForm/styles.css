@@ -1,5 +1,5 @@
 .recipeFormControl, .recipeFormControl:link, .recipeFormControl:hover, .recipeFormControl:active, .recipeFormControl:focus, .recipeFormControl:visited {
-    margin-bottom: 5px;
+    margin-bottom: .5rem;
     background-color: transparent;
     border: 1px solid midnightblue;
     color: midnightblue;
@@ -13,5 +13,5 @@
     width: 100%;
     background: linear-gradient(to bottom right,royalblue, midnightblue, cornflowerblue);
     border: 0px;
-    color:lightgoldenrodyellow;
+    color:whitesmoke;
 }

@@ -1,19 +1,14 @@
 import React from 'react'
 import './styles.css'
-import { Card } from 'react-bootstrap'
-import { Form } from 'react-bootstrap'
-import { Row } from 'react-bootstrap'
-import { Col } from 'react-bootstrap'
-import { Button } from 'react-bootstrap'
-import { Image } from 'react-bootstrap'
+import { Card, Form, Row, Col, Button, Image } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSave, faEdit, faPlusSquare } from '@fortawesome/free-solid-svg-icons'
+import { faSave, faImage, faPlusSquare } from '@fortawesome/free-solid-svg-icons'
 
 export default function UpdateRecipeForm(props) {
     return (
         <Card className="updateRecipeCard">
+            <Card.Header className="updateRecipeTitle"><strong>Update Recipe</strong></Card.Header>
             <Card.Body>
-                <Card.Title className="updateRecipeTitle"><strong>Update Recipe</strong></Card.Title>
                 <Form onSubmit={props.handleFormSubmit}>
                     <Form.Group>
                         {props.loading ? (
@@ -161,7 +156,7 @@ export default function UpdateRecipeForm(props) {
                         className="updateFormButton"
                         onClick={props.handleUploadImgBtn}
                     >
-                        <FontAwesomeIcon icon={faEdit} className="fa-fw" />
+                        <FontAwesomeIcon icon={faImage} className="fa-fw" />
                         Update Image
                          </Button>
                     {/* Hidden upload button for css */}

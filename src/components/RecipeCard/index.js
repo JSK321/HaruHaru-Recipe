@@ -1,9 +1,4 @@
-import { Card } from 'react-bootstrap'
-import { ListGroup } from 'react-bootstrap'
-import { Accordion } from 'react-bootstrap'
-import { Button } from 'react-bootstrap'
-import { Row } from 'react-bootstrap'
-import { Badge } from 'react-bootstrap'
+import { Card, ListGroup, Accordion, Button, Row, Badge } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import './styles.css'
@@ -56,7 +51,7 @@ export default function RecipeCard(props) {
                 </Accordion.Collapse>
                 <Card.Footer className="ingreCardFooter">
                     <h5>
-                        <FontAwesomeIcon icon={faHeart} />
+                        <FontAwesomeIcon className="heartIcon" icon={faHeart} />
                         <Badge className="likeBadge">Likes: {props.numberOflikes}</Badge>
                     </h5>
                     {props.userId === props.ownerId ?

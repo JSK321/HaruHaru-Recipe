@@ -5,7 +5,6 @@
 div.dropdown-menu.show {
     background:transparent;
     border:1px solid black;
-    /* background: linear-gradient(goldenrod,yellow, orangered) */
 }
 
 a.dropdown-item {

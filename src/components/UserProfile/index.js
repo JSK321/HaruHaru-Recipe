@@ -1,16 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import API from '../../utils/API'
-import { Card } from 'react-bootstrap'
 import { Link } from "react-router-dom"
-import { Container } from 'react-bootstrap'
-import { ListGroup } from 'react-bootstrap'
-import { InputGroup } from 'react-bootstrap'
-import { FormControl } from 'react-bootstrap'
-import { Row } from 'react-bootstrap'
-import { Col } from 'react-bootstrap'
-import { Tabs } from 'react-bootstrap'
-import { Tab } from 'react-bootstrap'
-import { CloseButton } from 'react-bootstrap'
+import { Card, Container, ListGroup, InputGroup, FormControl, Row, Col, Tabs, Tab, CloseButton } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faIdBadge, faUserEdit, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import './styles.css'
@@ -132,9 +123,10 @@ export default function UserProfile(props) {
                         id="controlled-tab-example"
                         activeKey={key}
                         onSelect={(k) => setKey(k)}
+                        className="profileTabs"
                     >
-                        <Tab eventKey="recipe" title="My Recipes" className="tabBackground">
-                            <Card className="profileCard">
+                        <Tab eventKey="recipe" title="My Recipes">
+                            <Card className="profileRecipeCard">
                                 <Card.Body>
                                     <InputGroup className="mb-3">
                                         <FormControl
@@ -172,7 +164,7 @@ export default function UserProfile(props) {
                             </Card>
                         </Tab>
                         <Tab eventKey="savedRecipes" title="Saved Recipes" className="tabBackground">
-                            <Card className="profileCard">
+                            <Card className="profileRecipeCard">
                                 <Card.Body>
                                     <InputGroup className="mb-3">
                                         <FormControl

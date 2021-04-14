@@ -2,17 +2,17 @@
     width: 24rem;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 15px;
+    margin-top: 1rem;
     border: 0px;
     border-radius: 15px;
-    background: linear-gradient(to top left, transparent, lightgoldenrodyellow)
+    background: linear-gradient(to bottom left, whitesmoke,lavender)
 }
 
 .addRecipeBtn, .addRecipeBtn:link, .addRecipeBtn:hover, .addRecipeBtn:active, .addRecipeBtn:focus, .addRecipeBtn:visited {
-    width: 45%;
-    margin-top:5px;
+    width: 60%;
+    margin-top: 1rem;
     border-radius:15px;
-    background: linear-gradient(to bottom left, transparent, gold, goldenrod);
+    background: powderblue;
     border: 0px;
     color:midnightblue;
 }
@@ -20,11 +20,6 @@
 @media screen and (max-width: 420px){
     .addRecipeBtn, .addRecipeBtn:link, .addRecipeBtn:hover, .addRecipeBtn:active, .addRecipeBtn:focus, .addRecipeBtn:visited {
         width: 60%;
-        margin-top:5px;
-        border-radius:15px;
-        background: linear-gradient(to bottom left, transparent, gold, goldenrod);
-        border: 0px;
-        color:midnightblue;
     }
 
 }

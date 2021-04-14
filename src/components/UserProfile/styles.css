@@ -1,37 +1,38 @@
 .profileCard{
-    background: linear-gradient(to bottom right,darksalmon, darkgoldenrod,goldenrod,gold,lightgoldenrodyellow,lightyellow);
-    border: 1px solid lightgoldenrodyellow;
-    color:midnightblue
+    background: linear-gradient(powderblue, lavender);
+    color:midnightblue;
+  
+}
+.profileRecipeCard {
+    background: linear-gradient(powderblue, lavender);
+    color:midnightblue;
+   
 }
 
 #controlled-tab-example-tab-recipe, #controlled-tab-example-tab-savedRecipes{
-    /* background:transparent; */
-    /* background: linear-gradient(to top left,goldenrod, lightgoldenrodyellow, lightyellow); */
-    background: linear-gradient(to bottom right,darksalmon,goldenrod);
-    border: 1px solid lightgoldenrodyellow;
+    border: 1px solid whitesmoke;
     color:midnightblue;
     font-weight: bold;
 }
 
 .editProfileBtn, .editProfileBtn:link, .editProfileBtn:hover, .editProfileBtn:active, .editProfileBtn:focus, .editProfileBtn:visited {
     width: 100%;
-    /* background: linear-gradient(to bottom left, transparent, gold, goldenrod, yellow); */
     background: linear-gradient(to bottom right,royalblue, midnightblue, cornflowerblue);
     border: 0px;
-    color:lightgoldenrodyellow;
+    color:whitesmoke;
 
 }
 
-.tabBackground{
-    font-weight: bold;
+.profileTabs {
+    background: lavender;
 }
+
 .recipeDeleteBtn, .recipeDeleteBtn:hover{
     color:crimson;
 }
 
 .profileSearchBar, .profileSearchBar:hover, .profileSearchBar:active, .profileSearchBar:focus{
     background: transparent;
-    /* background: linear-gradient(to bottom left, transparent, goldenrod); */
     border: 2px solid midnightblue;
     border-radius: 15px;
     color:midnightblue
@@ -43,11 +44,9 @@
 }
 
 .RecipeListGroup, .RecipeListGroup:hover, .RecipeListGroup:link, .RecipeListGroup:active, .RecipeListGroup:focus, .RecipeListGroup:visited {
-    /* border: 1px solid midnightblue; */
     padding: 10px;
     color: midnightblue;
     background: transparent;
-    /* background: linear-gradient(to bottom left, transparent, goldenrod, yellow); */
     text-decoration: none;
 }
 
@@ -71,9 +70,6 @@
 @media screen and (max-width: 300px){
     .profileCard{
         width:100%;
-        background: linear-gradient(to bottom right,darksalmon, darkgoldenrod,goldenrod,gold,lightgoldenrodyellow,lightyellow);
-        border: 1px solid lightgoldenrodyellow;
-        color:midnightblue
     }
 
     .ProfileImage {

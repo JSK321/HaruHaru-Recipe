@@ -2,9 +2,9 @@
     width: 22rem;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 15px;
+    margin-top: 3rem;
     border: 0px;
-    background: linear-gradient(to bottom left, transparent, lightgoldenrodyellow)
+    background: linear-gradient(to bottom left, whitesmoke,lavender)
 }
 
 .signUpFormControl, .signUpFormControl:link, .signUpFormControl:hover, .signUpFormControl:active, .signUpFormControl:focus, .signUpFormControl:visited {
@@ -22,17 +22,17 @@
     width: 100%;
     background: linear-gradient(to bottom right,royalblue, midnightblue, cornflowerblue);
     border: 0px;
-    color:lightgoldenrodyellow;
+    color:whitesmoke;
 }
 
 .signInLink, .signInLink:link, .signInLink:hover, .signInLink:active, .signInLink:focus, .signInLink:visited  {
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 
 .Registered {
-    margin-top: -10px;
+    margin-top: .2rem;
     text-align: center;
     font-weight: 1000;
 }

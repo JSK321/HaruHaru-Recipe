@@ -1,15 +1,17 @@
 .updateRecipeCard {
     width: 45rem;
-    margin-top: 15px;
+    margin-top: 2rem;
     margin-left: auto;
     margin-right: auto;
     border: 0px;
-    background: linear-gradient(to bottom right,goldenrod, lightgoldenrodyellow)
+    background: linear-gradient(powderblue, lavender)
 }
 
 .updateRecipeTitle {
     text-align: center;
+    font-size: 24px;
     color:midnightblue;
+    background-color: whitesmoke;
 }
 
 .updateRecipeDescript {
@@ -31,7 +33,7 @@
     margin-top:10px;
     border: 0px;
     background: linear-gradient(to bottom right,royalblue, midnightblue, cornflowerblue);
-    color:lightgoldenrodyellow;
+    color:whitesmoke;
 }
 .recipeImageUpdate{
     display: block;
@@ -54,7 +56,7 @@
     margin-top:10px;
     border: 0px;
     background: linear-gradient(to bottom right,royalblue, midnightblue, cornflowerblue);
-    color:lightgoldenrodyellow;
+    color:whitesmoke;
     text-align: center;
     text-decoration: none;
 }

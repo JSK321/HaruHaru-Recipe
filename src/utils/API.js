@@ -203,23 +203,6 @@ const API = {
             }
         }).catch(err => console.log(err))
     },
-    // Update Ingredients Function
-    // updateIngre: function (token, id, ingredients) {
-    //     return fetch(`${URL_PREFIX}/api/ingredients/${id}`, {
-    //         method: "PUT",
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //             'authorization': `Bearer ${token}`
-    //         },
-    //         body: JSON.stringify({ ingredients })
-    //     }).then(res => {
-    //         if (res.ok) {
-    //             return res.json()
-    //         } else {
-    //             throw new Error("Something went wrong")
-    //         }
-    //     }).catch(err => console.log(err))
-    // },
     // Update One Ingredient Fucntion
     updateOneIngre: function (token, id, ingredient, ingredientQuant, ingredientUnit) {
         return fetch(`${URL_PREFIX}/api/ingredients/${id}`, {

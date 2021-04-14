@@ -5,13 +5,13 @@
 
 .modalProfilImage{
     width: 175px;
-    margin-top:10px;
-    margin-right: 15px;
+    margin-top: 1rem;
+    margin-right: 1rem;
     height:auto;
 }
 
 .modalTitle{
-    margin-top: 35px;
+    margin-top: 2rem;
     color:midnightblue;
 }
 
@@ -19,8 +19,8 @@
     margin: 0 auto;
 }
 .modal-content{
-    /* background: linear-gradient(goldenrod,gold, yellow,orange,orangered); */
-    background: linear-gradient(to bottom right,darksalmon, darkgoldenrod,goldenrod,gold,lightgoldenrodyellow,lightyellow);
+    
+    background: linear-gradient(powderblue, lavender, whitesmoke);
 }
 
 .viewProfileLinkBtn, .viewProfileLinkBtn:link, .viewProfileLinkBtn:hover, .viewProfileLinkBtn:active, .viewProfileLinkBtn:focus, .viewProfileLinkBtn:visited {
@@ -32,20 +32,21 @@
     width: 100%;
     background: linear-gradient(to bottom right,royalblue, midnightblue, cornflowerblue);
     border: 0px;
-    color:lightgoldenrodyellow;
+    color:whitesmoke;
 }
 
 
 @media screen and (max-width: 470px){
     .modalProfilImage{
         width: 100px;
-        margin-top:15px;
-        margin-right: 15px;
+        margin-top: 1rem;
+        margin-right: .5rem;
         height:auto;
     }
 
     .modalTitle{
-        margin-top: 15px;
+        margin-top: 1rem;
+        font-size: 22px;
         color:midnightblue;
     }
 }

@@ -2,17 +2,17 @@
     width: 34rem;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 15px;
+    margin-top: 2rem;
     border: 0px;
-    background: linear-gradient(to bottom left, transparent, lightgoldenrodyellow)
+    background: linear-gradient(powderblue, lavender)
 }
 
 .updateProfileBtn, .updateProfileBtn:link, .updateProfileBtn:hover, .updateProfileBtn:active, .updateProfileBtn:focus, .updateProfileBtn:visited {
     width: 100%;
-    margin-bottom: 5px;
+    margin-bottom: .5rem;
     background: linear-gradient(to bottom right,royalblue, midnightblue, cornflowerblue);
     border: 0px;
-    color:lightgoldenrodyellow;
+    color:whitesmoke;
 }
 
 @media screen and (max-width: 540px){
@@ -20,8 +20,7 @@
         width: 28rem;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 25px;
-        border: 1px solid black
+        margin-top: 2rem;
     }
     
 }
@@ -31,8 +30,7 @@
         width: 22rem;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 25px;
-        border: 1px solid black
+        margin-top: 2rem;
     }
     
 }
@@ -42,8 +40,7 @@
         width: 100%;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 25px;
-        border: 1px solid black
+        margin-top: 2rem;
     }
     
 }
