@@ -4,6 +4,7 @@ import API from './utils/API'
 import 'bootstrap/dist/css/bootstrap.min.css'
 // Components
 import NavBar from './components/NavBar'
+import Footer from './components/Footer'
 // Pages
 import SignUpPage from './pages/SignUpPage'
 import SignInPage from './pages/SignInPage'
@@ -81,7 +82,7 @@ function App() {
       token: "",
       isLoggedIn: false
     })
-    window.location.href="/"
+    window.location.href = "/"
     // }
   }
 
@@ -99,6 +100,7 @@ function App() {
       <Switch>
         <Route exact path="/">
           <HomePage />
+          <Footer />
         </Route>
         <Route exact path="/signup">
           <SignUpPage />

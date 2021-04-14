@@ -1,7 +1,5 @@
 import LogInModal from '../LogInModal'
-import { Navbar } from 'react-bootstrap'
-import { Nav } from 'react-bootstrap'
-import { NavDropdown } from 'react-bootstrap'
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 import "./styles.css"
