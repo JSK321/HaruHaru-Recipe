@@ -73,17 +73,17 @@ export default function UpdateRecipeForm(props) {
                         />
                     </Form.Group>
                     <Form.Text className="addIngreTextHelp">
-                        <strong> Press set for each ingredient to update.</strong>
+                        <strong> Update ingredients, amount, and measurement.</strong>
                     </Form.Text>
                     <Form.Group>
                         {props.ingredients !== undefined ?
                             props.ingredients.map(item => (
                                 <Row noGutters>
-                                    <Col xs={5}>
+                                    <Col xs={6}>
                                         <Form.Control
                                             placeholder={item.ingredient !== "" ? item.ingredient : "Ingredient"}
                                             type="text"
-                                            name="ingredient"
+                                            name={item.ingredient}
                                             className="updateRecipeFormControl"
                                             onChange={props.handleIngreInputChange}
                                             id={item.id}
@@ -97,32 +97,23 @@ export default function UpdateRecipeForm(props) {
                                             type="number"
                                             min="0"
                                             step=".01"
-                                            name="ingredientQuant"
+                                            name={item.ingredientQuant}
                                             className="updateRecipeFormControl"
-                                            onChange={props.handleIngreQuantInputChange}
+                                            onChange={props.handleIngreInputChange}
                                             id={item.id}
                                             recipeId={item.RecipeId}
                                         />
                                     </Col>
-                                    <Col xs={2}>
+                                    <Col xs={3}>
                                         <Form.Control
                                             placeholder={item.ingredientUnit !== "" ? item.ingredientUnit : "Unit"}
                                             type="text"
-                                            name="ingredientUnit"
+                                            name={item.ingredientUnit}
                                             className="updateRecipeFormControl"
-                                            onChange={props.handleIngreUnitInputChange}
+                                            onChange={props.handleIngreInputChange}
                                             id={item.id}
                                             recipeId={item.RecipeId}
                                         />
-                                    </Col>
-                                    <Col xs={2}>
-                                        <Button
-                                            className="updateIngreSetBtn"
-                                            onClick={props.handleIngreSetButton}
-                                            id={item.id}
-                                        >
-                                            <strong id={item.id}>SET</strong>
-                                        </Button>
                                     </Col>
                                     <Col xs={1}>
                                         <Button
@@ -146,7 +137,7 @@ export default function UpdateRecipeForm(props) {
                     <Form.Group>
                         <Form.Control
                             as="textarea"
-                            rows={2}
+                            rows={3}
                             placeholder={props.directions !== "" ? props.directions : "Recipe Directions"}
                             onChange={props.handleDirectInputChange}
                             value={props.directions}

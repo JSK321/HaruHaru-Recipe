@@ -21,11 +21,48 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 body {
-    background: url('https://i.imgur.com/gNcjsZc.jpg') center center fixed; 
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    /* background: url('https://i.imgur.com/gNcjsZc.jpg') center center fixed;  */
+    /* background-repeat: no-repeat; */
+    /* -webkit-background-size: cover; */
+    /* -moz-background-size: cover; */
+    /* -o-background-size: cover; */
+    /* background-size: cover; */
+    background: repeating-linear-gradient(
+		45deg,
+		transparent,
+		transparent 1em,
+		moccasin 0,
+		moccasin 2em,
+		transparent 0,
+		transparent 3em,
+		powderblue 0,
+		powderblue 4em,
+		transparent 0,
+		transparent 5em,
+		lavender 0,
+		lavender 6em,
+		transparent 0,
+		transparent 7em,
+		beige 0,
+		beige 8em
+	),
+	repeating-linear-gradient(
+		-45deg,
+		transparent,
+		transparent 1em,
+		khaki 0,
+		khaki 2em,
+		transparent 0,
+		transparent 3em,
+		beige 0,
+		beige 4em,
+		transparent 0,
+		transparent 5em,
+		peachpuff 0,
+		peachpuff 6em
+	), whitesmoke;
+
+	background-blend-mode: multiply;
+	
 }
     

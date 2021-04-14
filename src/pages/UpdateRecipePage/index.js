@@ -10,7 +10,7 @@ export default function UpdateRecipePage(props) {
         recipeDescript: "",
         recipeImage: ""
     })
-    const [ingredientState, setIngredientState] = useState({
+    const [previIngredientState, setPrevIngredientState] = useState({
         data: []
     })
     const [directionState, setDirectionState] = useState({
@@ -32,6 +32,9 @@ export default function UpdateRecipePage(props) {
         API.getAllIngreForRecipe(id).then(data => {
             setRecipeIngreState({
                 item: data
+            })
+            setPrevIngredientState({
+                data: data
             })
         })
         API.getOneRecipe(id).then(data => {
@@ -71,34 +74,25 @@ export default function UpdateRecipePage(props) {
 
     const handleIngreInputChange = event => {
         let id = event.target.id
-        const { value } = event.target
+        const { name, value } = event.target
         let data = recipeIngreState.item
-        let index = data.findIndex(obj => obj.id == id)
-        data[index].ingredient = value
-        setIngredientState({ data })
 
+        // Map through recipe ingredients and update recipe ingredient, quantity, and unit
+        let updateRecipeIngre = data.map(recipes => {
+            if (recipes.ingredient == name && recipes.id == id) {
+                return { ...recipes, ingredient: value }
+            }
+            if (recipes.ingredientQuant == name && recipes.id == id) {
+                return { ...recipes, ingredientQuant: value }
+            }
+            if (recipes.ingredientUnit == name && recipes.id == id) {
+                return { ...recipes, ingredientUnit: value }
+            }
+            return recipes
+        })
+        setRecipeIngreState({ item: updateRecipeIngre })
     };
 
-    const handleIngreQuantInputChange = event => {
-        let id = event.target.id
-        const { value } = event.target
-        let data = recipeIngreState.item
-        let index = data.findIndex(obj => obj.id == id)
-        data[index].ingredientQuant = value
-        // console.log({ data })
-        setIngredientState({ data })
-    }
-
-    const handleIngreUnitInputChange = event => {
-        let id = event.target.id
-        const { value } = event.target
-        let data = recipeIngreState.item
-        let index = data.findIndex(obj => obj.id == id)
-        data[index].ingredientUnit = value
-        // console.log({ data })
-        setIngredientState({ data })
-
-    }
 
     const handleDirectInputChange = event => {
         const { name, value } = event.target
@@ -107,20 +101,6 @@ export default function UpdateRecipePage(props) {
             [name]: value
         })
     };
-
-    const handleIngreSetButton = event => {
-        event.preventDefault()
-        let id = event.target.id
-        let index = ingredientState.data.findIndex(obj => obj.id == id)
-        let updateIngre = ingredientState.data[index]
-        API.updateOneIngre(
-            props.profile.token,
-            updateIngre.id,
-            updateIngre.ingredient,
-            updateIngre.ingredientQuant,
-            updateIngre.ingredientUnit
-        )
-    }
 
     const handleIngreDeleteButton = event => {
         event.preventDefault()
@@ -158,6 +138,9 @@ export default function UpdateRecipePage(props) {
 
     const handleFormSubmit = event => {
         event.preventDefault()
+        let ingreList = recipeIngreState.item
+        let prevList = previIngredientState.data
+
         API.updateRecipe(
             props.profile.token,
             id,
@@ -166,6 +149,20 @@ export default function UpdateRecipePage(props) {
             recipeState.recipeCategory,
             recipeState.recipeImage,
         )
+
+        for (let i = 0; i < ingreList.length; i++) {
+            if (ingreList[i] != prevList[i]) {
+                ingreList.forEach(ingre => 
+                    API.updateOneIngre(
+                        props.profile.token,
+                        ingreList[i].id,
+                        ingreList[i].ingredient,
+                        ingreList[i].ingredientQuant,
+                        ingreList[i].ingredientUnit
+                    )
+                )
+            }
+        }
 
         API.updateDirection(
             props.profile.token,
@@ -200,13 +197,11 @@ export default function UpdateRecipePage(props) {
                 handleRecipeInputChange={handleRecipeInputChange}
                 handleSelectCategory={handleSelectCategory}
                 handleIngreInputChange={handleIngreInputChange}
-                handleIngreQuantInputChange={handleIngreQuantInputChange}
-                handleIngreUnitInputChange={handleIngreUnitInputChange}
                 handleDirectInputChange={handleDirectInputChange}
                 // Button clicks
                 handleUploadImgBtn={handleUploadImgBtn}
                 handleUploadImg={handleUploadImg}
-                handleIngreSetButton={handleIngreSetButton}
+                // handleIngreSetButton={handleIngreSetButton}
                 handleIngreDeleteButton={handleIngreDeleteButton}
                 handleFormSubmit={handleFormSubmit}
             />

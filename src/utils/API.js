@@ -1,5 +1,5 @@
-// const URL_PREFIX = "http://localhost:8080"
-const URL_PREFIX = "https://haruharurecipes.herokuapp.com"
+const URL_PREFIX = "http://localhost:8080"
+// const URL_PREFIX = "https://haruharurecipes.herokuapp.com"
 
 const API = {
     // Login Function
@@ -203,24 +203,19 @@ const API = {
             }
         }).catch(err => console.log(err))
     },
-    // // Update Ingredients At RecipeId Function
-    // updateIngre: function (token, id, ingredient, ingredientQuant, ingredientUnit) {
-    //     return fetch(`${URL_PREFIX}/api/ingredients/all/${id}`, {
+    // Update Ingredients Function
+    // updateIngre: function (token, id, ingredients) {
+    //     return fetch(`${URL_PREFIX}/api/ingredients/${id}`, {
     //         method: "PUT",
     //         headers: {
     //             'Content-Type': 'application/json',
     //             'authorization': `Bearer ${token}`
     //         },
-    //         body: JSON.stringify({
-    //             ingredient: ingredient,
-    //             ingredientQuant: ingredientQuant,
-    //             ingredientUnit: ingredientUnit,
-    //         })
+    //         body: JSON.stringify({ ingredients })
     //     }).then(res => {
     //         if (res.ok) {
     //             return res.json()
     //         } else {
-    //             console.log(res)
     //             throw new Error("Something went wrong")
     //         }
     //     }).catch(err => console.log(err))
@@ -268,6 +263,7 @@ const API = {
             }
         }).catch(err => console.log(err))
     },
+
     // Update Number Of Likes Recipe Function
     updateNumOfLikes: function (id, numberOfLikes) {
         return fetch(`${URL_PREFIX}/api/recipes/likes/${id}`, {
