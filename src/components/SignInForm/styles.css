@@ -7,7 +7,7 @@
      background: linear-gradient(to bottom left, whitesmoke,lavender)
 }
 
-.signInFormControl, .signInFormControl:link, .signInFormControl:hover, .signInFormControl:active, .signInFormControl:focus, .signInFormControl:visited  {
+.signInFormControl  {
      margin-bottom: 5px;
      background-color: transparent;
      border: 1px solid midnightblue;
@@ -18,14 +18,14 @@
      color: midnightblue
 }
 
-.signInBtn, .signInBtn:link, .signInBtn:hover, .signInBtn:active, .signInBtn:focus, .signInBtn:visited {
+.signInBtn {
      width: 100%;
      background: linear-gradient(to bottom right,royalblue, midnightblue, cornflowerblue);
      border: 0px;
      color:whitesmoke;
 }
 
-.signInLink, .signInLink:link, .signInLink:hover, .signInLink:active, .signInLink:focus, .signInLink:visited {
+.signInLink {
      text-decoration: none;
      color:midnightblue;
 }

@@ -7,7 +7,7 @@
     background: linear-gradient(to bottom left, whitesmoke,lavender)
 }
 
-.signUpFormControl, .signUpFormControl:link, .signUpFormControl:hover, .signUpFormControl:active, .signUpFormControl:focus, .signUpFormControl:visited {
+.signUpFormControl {
     margin-bottom: 5px;
     background-color: transparent;
     border: 1px solid midnightblue;
@@ -18,14 +18,14 @@
     color: midnightblue
 }
 
-.signUpBtn, .signUpBtn:link, .signUpBtn:hover, .signUpBtn:active, .signUpBtn:focus, .signUpBtn:visited {
+.signUpBtn {
     width: 100%;
     background: linear-gradient(to bottom right,royalblue, midnightblue, cornflowerblue);
     border: 0px;
     color:whitesmoke;
 }
 
-.signInLink, .signInLink:link, .signInLink:hover, .signInLink:active, .signInLink:focus, .signInLink:visited  {
+.signInLink  {
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 1rem;

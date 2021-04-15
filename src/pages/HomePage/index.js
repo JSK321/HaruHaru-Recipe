@@ -2,12 +2,8 @@ import React, { useState, useEffect } from 'react'
 import API from '../../utils/API'
 import RecipeViewCard from '../../components/RecipeViewCard'
 import NoPageCard from '../../components/NoPageCard'
-import { Container } from 'react-bootstrap'
-import { Row } from 'react-bootstrap'
-import { InputGroup } from 'react-bootstrap'
-import { FormControl } from 'react-bootstrap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import Footer from '../../components/Footer'
+import { Container, Row, FormControl } from 'react-bootstrap'
 import './styles.css'
 
 
@@ -37,7 +33,7 @@ export default function HomePage() {
         let keyword = event.target.value
         let filtered = recipeInfoState.recipes.filter(recipeObj => {
             return (
-                recipeObj.recipeName.toLowerCase().indexOf(keyword.toLowerCase()) > -1 
+                recipeObj.recipeName.toLowerCase().indexOf(keyword.toLowerCase()) > -1
             )
         })
         if (keyword === "") {
@@ -55,24 +51,14 @@ export default function HomePage() {
     return (
         <Container>
             <h1>HaruHaru Recipe</h1>
-            <InputGroup
-                style={{
-                    width: "250px",
-                    marginLeft: "auto",
-                    marginRight: "auto",
-                    position: "sticky",
-                    top: "0",
-                    zIndex: "1",
-                }}
-            >
-               
-                <FormControl
-                    type="search"
-                    placeholder="Search"
-                    className="homeSearchBar form-control"
-                    onChange={handleSearchInput}
-                />
-            </InputGroup>
+
+            <FormControl
+                type="search"
+                placeholder="Search"
+                className="homeSearchBar form-control"
+                onChange={handleSearchInput}
+            />
+
             <Row noGutters>
                 {!recipeInfoState.recipes || recipeInfoState.recipes < 1 ?
                     <NoPageCard />
@@ -90,6 +76,7 @@ export default function HomePage() {
                     ))
                 }
             </Row>
+            <Footer />
         </Container>
     )
 }

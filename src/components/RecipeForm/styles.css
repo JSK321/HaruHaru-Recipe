@@ -1,4 +1,4 @@
-.recipeFormControl, .recipeFormControl:link, .recipeFormControl:hover, .recipeFormControl:active, .recipeFormControl:focus, .recipeFormControl:visited {
+.recipeFormControl {
     margin-bottom: .5rem;
     background-color: transparent;
     border: 1px solid midnightblue;
@@ -9,7 +9,7 @@
     color: midnightblue
 }
 
-.recipeFormBtn, .recipeFormBtn:link, .recipeFormBtn:hover, .recipeFormBtn:active, .recipeFormBtn:focus, .recipeFormBtn:visited{
+.recipeFormBtn {
     width: 100%;
     background: linear-gradient(to bottom right,royalblue, midnightblue, cornflowerblue);
     border: 0px;

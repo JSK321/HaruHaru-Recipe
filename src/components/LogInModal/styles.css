@@ -1,4 +1,4 @@
-.accoutNameLink, .accoutNameLink:hover, .accoutNameLink:active, .accoutNameLink:focus {
+.accoutNameLink {
     color: black;
     text-decoration: none;
 }
@@ -23,12 +23,12 @@
     background: linear-gradient(powderblue, lavender, whitesmoke);
 }
 
-.viewProfileLinkBtn, .viewProfileLinkBtn:link, .viewProfileLinkBtn:hover, .viewProfileLinkBtn:active, .viewProfileLinkBtn:focus, .viewProfileLinkBtn:visited {
+.viewProfileLinkBtn {
     text-decoration: none;
     color:midnightblue;
 }
 
-.signOutBtn, .signOutBtn:link, .signOutBtn:hover, .signOutBtn:active, .signOutBtn:focus, .signOutBtn:visited {
+.signOutBtn {
     width: 100%;
     background: linear-gradient(to bottom right,royalblue, midnightblue, cornflowerblue);
     border: 0px;

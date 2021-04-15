@@ -12,7 +12,7 @@ a.dropdown-item {
 }
 
 .dropdown-item.active, .dropdown-item:active {
-    background-color: goldenrod;
+    background-color: powderblue;
     color: black;
     text-decoration: none
 }

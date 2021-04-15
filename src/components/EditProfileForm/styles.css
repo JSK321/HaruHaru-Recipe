@@ -7,7 +7,7 @@
     background: linear-gradient(powderblue, lavender)
 }
 
-.updateProfileBtn, .updateProfileBtn:link, .updateProfileBtn:hover, .updateProfileBtn:active, .updateProfileBtn:focus, .updateProfileBtn:visited {
+.updateProfileBtn {
     width: 100%;
     margin-bottom: .5rem;
     background: linear-gradient(to bottom right,royalblue, midnightblue, cornflowerblue);

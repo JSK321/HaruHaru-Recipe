@@ -15,7 +15,7 @@
     font-weight: bold;
 }
 
-.editProfileBtn, .editProfileBtn:link, .editProfileBtn:hover, .editProfileBtn:active, .editProfileBtn:focus, .editProfileBtn:visited {
+.editProfileBtn {
     width: 100%;
     background: linear-gradient(to bottom right,royalblue, midnightblue, cornflowerblue);
     border: 0px;
@@ -27,11 +27,11 @@
     background: lavender;
 }
 
-.recipeDeleteBtn, .recipeDeleteBtn:hover{
+.recipeDeleteBtn {
     color:crimson;
 }
 
-.profileSearchBar, .profileSearchBar:hover, .profileSearchBar:active, .profileSearchBar:focus{
+.profileSearchBar {
     background: transparent;
     border: 2px solid midnightblue;
     border-radius: 15px;
@@ -43,7 +43,7 @@
     font-weight: bold;
 }
 
-.RecipeListGroup, .RecipeListGroup:hover, .RecipeListGroup:link, .RecipeListGroup:active, .RecipeListGroup:focus, .RecipeListGroup:visited {
+.RecipeListGroup {
     padding: 10px;
     color: midnightblue;
     background: transparent;

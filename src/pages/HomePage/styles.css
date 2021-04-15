@@ -1,13 +1,23 @@
 .homeSearchBar, .homeSearchBar:hover, .homeSearchBar:active, .homeSearchBar:focus{
-    /* background: transparent; */
     background: linear-gradient(to bottom right,royalblue,cornflowerblue);
-    border: 1px solid lightgoldenrodyellow;
-    border-radius: 15px;
-    color:lightgoldenrodyellow
+    border: 1px solid whitesmoke;
+    color:whitesmoke;
+	width: 21rem;
+	margin-left: auto;
+	margin-right: auto;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+
+.arrowUp {
+	margin-top: .5rem;
+	font-weight: bold;
+	font-size: 24px;
 }
 
 .homeSearchBar::placeholder{
-    color: lightgoldenrodyellow
+    color: whitesmoke
 }
 
 input[type="search"]::-webkit-search-cancel-button {

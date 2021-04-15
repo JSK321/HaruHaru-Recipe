@@ -8,7 +8,7 @@
     background: linear-gradient(powderblue, lavender)
 }
 
-.viewRecipeLink, .viewRecipeLink:link, .viewRecipeLink:hover, .viewRecipeLink:active, .viewRecipeLink:focus, .viewRecipeLink:visited{
+.viewRecipeLink {
     color:midnightblue;
     text-decoration: none;
     margin:0 auto;

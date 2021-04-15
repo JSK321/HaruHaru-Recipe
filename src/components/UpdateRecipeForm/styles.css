@@ -18,7 +18,7 @@
     margin-top: 10px;
 }
 
-.updateRecipeFormControl, .updateRecipeFormControl:link, .updateRecipeFormControl:hover, .updateRecipeFormControl:active, .updateRecipeFormControl:focus, .updateRecipeFormControl:visited {
+.updateRecipeFormControl {
     background: transparent;
     border: 1px solid midnightblue;
     color:firebrick;
@@ -28,7 +28,7 @@
     color: firebrick
 }
 
-.updateFormButton, .updateFormButton:link, .updateFormButton:hover, .updateFormButton:active, .updateFormButton:focus, .updateFormButton:visited{
+.updateFormButton {
     width: 100%;
     margin-top:10px;
     border: 0px;
@@ -43,14 +43,14 @@
     height:auto;
     border-radius: 15px;
 }
-.updateIngreSetBtn, .updateIngreSetBtn:link, .updateIngreSetBtn:hover, .updateIngreSetBtn:active, .updateIngreSetBtn:focus, .updateIngreSetBtn:visited{
+.updateIngreSetBtn {
     width:100%;
     border: 1px solid midnightblue;
     color: midnightblue;
     background:transparent;
 }
 
-.addIngreButton, .addIngreButton:link, .addIngreButton:hover, .addIngreButton:active, .addIngreButton:focus, .addIngreButton:visited {
+.addIngreButton {
     width: 100%;
     padding: .375rem;
     margin-top:10px;
@@ -61,7 +61,7 @@
     text-decoration: none;
 }
 
-.ingreDeleteBtn, .ingreDeleteBtn:hover, .ingreDeleteBtn:link, .ingreDeleteBtn:active, .ingreDeleteBtn:focus, .ingreDeleteBtn:visited{
+.ingreDeleteBtn {
     color:crimson;
     border: 1px solid midnightblue;
     background:transparent;

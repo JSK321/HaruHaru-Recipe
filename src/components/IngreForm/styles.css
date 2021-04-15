@@ -1,4 +1,4 @@
-.ingreFormControl, .ingreFormControl:link, .ingreFormControl:hover, .ingreFormControl:active, .ingreFormControl:focus, .ingreFormControl:visited {
+.ingreFormControl {
     background-color: transparent;
     border: 1px solid midnightblue;
     color: midnightblue;
@@ -17,12 +17,12 @@
     margin-top: .5rem;
 }
 
-.ingreFormListGroup{
+.ingreFormListGroup {
     background-color: transparent;
     color: midnightblue;
 }
 
-.ingreFormAddBtn, .ingreFormAddBtn:link, .ingreFormAddBtn:hover, .ingreFormAddBtn:active, .ingreFormAddBtn:focus, .ingreFormAddBtn:visited {
+.ingreFormAddBtn {
     width: 100%;
     background: linear-gradient(to bottom right,royalblue, midnightblue, cornflowerblue);
     border: 0px;

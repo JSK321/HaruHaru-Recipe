@@ -46,7 +46,7 @@
     color: red;
 }
 
-.recipeCardViewBtn, .recipeCardViewBtn:link, .recipeCardViewBtn:hover, .recipeCardViewBtn:active, .recipeCardViewBtn:focus, .recipeCardViewBtn:visited {
+.recipeCardViewBtn {
     color:midnightblue;
     text-decoration: none;
     margin:0 auto;

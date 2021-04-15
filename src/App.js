@@ -4,7 +4,8 @@ import API from './utils/API'
 import 'bootstrap/dist/css/bootstrap.min.css'
 // Components
 import NavBar from './components/NavBar'
-import Footer from './components/Footer'
+// React Scroll
+import { Element } from "react-scroll"
 // Pages
 import SignUpPage from './pages/SignUpPage'
 import SignInPage from './pages/SignInPage'
@@ -88,19 +89,20 @@ function App() {
 
   return (
     <Router >
-      <NavBar
-        id={profileState.id}
-        name={profileState.name}
-        email={profileState.email}
-        accountName={profileState.accountName}
-        profileImage={profileState.profileImage}
-        isLoggedIn={profileState.isLoggedIn}
-        handleLogOut={handleLogOut}
-      />
+      <Element name="top">
+        <NavBar
+          id={profileState.id}
+          name={profileState.name}
+          email={profileState.email}
+          accountName={profileState.accountName}
+          profileImage={profileState.profileImage}
+          isLoggedIn={profileState.isLoggedIn}
+          handleLogOut={handleLogOut}
+        />
+      </Element>
       <Switch>
         <Route exact path="/">
           <HomePage />
-          <Footer />
         </Route>
         <Route exact path="/signup">
           <SignUpPage />

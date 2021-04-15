@@ -2,11 +2,9 @@ import React, { useState, useEffect } from 'react'
 import API from '../../utils/API'
 import RecipeViewCard from '../../components/RecipeViewCard'
 import NoPageCard from '../../components/NoPageCard'
+import Footer from '../../components/Footer'
 import { useParams } from 'react-router-dom'
-import { Container } from 'react-bootstrap'
-import { Row } from 'react-bootstrap'
-import { InputGroup } from 'react-bootstrap'
-import { FormControl } from 'react-bootstrap'
+import { Container, Row, InputGroup, FormControl } from 'react-bootstrap'
 import './styles.css'
 
 export default function CategoryPage() {
@@ -95,6 +93,7 @@ export default function CategoryPage() {
                     ))
                 }
             </Row>
+            <Footer />
         </Container >
     )
 }
