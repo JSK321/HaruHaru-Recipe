@@ -43,7 +43,7 @@ A user can search for a recipe using the search bar on the main page, if they wo
 The back-end server side is required to run the application locally, it is found here at: https://github.com/JSK321/ummas-cb-backend
 
 ## Screenshot
-![Website index](https://i.imgur.com/dtNYLNr.png)
+![Website index](https://i.imgur.com/oDEI1E8.png)
 
 ## License
 This project uses MIT
